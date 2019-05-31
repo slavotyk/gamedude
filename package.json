@@ -27,5 +27,20 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Game Dude",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slavotyk/gamedude.git"
+  },
+  "keywords": [
+    "gamedude"
+  ],
+  "author": "gb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slavotyk/gamedude/issues"
+  },
+  "homepage": "https://github.com/slavotyk/gamedude#readme"
 }
