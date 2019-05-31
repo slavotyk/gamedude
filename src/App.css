@@ -1,7 +1,25 @@
 .navigationWrapper{
     background: #7b7b7b;
+    position: fixed;
     height: 60px;
     width: 100%;
+    top: 0;
+}
+
+.mainWrapper{
+    margin: 60px auto;
+    height: auto;
+    min-height: calc(100vh - 120px);
+    width: 1060px;
+    background: #efefef;
+}
+
+.footerWrapper{
+    background: #7b7b7b;
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    bottom: 0;
 }
 
 .logo{
