@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Landing from './components/layout/landing';
+import Landing from './components/layout/landing/landing';
 import Navbar from './components/layout/nav/navbar';
 import Footer from './components/layout/footer/footer';
 

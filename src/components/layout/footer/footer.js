@@ -4,6 +4,9 @@ const Footer = () => {
     return(
         <div className='footerContainer'>
             <div className='footerWrapper'>
+
+                {/*   Основной контент располагать ниже   */}
+
                 footer
             </div>
         </div>
