@@ -1,10 +1,20 @@
-.navigationWrapper{
+/*   Navigation Bar   */
+
+.navigationContainer{
     background: #7b7b7b;
     position: fixed;
     height: 60px;
     width: 100%;
     top: 0;
 }
+
+.navigationWrapper{
+    position: relative;
+    width: 1060px;
+    margin: 0 auto;
+}
+
+/*   Main section   */
 
 .mainWrapper{
     margin: 60px auto;
@@ -14,12 +24,20 @@
     background: #efefef;
 }
 
-.footerWrapper{
+/*   Footer Bar   */
+
+.footerContainer{
     background: #7b7b7b;
     position: fixed;
     height: 60px;
     width: 100%;
     bottom: 0;
+}
+.footerWrapper{
+    position: relative;
+    width: 1060px;
+    height: 100%;
+    margin: 0 auto;
 }
 
 .logo{
