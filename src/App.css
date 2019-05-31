@@ -1,0 +1,13 @@
+.navigationWrapper{
+    background: #7b7b7b;
+    height: 60px;
+    width: 100%;
+}
+
+.logo{
+    background: url(./img/logo_main.png) no-repeat;
+    background-size: contain;
+    width: 100px;
+    height: 60px;
+    margin: 0 auto;
+}
