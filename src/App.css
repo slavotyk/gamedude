@@ -45,6 +45,7 @@
     bottom: 0;
 }
 .mainWrapper{
+    position: relative;
     margin: 0 auto;
     height: auto;
     min-height: calc(100vh - 120px);
@@ -89,6 +90,7 @@
     }
 }
 
+/*   Features   */
 
 .logo{
     background: url(./img/logo_main.png) no-repeat;
@@ -96,4 +98,14 @@
     width: 100px;
     height: 60px;
     margin: 0 auto;
+}
+
+.heroText{
+    margin: 0 auto;
+    padding-top: 34px;
+    max-width: 340px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 26px;
 }

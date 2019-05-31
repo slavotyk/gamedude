@@ -4,7 +4,7 @@ import React from 'react';
 const Herotext = () => {
     return(
         <div className='heroText'>
-            Самый быстрый доступ к тому, что ты ищешь!
+            <p>Самый быстрый доступ к&nbsp;тому, <b>что</b> ты&nbsp;ищешь!</p>
         </div>
     );
 };

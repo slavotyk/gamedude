@@ -6,6 +6,8 @@ const Navbar = () => {
             <div className='navigationWrapper'>
                 {/*   Основной контент располагать ниже   */}
                 <div className='logo'> </div>
+
+                {/*  Нужен компонент юзера в навбаре  */}
             </div>
         </div>
     );

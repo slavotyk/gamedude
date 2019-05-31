@@ -7,6 +7,12 @@ const Landing = () => {
             <div className='mainWrapper'>
                 {/*   Основной контент располагать ниже   */}
                 <Herotext/>
+
+                {/*  Нужен компонент SearchBar  */}
+
+                {/*  Нужен компонент MainFresh  */}
+
+                {/*  Нужен компонент MainLast */}
             </div>
         </div>
     );
