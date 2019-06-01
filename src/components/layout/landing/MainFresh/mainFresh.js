@@ -5,7 +5,7 @@ const MainFresh = () => {
     return(
         <div className='mainFresh'>
             <h1>Свежее</h1>
-                <div className="freshWraper">
+                <div className="freshWrapper">
                     <div className="freshUnit">
                         <p>1</p>
                     </div>
