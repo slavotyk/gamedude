@@ -1,0 +1,29 @@
+/*   Footer Bar   */
+
+.footerContainer{
+  background: #7b7b7b;
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  bottom: 0;
+}
+.footerWrapper{
+  position: relative;
+  width: 1060px;
+  height: 100%;
+  margin: 0 auto;
+}
+@media (min-width: 700px) and (max-width: 1440px) {
+  .footerWrapper{
+    width: 700px;
+  }
+}
+@media (max-width: 700px) {
+  .footerWrapper{
+    width: calc(100% - 10px);
+  }
+}
+.footerLink{
+  color: #fff;
+  margin-right: 20px;
+}

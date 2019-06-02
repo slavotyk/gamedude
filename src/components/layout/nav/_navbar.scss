@@ -1,0 +1,25 @@
+/*   Navigation Bar   */
+
+.navigationContainer{
+  background: #7b7b7b;
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  top: 0;
+}
+
+.navigationWrapper{
+  position: relative;
+  width: 1060px;
+  margin: 0 auto;
+}
+@media (min-width: 700px) and (max-width: 1440px) {
+  .navigationWrapper{
+    width: 700px;
+  }
+}
+@media (max-width: 700px) {
+  .navigationWrapper{
+    width: calc(100% - 10px);
+  }
+}

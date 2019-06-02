@@ -1,0 +1,16 @@
+/*   Roboto from googleFonts   */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap&subset=cyrillic-ext');
+
+/*   Normalized   */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*   SCSSComponents   */
+@import "components/layout/landing/landing.scss";
+@import "components/layout/nav/navbar.scss";
+@import "components/layout/landing/MainFresh/mainFresh.scss";
+@import "components/layout/footer/footer.scss";
+
