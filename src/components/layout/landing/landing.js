@@ -1,6 +1,8 @@
 import React from 'react';
 import Herotext from './herotext';
 import MainFresh from "./MainFresh/mainFresh";
+import MainLast from './MainLast/MainLast';
+import news from './MainLast/mock/news.json';
 
 const Landing = () => {
     return(
@@ -16,6 +18,7 @@ const Landing = () => {
                 {/*  Нужен компонент MainFresh  */}
                 <MainFresh/>
                 {/*  Нужен компонент MainLast */}
+                <MainLast items={ news }/>
             </div>
         </div>
     );
