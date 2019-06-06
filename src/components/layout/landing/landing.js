@@ -1,4 +1,6 @@
 import React from 'react';
+
+import SearchBar from './SearchBar/SearchBar'
 import Herotext from './herotext';
 import MainFresh from "./MainFresh/mainFresh";
 import MainLast from './MainLast/MainLast';
@@ -12,9 +14,8 @@ const Landing = () => {
 
                 {/* Компонент Herotext */}
                 <Herotext/>
-
                 {/*  Нужен компонент SearchBar  */}
-
+                <SearchBar/>
                 {/*  Нужен компонент MainFresh  */}
                 <MainFresh/>
                 {/*  Нужен компонент MainLast */}
