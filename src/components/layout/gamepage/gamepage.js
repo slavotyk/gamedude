@@ -1,4 +1,7 @@
 import React from 'react';
+import HotLinks from './HotLinks/hotLinks';
+import GameLast from './GameLast/GameLast';
+import news from './GameLast/mock/news.json';
 
 const GamePage = () => {
     return(
@@ -6,7 +9,11 @@ const GamePage = () => {
             <div className='mainWrapper'>
                 {/*   Основной контент располагать ниже   */}
 
-                Game Page
+                <h1>Game Name</h1>
+
+                <HotLinks/>
+
+                <GameLast items={ news }/>
             </div>
         </div>
     );
