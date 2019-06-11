@@ -6,6 +6,9 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navbar from './components/layout/nav/navbar';
 import Footer from './components/layout/footer/footer';
 
+import SignIn from './components/layout/auth/SignIn';
+import SignUp from './components/layout/auth/SignUp';
+
 import Landing from './components/layout/landing/landing';
 import SearchResult from './components/layout/search/searchresult';
 import GamePage from './components/layout/gamepage/gamepage';
@@ -21,6 +24,10 @@ function App() {
                 <Route exact path='/' component={Landing} />
                 <Route path='/search' component={SearchResult} />
                 <Route path='/game' component={GamePage} />
+
+                <Route path='/signin' component={SignIn} />
+                <Route path='/signup' component={SignUp} />
+
                 <Route component={Error} />
             </Switch>
 
