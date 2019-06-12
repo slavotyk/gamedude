@@ -5,7 +5,7 @@ import Article from '../../../common/Article/Article';
 import './GameLast.scss';
 
 const GameLast = ({ items }) => (
-    <section className='mainLast'>
+    <section>
         <h2>Последние публикации</h2>
         <div className='mainLastWrapper'>
         {
