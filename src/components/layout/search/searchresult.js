@@ -1,12 +1,12 @@
 import React from 'react';
+import SearchResultBar from './SearchResultBar/SearchResultBar';
+import games from './mock/games.js'
 
 const SearchResult = () => {
     return(
         <div className='mainContainer'>
             <div className='mainWrapper'>
-                {/*   Основной контент располагать ниже   */}
-
-                SearchResult
+                <SearchResultBar items={ games }/>
             </div>
         </div>
     );
