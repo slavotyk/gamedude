@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Article from './Article';
+import Article from '../../../common/Article/Article';
 
 import './MainLast.scss';
 
