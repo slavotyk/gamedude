@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Article from '../../../common/Article/Article';
 
@@ -21,9 +22,17 @@ const SearchResultBar = ({ items }) => {
     }
     else {
         return (
-            <h4>Ничего не найдено</h4>
+            <section>
+                <h4>Ничего не найдено</h4>
+            </section>
         );
     }
 };
 
-export default SearchResultBar;
+function mapStateToProps(state) {
+    return {
+        items: state.search.items
+    };
+}
+
+export default connect(mapStateToProps)(SearchResultBar);
