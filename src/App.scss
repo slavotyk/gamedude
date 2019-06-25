@@ -11,6 +11,14 @@
 body{
     background: #333333;
 }
+
+input{
+    background: #333333;
+    border: none;
+    &:focus{
+        outline: none;
+    }
+}
 /*   SCSSComponents   */
 @import "components/layout/landing/landing.scss";
 @import "components/layout/nav/navbar.scss";

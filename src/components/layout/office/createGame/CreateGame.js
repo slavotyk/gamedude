@@ -1,0 +1,118 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { createGame } from '../../../../store/actions/gameActions';
+import { Redirect } from 'react-router-dom';
+
+class CreateGame extends Component {
+    state = {
+        title: '',
+        developer: '',
+        category: '',
+        pictureAvatar: '',
+        pictureStyle: '',
+        linkWeb: '',
+        linkForum: '',
+        linkWiki: '',
+        linkVk: '',
+        linkYouTube: '',
+        linkTwitter: '',
+        linkFacebook: '',
+        linkInst: '',
+        linkTwitch: ''
+    };
+    handleChange = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+    };
+    handleSubmit = (e) => {
+        e.preventDefault();
+        // console.log(this.state);
+        this.props.createGame(this.state);
+        // после добавления игры - нужно нативно отреагировать, а-ля убрать форму и сказать "добавлено - хотите добавить еще?"
+    };
+    render() {
+        const { auth } = this.props;
+        if (!auth.uid) return <Redirect to='/signin' />;
+        return (
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <h5>Create a New Game</h5>
+                    <div>
+                        <input type="text" id='title' onChange={this.handleChange} />
+                        <label htmlFor="title">Game Title</label>
+                    </div>
+                    <div>
+                        <input type="text" id="developer" onChange={this.handleChange} />
+                        <label htmlFor="developer">Game Developer</label>
+                    </div>
+                    <div>
+                        <input type="text" id="category" onChange={this.handleChange} />
+                        <label htmlFor="category">Game Category</label>
+                    </div>
+                    <div>
+                        <input type="text" id="pictureAvatar" onChange={this.handleChange} />
+                        <label htmlFor="pictureAvatar">Game Avatar (link)</label>
+                    </div>
+                    <div>
+                        <input type="text" id="pictureStyle" onChange={this.handleChange} />
+                        <label htmlFor="pictureStyle">Game Style (link)</label>
+                    </div>
+                    <div>
+                        <input type="text" id="linkWeb" onChange={this.handleChange} />
+                        <label htmlFor="linkWeb">official WebPage</label>
+                    </div>
+                    <div>
+                        <input type="text" id="linkForum" onChange={this.handleChange} />
+                        <label htmlFor="linkForum">official (or biggest) Forum</label>
+                    </div>
+                    <div>
+                        <input type="text" id="linkWiki" onChange={this.handleChange} />
+                        <label htmlFor="linkWiki">Wikipedia page</label>
+                    </div>
+                    <div>
+                        <input type="text" id="linkVk" onChange={this.handleChange} />
+                        <label htmlFor="linkVk">VK.com page</label>
+                    </div>
+                    <div>
+                        <input type="text" id="linkYouTube" onChange={this.handleChange} />
+                        <label htmlFor="linkYouTube">YouTube page</label>
+                    </div>
+                    <div>
+                        <input type="text" id="linkTwitter" onChange={this.handleChange} />
+                        <label htmlFor="linkTwitter">Twitter page</label>
+                    </div>
+                    <div>
+                        <input type="text" id="linkFacebook" onChange={this.handleChange} />
+                        <label htmlFor="linkFacebook">Facebook page</label>
+                    </div>
+                    <div>
+                        <input type="text" id="linkInst" onChange={this.handleChange} />
+                        <label htmlFor="linkInst">Instagram page</label>
+                    </div>
+                    <div>
+                        <input type="text" id="linkTwitch" onChange={this.handleChange} />
+                        <label htmlFor="linkTwitch">Twitch page</label>
+                    </div>
+                    <div>
+                        <button >Create</button>
+                    </div>
+                </form>
+            </div>
+        )
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        createGame: (project) => dispatch(createGame(project))
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateGame)

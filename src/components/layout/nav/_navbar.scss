@@ -57,5 +57,15 @@
   text-align: center;
   line-height: 50px;
   text-decoration: none;
-  color: #000;
+  color: #000 !important;
+}
+
+.navigationButton{
+  display: inline-block;
+  height: 100%;
+  color: #fff;
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  font-size: 14px;
 }

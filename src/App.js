@@ -12,6 +12,7 @@ import SignUp from './components/layout/auth/SignUp';
 import Landing from './components/layout/landing/landing';
 import SearchResult from './components/layout/search/searchresult';
 import GamePage from './components/layout/gamepage/gamepage';
+import Office from './components/layout/office/office';
 import Error from './components/layout/error/404';
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
                 <Route exact path='/' component={Landing} />
                 <Route path='/search' component={SearchResult} />
                 <Route path='/game' component={GamePage} />
+
+                <Route path='/back-office' component={Office} />
 
                 <Route path='/signin' component={SignIn} />
                 <Route path='/signup' component={SignUp} />
