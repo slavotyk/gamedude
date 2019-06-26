@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { createGame } from '../../../../store/actions/gameActions';
 import { Redirect } from 'react-router-dom';
 
+import './CreateGame.scss';
 class CreateGame extends Component {
     state = {
         title: '',
@@ -36,66 +37,65 @@ class CreateGame extends Component {
         if (!auth.uid) return <Redirect to='/signin' />;
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <h5>Create a New Game</h5>
+                <form onSubmit={this.handleSubmit} className="create-game-form">
                     <div>
-                        <input type="text" id='title' onChange={this.handleChange} />
                         <label htmlFor="title">Game Title</label>
+                        <input type="text" id='title' onChange={this.handleChange}/>
                     </div>
                     <div>
-                        <input type="text" id="developer" onChange={this.handleChange} />
                         <label htmlFor="developer">Game Developer</label>
+                        <input type="text" id="developer" onChange={this.handleChange}/>
                     </div>
                     <div>
-                        <input type="text" id="category" onChange={this.handleChange} />
                         <label htmlFor="category">Game Category</label>
+                        <input type="text" id="category" onChange={this.handleChange}/>
                     </div>
                     <div>
-                        <input type="text" id="pictureAvatar" onChange={this.handleChange} />
                         <label htmlFor="pictureAvatar">Game Avatar (link)</label>
+                        <input type="text" id="pictureAvatar" onChange={this.handleChange}/>
                     </div>
                     <div>
-                        <input type="text" id="pictureStyle" onChange={this.handleChange} />
                         <label htmlFor="pictureStyle">Game Style (link)</label>
+                        <input type="text" id="pictureStyle" onChange={this.handleChange}/>
                     </div>
                     <div>
-                        <input type="text" id="linkWeb" onChange={this.handleChange} />
                         <label htmlFor="linkWeb">official WebPage</label>
+                        <input type="text" id="linkWeb" onChange={this.handleChange} />
                     </div>
                     <div>
-                        <input type="text" id="linkForum" onChange={this.handleChange} />
                         <label htmlFor="linkForum">official (or biggest) Forum</label>
+                        <input type="text" id="linkForum" onChange={this.handleChange}/>
                     </div>
                     <div>
-                        <input type="text" id="linkWiki" onChange={this.handleChange} />
                         <label htmlFor="linkWiki">Wikipedia page</label>
+                        <input type="text" id="linkWiki" onChange={this.handleChange}/>
                     </div>
                     <div>
-                        <input type="text" id="linkVk" onChange={this.handleChange} />
                         <label htmlFor="linkVk">VK.com page</label>
+                        <input type="text" id="linkVk" onChange={this.handleChange}/>
                     </div>
                     <div>
-                        <input type="text" id="linkYouTube" onChange={this.handleChange} />
                         <label htmlFor="linkYouTube">YouTube page</label>
+                        <input type="text" id="linkYouTube" onChange={this.handleChange}/>
                     </div>
                     <div>
-                        <input type="text" id="linkTwitter" onChange={this.handleChange} />
                         <label htmlFor="linkTwitter">Twitter page</label>
+                        <input type="text" id="linkTwitter" onChange={this.handleChange}/>
                     </div>
                     <div>
-                        <input type="text" id="linkFacebook" onChange={this.handleChange} />
                         <label htmlFor="linkFacebook">Facebook page</label>
+                        <input type="text" id="linkFacebook" onChange={this.handleChange}/>
                     </div>
                     <div>
-                        <input type="text" id="linkInst" onChange={this.handleChange} />
                         <label htmlFor="linkInst">Instagram page</label>
+                        <input type="text" id="linkInst" onChange={this.handleChange}/>
                     </div>
                     <div>
-                        <input type="text" id="linkTwitch" onChange={this.handleChange} />
                         <label htmlFor="linkTwitch">Twitch page</label>
+                        <input type="text" id="linkTwitch" onChange={this.handleChange}/>
                     </div>
                     <div>
-                        <button >Create</button>
+                        <button className="create-game-form__button">Add</button>
                     </div>
                 </form>
             </div>
