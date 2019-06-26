@@ -12,7 +12,7 @@ const Navbar = (props) => {
         <nav className="navigationContainer">
             <div className="navigationWrapper">
                 {/*   Основной контент располагать ниже   */}
-                <div className='logo'> </div>
+                <a className='logo' href="/"/>
 
                 {/*  Нужен компонент юзера в навбаре  */}
                 <div className="userAuth">
