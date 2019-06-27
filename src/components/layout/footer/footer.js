@@ -12,6 +12,7 @@ const Footer = () => {
                 <Link to="/game" className='footerLink'>GamePage</Link>
                 <Link to="/search" className='footerLink'>SearchResult</Link>
                 <Link to="/whyAmIHere" className='footerLink'>404</Link>
+                <Link to="/back-office" className='footerLink'>Back-office</Link>
             </div>
         </div>
     );
