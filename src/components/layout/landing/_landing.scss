@@ -29,11 +29,13 @@
 }
 
 .logo{
+  display: block;
   background: url(./img/logo_main.png) no-repeat;
   background-size: contain;
   width: 100px;
   height: 60px;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 /*   Hero Text   */
