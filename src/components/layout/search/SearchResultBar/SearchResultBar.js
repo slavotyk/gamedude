@@ -5,8 +5,8 @@ import Article from '../../../common/Article/Article';
 
 import './SearchResultBar.scss';
 
-const SearchResultBar = ({ items }) => {
-    if (items.length !== 0) {
+export const SearchResultBar = ({ items = [] }) => {
+    if (items.length) {
         return (
             <section>
                 <h4>По запросу найдено</h4>

@@ -5,7 +5,7 @@ export const setSearchQuery = (query) => ({
     payload: query
 });
 
-export function setSearchResult(query) {
+export function setSearchResult(query='') {
     const queryLower = query.toLowerCase();
     const result = games.filter(
         game => game.title.toLowerCase().split(" ").some(word => word.indexOf(queryLower) === 0)

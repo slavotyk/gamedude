@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "firebase": "^6.1.1",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
@@ -19,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -51,5 +53,10 @@
   "bugs": {
     "url": "https://github.com/slavotyk/gamedude/issues"
   },
-  "homepage": "https://github.com/slavotyk/gamedude#readme"
+  "homepage": "https://github.com/slavotyk/gamedude#readme",
+  "jest": {
+    "collectCoverageFrom" : [
+      "src/**/*.js"
+    ]
+  }
 }
