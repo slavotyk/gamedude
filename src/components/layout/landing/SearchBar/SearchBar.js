@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import './SearchBar.scss';
 import { setSearchQuery, setSearchResult } from '../../../../store/actions/searchActions';
 
-class SearchBar extends Component {
+export class SearchBar extends Component {
     state = {
         value: this.props.value
     };

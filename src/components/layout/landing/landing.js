@@ -10,15 +10,9 @@ const Landing = () => {
     return(
         <div className='mainContainer'>
             <div className='mainWrapper'>
-                {/*   Основной контент располагать ниже   */}
-
-                {/* Компонент Herotext */}
                 <Herotext/>
-                {/*  Нужен компонент SearchBar  */}
                 <SearchBar/>
-                {/*  Нужен компонент MainFresh  */}
                 <MainFresh/>
-                {/*  Нужен компонент MainLast */}
                 <MainLast items={ news }/>
             </div>
         </div>
