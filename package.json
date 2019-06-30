@@ -53,9 +53,9 @@
   "bugs": {
     "url": "https://github.com/slavotyk/gamedude/issues"
   },
-  "homepage": "https://github.com/slavotyk/gamedude#readme",
+  "homepage": "https://gamedude.ru",
   "jest": {
-    "collectCoverageFrom" : [
+    "collectCoverageFrom": [
       "src/**/*.js"
     ]
   }

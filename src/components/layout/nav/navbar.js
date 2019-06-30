@@ -1,7 +1,8 @@
-import React from 'react'
-import SignedInLinks from './SignedInLinks'
-import SignedOutLinks from './SignedOutLinks'
-import { connect } from 'react-redux'
+import React from 'react';
+import SignedInLinks from './SignedInLinks';
+import SignedOutLinks from './SignedOutLinks';
+import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = (props) => {
     const { auth, profile } = props;
@@ -12,7 +13,8 @@ const Navbar = (props) => {
         <nav className="navigationContainer">
             <div className="navigationWrapper">
                 {/*   Основной контент располагать ниже   */}
-                <a className='logo' href="/"/>
+
+                <NavLink to='/' className='logo'> </NavLink>
 
                 {/*  Нужен компонент юзера в навбаре  */}
                 <div className="userAuth">
