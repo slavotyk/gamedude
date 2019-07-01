@@ -24,7 +24,7 @@ function App() {
             <Switch>
                 <Route exact path='/' component={Landing} />
                 <Route path='/search' component={SearchResult} />
-                <Route path='/game' component={GamePage} />
+                <Route path='/games/:id' component={GamePage} />
 
                 <Route path='/back-office' component={Office} />
 

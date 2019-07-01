@@ -1,22 +1,62 @@
 import React from 'react';
+
+import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
+
 import HotLinks from './HotLinks/hotLinks';
 import GameLast from './GameLast/GameLast';
 import news from './GameLast/mock/news.json';
 
-const GamePage = () => {
-    return(
-        <div className='mainContainer'>
-            <div className='mainWrapper'>
-                {/*   Основной контент располагать ниже   */}
+const GamePage = (props) => {
+    const { game } = props;
+    if (game) {
+        return (
 
-                <h1>Game Name</h1>
+            <div className='mainContainer'>
+                <div className='mainWrapper'>
+                    {/*   Основной контент располагать ниже   */}
 
-                <HotLinks/>
 
-                <GameLast items={ news }/>
+
+
+                    <h1>{game.title}</h1>
+
+                    <HotLinks/>
+
+                    <GameLast items={ news }/>
+                </div>
             </div>
-        </div>
-    );
+
+
+
+        )
+    } else {
+        return (
+            <div className="container center">
+                <p>Загружаем...</p>
+            </div>
+        )
+    }
+
+
 };
 
-export default GamePage;
+const mapStateToProps = (state, ownProps) => {
+    // console.log(state);
+    const id = ownProps.match.params.id;
+    const games = state.firestore.data.games;
+    const game = games ? games[id] : null;
+    return {
+        game: game,
+        auth: state.firebase.auth
+    }
+};
+
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([{
+        collection: 'games'
+    }])
+)(GamePage);
+

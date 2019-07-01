@@ -111,7 +111,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        createGame: (project) => dispatch(createGame(project))
+        createGame: (game) => dispatch(createGame(game))
     }
 };
 
