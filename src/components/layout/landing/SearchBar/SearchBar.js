@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import './SearchBar.scss';
-import { setSearchQuery, setSearchResult } from '../../../../store/actions/searchActions';
+import { search } from '../../../../store/actions/searchActions';
 
 export class SearchBar extends Component {
     state = {
@@ -24,11 +24,10 @@ export class SearchBar extends Component {
     };
 
     searchQuery = () => {
-        const { setSearchQuery, setSearchResult, history } = this.props;
+        const { search, history } = this.props;
         const { value } = this.state;
 
-        setSearchQuery(value);
-        setSearchResult(value);
+        search(value);
 
         history.push('/search');
     };
@@ -51,4 +50,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps, { setSearchQuery, setSearchResult })(withRouter(SearchBar));
+export default connect(mapStateToProps, { search })(withRouter(SearchBar));
