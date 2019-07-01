@@ -1,17 +1,32 @@
-import games from './mock/games';
-
-export const setSearchQuery = (query) => ({
+export const setSearchQuery = query => ({
     type: 'SET_SEARCH_QUERY',
     payload: query
 });
 
-export function setSearchResult(query='') {
-    const queryLower = query.toLowerCase();
-    const result = games.filter(
-        game => game.title.toLowerCase().split(" ").some(word => word.indexOf(queryLower) === 0)
-    );
-    return {
-        type: 'SET_SEARCH_RESULT',
-        payload: result
+export const setSearchResult = result => ({
+    type: 'SET_SEARCH_RESULT',
+    payload: result
+});
+
+export const search = query => {
+    return (dispatch, getState, { getFirestore }) => {
+        dispatch(setSearchQuery(query));
+
+        getFirestore().get({
+            collection: 'games',
+            where: [ 'keywords', 'array-contains', query.toLowerCase() ],
+        }).then(result => {
+            const games = result.docs
+                .map(
+                    document => {
+                        const { id } = document;
+                        const { title, poster } = document.data();
+
+                        return { id, title, poster };
+                    }
+                );
+
+            dispatch(setSearchResult(games));
+        });
     };
-}
+};
