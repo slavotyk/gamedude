@@ -5,8 +5,9 @@ input[type='search'] {
 }
 
 .searchBar {
-    margin: 21px auto;
     position: relative;
+    width: 700px;
+    margin: 21px auto;
     @media (max-width: 700px) {
         width: 341px;
     }
