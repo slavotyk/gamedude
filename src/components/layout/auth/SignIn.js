@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { signIn } from '../../../store/actions/authActions'
 import { Redirect } from 'react-router-dom'
 
+import './Auth.scss';
+
 class SignIn extends Component {
   state = {
     email: '',
@@ -23,21 +25,13 @@ class SignIn extends Component {
     return (
       <div className="mainContainer">
         <div className="mainWrapper">
-          <form className="white" onSubmit={this.handleSubmit}>
-            <h5 className="grey-text text-darken-3">Авторизация</h5>
-            <div className="input-field">
-              <label htmlFor="email">Email</label>
-              <input type="email" id='email' onChange={this.handleChange} />
-            </div>
-            <div className="input-field">
-              <label htmlFor="password">Пароль</label>
-              <input type="password" id='password' onChange={this.handleChange} />
-            </div>
-            <div className="input-field">
-              <button className="btn pink lighten-1 z-depth-0">Войти</button>
-              <div className="center red-text">
-                { authError ? <p>{authError}</p> : null }
-              </div>
+          <form className="auth-form" onSubmit={this.handleSubmit}>
+            <h3>Авторизация</h3>
+            <input type="email" className="auth-form__input" placeholder="Email" id='email' onChange={this.handleChange} />
+            <input type="password" className="auth-form__input" placeholder="Пароль" id='password' onChange={this.handleChange} />
+            <button  className="auth-form__button">ВОЙТИ</button>
+            <div>
+              { authError ? <p className="auth-form__error">{authError}</p> : null }
             </div>
           </form>
         </div>
