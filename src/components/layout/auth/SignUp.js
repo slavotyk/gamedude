@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signUp } from '../../../store/actions/authActions'
 
+import './Auth.scss';
+
 class SignUp extends Component {
   state = {
     email: '',
@@ -25,29 +27,15 @@ class SignUp extends Component {
     return (
       <div className="mainContainer">
         <div className="mainWrapper">
-          <form className="white" onSubmit={this.handleSubmit}>
-            <h5 className="grey-text text-darken-3">Регистрация</h5>
-            <div className="input-field">
-              <label htmlFor="email">Email</label>
-              <input type="email" id='email' onChange={this.handleChange} />
-            </div>
-            <div className="input-field">
-              <label htmlFor="password">Пароль</label>
-              <input type="password" id='password' onChange={this.handleChange} />
-            </div>
-            <div className="input-field">
-              <label htmlFor="firstName">Имя</label>
-              <input type="text" id='firstName' onChange={this.handleChange} />
-            </div>
-            <div className="input-field">
-              <label htmlFor="lastName">Фамилия</label>
-              <input type="text" id='lastName' onChange={this.handleChange} />
-            </div>
-            <div className="input-field">
-              <button className="btn pink lighten-1 z-depth-0">Зарегистрироваться</button>
-              <div className="center red-text">
-                { authError ? <p>{authError}</p> : null }
-              </div>
+          <form className="auth-form" onSubmit={this.handleSubmit}>
+            <h3>Регистрация</h3>
+            <input type="text" className="auth-form__input" placeholder="Имя" id='firstName' onChange={this.handleChange} />
+            <input type="text" className="auth-form__input" placeholder="Фамилия" id='lastName' onChange={this.handleChange} />
+            <input type="email" className="auth-form__input" placeholder="Email" id='email' onChange={this.handleChange} />
+            <input type="password" className="auth-form__input" placeholder="Пароль" id='password' onChange={this.handleChange} />
+            <button className="auth-form__button">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+            <div>
+              { authError ? <p className="auth-form__error">{authError}</p> : null }
             </div>
           </form>
         </div>

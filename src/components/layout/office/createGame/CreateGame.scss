@@ -30,11 +30,12 @@
         height: 40px;
         margin: 30px;
         margin-right: 0px;
-        background-color:#333333;
+        background-color:#222222;
         border: 1px solid #616161;
         &:hover {
             transition: 1s;
-            background-color:#616161;
+            background-color:white;
+            color: #222222;
             border: 1px solid #333333;
         }
     }
