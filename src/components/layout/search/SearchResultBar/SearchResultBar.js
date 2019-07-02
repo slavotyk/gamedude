@@ -13,7 +13,7 @@ export const SearchResultBar = ({ items = [] }) => {
                 <div className='searchResultBar'>
                 {
                     (items || []).map(
-                        item => <Article key={ item.id } title={ item.title } poster={ item.poster }/>
+                        item => <Article key={ item.id } title={ item.title } poster={ item.poster } id={ item.id }/>
                     )
                 }
                 </div>
