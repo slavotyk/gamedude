@@ -17,12 +17,11 @@ const GamePage = (props) => {
                 <div className='mainWrapper'>
                     {/*   Основной контент располагать ниже   */}
 
-
-
-
                     <h1>{game.title}</h1>
 
                     <HotLinks/>
+                    <h4>Разработчик:  { game.developer }</h4>
+                    <h4>Жанр: { game.category }</h4>
 
                     <GameLast items={ news }/>
                 </div>

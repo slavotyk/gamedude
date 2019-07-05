@@ -9,7 +9,8 @@ class CreateGame extends Component {
         title: '',
         developer: '',
         category: '',
-        pictureAvatar: '',
+        keywords: '',
+        poster: '',
         pictureStyle: '',
         linkWeb: '',
         linkForum: '',
@@ -22,14 +23,23 @@ class CreateGame extends Component {
         linkTwitch: ''
     };
     handleChange = (e) => {
-        this.setState({
-            [e.target.id]: e.target.value
+        if (e.target.type === 'file') {
+            this.setState({
+                [e.target.id]: e.target.files[0]
+            })
+        }
+        else {
+            this.setState({
+                [e.target.id]: e.target.value
         })
+        }
     };
+
     handleSubmit = (e) => {
         e.preventDefault();
         // console.log(this.state);
         this.props.createGame(this.state);
+        alert("Игра добавлена")
         // после добавления игры - нужно нативно отреагировать, а-ля убрать форму и сказать "добавлено - хотите добавить еще?"
     };
     render() {
@@ -51,8 +61,12 @@ class CreateGame extends Component {
                         <input type="text" id="category" onChange={this.handleChange}/>
                     </div>
                     <div>
-                        <label htmlFor="pictureAvatar">Game Avatar (link)</label>
-                        <input type="text" id="pictureAvatar" onChange={this.handleChange}/>
+                        <label htmlFor="keywords">Keywords</label>
+                        <input type="text" id="keywords" onChange={this.handleChange}/>
+                    </div>
+                    <div>
+                        <label htmlFor="poster">Game Poster</label>
+                        <input type="file" id="poster" onChange={this.handleChange}/>
                     </div>
                     <div>
                         <label htmlFor="pictureStyle">Game Style (link)</label>
