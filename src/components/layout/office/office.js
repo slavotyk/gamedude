@@ -67,7 +67,7 @@ class Office extends Component {
             return this.showError();
         }
 
-        // this.props.createGame(newGame);
+        this.props.createGame(newGame);
         this.hideCreateGameForm();
         this.showSuccess(newGame.title);
     }
