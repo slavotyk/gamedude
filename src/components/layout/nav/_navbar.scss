@@ -46,8 +46,8 @@
       color: #fff;
       text-decoration: none;
       border-bottom: 1px solid transparent;
+      transition: 1s;
       &:hover {
-        transition: 1s;
         border-bottom: 1px solid white;
       }
     }

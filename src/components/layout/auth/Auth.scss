@@ -18,9 +18,10 @@
         margin-bottom: 10px;
         border: 1px solid #333333;
         border-radius: 10px;
+        transition: 1s;
         &:focus {
-            transition: 1s;
             border: 1px solid #616161;
+            outline: none;
         }
     }
 
@@ -34,17 +35,17 @@
         background-color: #222222;
         border: 1px solid #616161;
         border-radius: 5px;
+        transition: 1s;
+
+        &:focus, &:active{
+            outline: none;
+        }
+
         &:hover {
-            transition: 1s;
             color: #333333;
             background-color: white;
             border: 1px solid #333333;
         }
-    }
-
-    &__error{
-        color: #d50000;        ;
-        text-align: center;
     }
 }
 

@@ -1,28 +1,46 @@
-.office {
-    padding: 15px;
-    p {
-        font-size: 12px;
-    }
+.office__button {
+        cursor: pointer;
+        margin-top: 30px;
+        font-size: 16px;
+        padding: 10px 40px;
+        background-color:#333333;
+        border: 1px solid #616161;
+        border-radius: 5px;
+        transition: 0.5s;
+
+        &:focus, &:active{
+            outline: none;
+        }
+
+        &:hover {
+            background-color:white;
+            color: #222222;
+            border: 1px solid #222222;
+        }
 }
 
 .profile {
     display: grid;
-    grid-template-columns: 25% 75%;
-    grid-gap: 20px;
-    padding: 30px;
-    width: 100%;
-    margin: 30px auto;
+    grid-template-columns: 40% 60%;
+    padding: 40px 0px;
+    @media (max-width: 700px) {
+        display: block;
+    }
         &__avatar {
-            border: 2px solid white;
-            border-radius: 70px;
-            width: 140px;
-            height: 140px;
-            background: url('../../../img/avatar.jpg') no-repeat;
+            margin: 0px auto;
+            border: 1px solid white;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            background: url('../../../img/avatar.jpg') no-repeat center;
         }
+
         &__info {
             font-size: 16px;
+            margin: 30px 0px;
             div {
                 padding: 10px;
             }
         }
 }
+
