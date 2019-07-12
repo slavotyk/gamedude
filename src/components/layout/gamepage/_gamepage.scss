@@ -1,7 +1,3 @@
-.gameName{
-
-}
-
 .hotLinksWrapper{
   display: block;
   width: 100%;
@@ -13,17 +9,48 @@
     height: calc(100% - 12px);
     padding: 6px 6px;
     grid-gap: 6px;
-    grid-template-columns: repeat(7, 40px);
+    grid-template-columns: repeat(9, 40px);
     grid-template-rows: 40px;
     li{
       display: block;
       float: left;
-      button{
+      .icon {
         display: block;
-        background: #fff;
+        cursor: pointer;
         width: 100%;
         height: 100%;
         border-radius: 50%;
+        background-image: url(https://firebasestorage.googleapis.com/v0/b/gamedude-7f1f1.appspot.com/o/icons.jpg?alt=media&token=e274a759-4bcb-49e7-91d3-24cca39f6677);
+          &:hover{
+            background-image: url(https://firebasestorage.googleapis.com/v0/b/gamedude-7f1f1.appspot.com/o/icons-active.jpg?alt=media&token=ddd84b54-9f54-4d5e-bf9a-0560f1c0fcdd);
+          }
+      }
+      .web {
+        background-position: -174px -8px;
+      }
+      .wiki {
+        background-position: -118px -8px;
+      }
+      .facebook {
+        background-position: -7px -8px;
+      }
+      .forum {
+        background-position: -340px -8px;
+      }
+      .youtube {
+        background-position: -284px -8px;
+      }
+      .vkontakte {
+        background-position: -230px -8px;
+      }
+      .twitter {
+        background-position: -63px -8px;
+      }
+      .instagram {
+        background-position: -452px -7px;
+      }
+      .twitch {
+        background-position: -395px -8px;
       }
     }
   }

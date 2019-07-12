@@ -96,7 +96,7 @@ class CreateGame extends Component {
                         <input type="text" id="linkTwitter" className="create-game-form__input" onChange={this.handleChange}/>
                     </div>
                     <div>
-                        <label htmlFor="linkFacebook">Facebook page</label>
+                        <label htmlFor="linkFacebook">Facebook page*</label>
                         <input type="text" id="linkFacebook" className="create-game-form__input" onChange={this.handleChange}/>
                     </div>
                     <div>
