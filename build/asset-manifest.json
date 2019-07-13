@@ -1,22 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.7883c55a.chunk.css",
-    "main.js": "/static/js/main.20ff27e3.chunk.js",
-    "main.js.map": "/static/js/main.20ff27e3.chunk.js.map",
+    "main.css": "/static/css/main.c49cd511.chunk.css",
+    "main.js": "/static/js/main.ee16c135.chunk.js",
+    "main.js.map": "/static/js/main.ee16c135.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.ebb3b5bd.chunk.js": "/static/js/2.ebb3b5bd.chunk.js",
-    "static/js/2.ebb3b5bd.chunk.js.map": "/static/js/2.ebb3b5bd.chunk.js.map",
+    "static/js/2.9b06fb96.chunk.js": "/static/js/2.9b06fb96.chunk.js",
+    "static/js/2.9b06fb96.chunk.js.map": "/static/js/2.9b06fb96.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.a935ab5a343ef0e1d8d67607aa20d2d7.js": "/precache-manifest.a935ab5a343ef0e1d8d67607aa20d2d7.js",
+    "precache-manifest.82a25f318a8c6f23a054a5a931b21ae6.js": "/precache-manifest.82a25f318a8c6f23a054a5a931b21ae6.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.7883c55a.chunk.css.map": "/static/css/main.7883c55a.chunk.css.map",
-    "static/media/office.scss": "/static/media/avatar.e3691c97.jpg",
-    "static/media/daysgone.jpg": "/static/media/daysgone.2ae21993.jpg",
-    "static/media/App.scss": "/static/media/mtg.de28e9a2.jpg",
-    "static/media/lol.jpg": "/static/media/lol.9446002a.jpg",
-    "static/media/SearchBar.scss": "/static/media/search.461965f0.png",
-    "static/media/totalwar.jpg": "/static/media/totalwar.71ef46d2.jpg",
-    "static/media/warcraft.jpg": "/static/media/warcraft.8052c34e.jpg"
+    "static/css/main.c49cd511.chunk.css.map": "/static/css/main.c49cd511.chunk.css.map",
+    "static/media/office.scss": "/static/media/avatar.cd5f423a.jpg",
+    "static/media/App.scss": "/static/media/logo_main.053ec37d.png",
+    "static/media/SearchBar.scss": "/static/media/search.461965f0.png"
   }
 }
