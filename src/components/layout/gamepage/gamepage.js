@@ -19,7 +19,7 @@ const GamePage = (props) => {
 
                     <h1>{game.title}</h1>
 
-                    <HotLinks/>
+                    <HotLinks game = { game }/>
                     <h4>Разработчик:  { game.developer }</h4>
                     <h4>Жанр: { game.category }</h4>
 

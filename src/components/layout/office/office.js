@@ -88,9 +88,9 @@ class Office extends Component {
                         </div>
                     </div>
 
-                    {this.state.showCreateGameForm === false ? <button className="office__button" onClick = {() => this.showCreateGameForm()}>ДOБАВИТЬ НОВУЮ ИГРУ</button> : <CreateGame onSave={ this.saveGame } onCancel={() => this.hideCreateGameForm()}/>}
+                    { this.state.showCreateGameForm === false ? <button className="office__button" onClick = {() => this.showCreateGameForm()}>ДOБАВИТЬ НОВУЮ ИГРУ</button> : <CreateGame onSave={ this.saveGame } onCancel={() => this.hideCreateGameForm()}/>}
 
-                    { this.state.modal && <ModalWindow { ...this.state.modal } /> }
+                    { this.state.modal && <ModalWindow { ...this.state.modal }/> }
                 </div>
             </div>
         )
