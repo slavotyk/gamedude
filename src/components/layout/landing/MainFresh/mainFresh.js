@@ -13,7 +13,7 @@ const MainFresh = (props) => {
             <h2>Свежее</h2>
                 <div className="freshWrapper">
                     {
-                        (games || [])
+                        Array.from(games || [])
                             .sort(
                                 (game1, game2) => game2.createdAt.seconds - game1.createdAt.seconds
                             )
