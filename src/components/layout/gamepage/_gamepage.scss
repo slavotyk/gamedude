@@ -1,57 +1,85 @@
 .hotLinksWrapper{
   display: block;
   width: 100%;
-  height: 52px;
-  background: #7b7b7b;
+  height: 32px;
+  margin-top: 25px;
   ul{
     display: grid;
-    width: calc(100% - 12px);
-    height: calc(100% - 12px);
-    padding: 6px 6px;
-    grid-gap: 6px;
+    width: calc(100%);
+    height: calc(100%);
+    padding: 0 0;
+    grid-gap: 30px;
     grid-template-columns: repeat(9, 40px);
-    grid-template-rows: 40px;
+    grid-template-rows: 100%;
     li{
-      display: block;
-      float: left;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
       .icon {
         display: block;
         cursor: pointer;
-        width: 100%;
+        width: 30px;
         height: 100%;
-        border-radius: 50%;
-        background-image: url(https://firebasestorage.googleapis.com/v0/b/gamedude-7f1f1.appspot.com/o/icons.jpg?alt=media&token=e274a759-4bcb-49e7-91d3-24cca39f6677);
-          &:hover{
-            background-image: url(https://firebasestorage.googleapis.com/v0/b/gamedude-7f1f1.appspot.com/o/icons-active.jpg?alt=media&token=ddd84b54-9f54-4d5e-bf9a-0560f1c0fcdd);
-          }
+        opacity: 0.5;
+        transition: 200ms;
+        background: no-repeat center;
+        background-size: contain;
+        &:hover{
+          opacity: 1;
+          transform: scale(1.1);
+        }
       }
       .web {
-        background-position: -174px -8px;
+        background-image: url(./img/social/web.svg);
       }
       .wiki {
-        background-position: -118px -8px;
+        background-image: url(./img/social/wikipedia.svg);
       }
       .facebook {
-        background-position: -7px -8px;
+        background-image: url(./img/social/facebook.svg);
       }
       .forum {
-        background-position: -340px -8px;
+        background-image: url(./img/social/forum.svg);
       }
       .youtube {
-        background-position: -284px -8px;
+        background-image: url(./img/social/youtube.svg);
       }
       .vkontakte {
-        background-position: -230px -8px;
+        background-image: url(./img/social/vk.svg);
       }
       .twitter {
-        background-position: -63px -8px;
+        background-image: url(./img/social/twitter.svg);
       }
       .instagram {
-        background-position: -452px -7px;
+        background-image: url(./img/social/instagram.svg);
       }
       .twitch {
-        background-position: -395px -8px;
+        background-image: url(./img/social/twitch.svg);
       }
     }
   }
+}
+
+h1{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+
+  color: #FFFDFD;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+}
+
+h4{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+
+  color: #FFFDFD;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  opacity: 0.6;
 }
