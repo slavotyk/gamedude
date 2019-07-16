@@ -15,12 +15,20 @@ const HotLinks = ({game}) => {
                         className: 'wiki'
                     },
                     {
-                        href: game.linkFacebook,
-                        className: 'facebook'
-                    },
-                    {
                         href: game.linkForum,
                         className: 'forum'
+                    },
+                    {
+                        href: game.linkTwitch,
+                        className: 'twitch'
+                    },
+                    {
+                        href: game.linkInst,
+                        className: 'instagram'
+                    },
+                    {
+                        href: game.linkTwitter,
+                        className: 'twitter'
                     },
                     {
                         href: game.linkYouTube,
@@ -31,17 +39,9 @@ const HotLinks = ({game}) => {
                         className: 'vkontakte'
                     },
                     {
-                        href: game.linkTwitter,
-                        className: 'twitter'
+                        href: game.linkFacebook,
+                        className: 'facebook'
                     },
-                    {
-                        href: game.linkInst,
-                        className: 'instagram'
-                    },
-                    {
-                        href: game.linkTwitch,
-                        className: 'twitch'
-                    }
                 ].map(({href, className})=>{
                     // eslint-disable-next-line jsx-a11y/anchor-has-content
                     return href && <li key={className}><a className={`icon ${className}`} target="_blank" href={href} rel="noopener noreferrer"/></li>
