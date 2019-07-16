@@ -11,18 +11,19 @@ import news from './GameLast/mock/news.json';
 const GamePage = (props) => {
     const { game } = props;
     if (game) {
+        const { background } = game;
+        const style={
+            background: `linear-gradient(180deg, rgba(34, 34, 34, 0.7) 0%, rgba(34, 34, 34, 0.3) 100%), url(${ background }) no-repeat center top/cover`
+        };
         return (
-
             <div className='mainContainer'>
+                <div className="gamepage-background" style={ style }></div>
                 <div className='mainWrapper'>
-                    {/*   Основной контент располагать ниже   */}
-
-                    <h1>{game.title}</h1>
+                    <h1>{ game.title }</h1>
                     <h4>Разработчик:  { game.developer }</h4>
                     <h4>Жанр: { game.category }</h4>
 
-                    <HotLinks game = { game }/>
-
+                    <HotLinks game={ game }/>
 
                     <GameLast items={ news }/>
                 </div>
@@ -43,7 +44,6 @@ const GamePage = (props) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-    // console.log(state);
     const id = ownProps.match.params.id;
     const games = state.firestore.data.games;
     const game = games ? games[id] : null;
