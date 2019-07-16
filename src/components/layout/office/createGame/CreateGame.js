@@ -68,8 +68,8 @@ class CreateGame extends Component {
                         <input type="file" id="poster" className="create-game-form__input" onChange={this.handleChange}/>
                     </div>
                     <div>
-                        <label htmlFor="pictureStyle">Game Style (link)</label>
-                        <input type="text" id="pictureStyle" className="create-game-form__input" onChange={this.handleChange}/>
+                        <label htmlFor="pictureStyle">Game Style*</label>
+                        <input type="file" id="pictureStyle" className="create-game-form__input" onChange={this.handleChange}/>
                     </div>
                     <div>
                         <label htmlFor="linkWeb">official WebPage*</label>

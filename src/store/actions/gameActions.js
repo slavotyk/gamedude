@@ -15,7 +15,7 @@ export const createGame = (game) => {
         firestore.collection('games').add({
           ...game,
           poster: url,
-          keywords: game.keywords.toLowerCase().split(' '),
+          keywords: game.keywords.toLowerCase().split(','),
           authorFirstName: profile.firstName,
           authorLastName: profile.lastName,
           authorId: authorId,
