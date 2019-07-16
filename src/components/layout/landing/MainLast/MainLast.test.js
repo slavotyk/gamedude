@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { MainLast } from './MainLast';
-import Article from '../../../common/Article/Article';
+import PostCard from '../../../common/PostCard/PostCard';
 
 describe('MainLast', () => {
     it('renders without crashing', () => {
@@ -22,12 +22,12 @@ describe('MainLast', () => {
         ];
 
         const wrapper = shallow(<MainLast items={ items } />);
-        const articles = wrapper.find(Article);
+        const postCards = wrapper.find(PostCard);
 
-        expect(articles).toHaveLength(items.length);
+        expect(postCards).toHaveLength(items.length);
         items.forEach(
             (item, index) => expect(
-                articles.at(index).props()
+                postCards.at(index).props()
             ).toEqual({
                 title: item.title,
                 poster: item.poster

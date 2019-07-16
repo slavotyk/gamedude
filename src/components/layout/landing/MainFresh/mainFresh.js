@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 
-import Article from '../../../common/Article/Article';
+import GameCard from '../../../common/GameCard/GameCard';
 
 const MainFresh = (props) => {
     const {games} = props;
@@ -19,7 +19,7 @@ const MainFresh = (props) => {
                             )
                             .slice(0, 8)
                             .map(
-                                item => <Article key={ item.id } id = { item.id } title={ item.title } poster={ item.poster }/>
+                                item => <GameCard key={ item.id } id = { item.id } title={ item.title } poster={ item.poster }/>
                             )
                     }
                 </div>

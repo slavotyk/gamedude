@@ -5,8 +5,8 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 
 import HotLinks from './HotLinks/hotLinks';
-import GameLast from './GameLast/GameLast';
-import news from './GameLast/mock/news.json';
+import PostLast from './PostLast/PostLast';
+import news from './PostLast/mock/news.json';
 
 const GamePage = (props) => {
     const { game } = props;
@@ -25,7 +25,7 @@ const GamePage = (props) => {
 
                     <HotLinks game={ game }/>
 
-                    <GameLast items={ news }/>
+                    <PostLast items={ news }/>
                 </div>
             </div>
 
@@ -39,8 +39,6 @@ const GamePage = (props) => {
             </div>
         )
     }
-
-
 };
 
 const mapStateToProps = (state, ownProps) => {

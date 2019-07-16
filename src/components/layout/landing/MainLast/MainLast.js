@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Article from '../../../common/Article/Article';
+import PostCard from '../../../common/PostCard/PostCard';
 
 import './MainLast.scss';
 
@@ -12,7 +12,7 @@ export const MainLast = ({ items=[] }) => {
                 <div className='mainLastWrapper'>
                 {
                     (items).map(
-                        item => <Article key={ item.id } title={ item.title }/>
+                        item => <PostCard key={ item.id } title={ item.title }/>
                     )
                 }
                 </div>
