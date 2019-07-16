@@ -11,9 +11,9 @@ import news from './GameLast/mock/news.json';
 const GamePage = (props) => {
     const { game } = props;
     if (game) {
-        const { pictureStyle } = game;
+        const { background } = game;
         const style={
-            background: `linear-gradient(180deg, rgba(34, 34, 34, 0.7) 0%, rgba(34, 34, 34, 0.3) 100%), url(${ pictureStyle }) no-repeat center top/cover`
+            background: `linear-gradient(180deg, rgba(34, 34, 34, 0.7) 0%, rgba(34, 34, 34, 0.3) 100%), url(${ background }) no-repeat center top/cover`
         };
         return (
             <div className='mainContainer'>
