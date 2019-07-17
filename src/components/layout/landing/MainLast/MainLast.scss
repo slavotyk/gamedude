@@ -1,7 +1,9 @@
 .mainLast {
-    display: none;
-    @media (min-width: 1400px) {
-        display: block;
+    display: block;
+    width: 700px;
+    margin: 0 auto;
+    @media (max-width: 700px) {
+        width: 320px;
     }
     h2 {
         font-size: 30px;
