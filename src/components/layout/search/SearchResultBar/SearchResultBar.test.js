@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { SearchResultBar } from './SearchResultBar';
-import Article from '../../../common/Article/Article';
+import GameCard from '../../../common/GameCard/GameCard';
 
 describe('SearchResultBar', () => {
     it('renders without crashing', () => {
@@ -24,12 +24,12 @@ describe('SearchResultBar', () => {
         ];
 
         const wrapper = shallow(<SearchResultBar items={ items } />);
-        const articles = wrapper.find(Article);
+        const gameCards = wrapper.find(GameCard);
 
-        expect(articles).toHaveLength(items.length);
+        expect(gameCards).toHaveLength(items.length);
         items.forEach(
             (item, index) => expect(
-                articles.at(index).props()
+                gameCards.at(index).props()
             ).toEqual({
                 title: item.title,
                 poster: item.poster

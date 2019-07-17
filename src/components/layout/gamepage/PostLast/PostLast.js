@@ -1,20 +1,20 @@
 import React from 'react';
 
-import Article from '../../../common/Article/Article';
+import PostOnGamePage from '../PostLast/PostOnGamePage/PostOnGamePage';
 
-import './GameLast.scss';
+import './PostLast.scss';
 
-const GameLast = ({ items }) => (
+const PostLast = ({ items }) => (
     <section>
         <h2>Последние публикации</h2>
         <div className='mainLastWrapper'>
         {
             (items || []).map(
-                item => <Article key={ item.id } title={ item.title }/>
+                item => <PostOnGamePage key={ item.id } title={ item.title }/>
             )
         }
         </div>
     </section>
 );
 
-export default GameLast;
+export default PostLast;
