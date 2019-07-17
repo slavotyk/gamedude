@@ -17,7 +17,7 @@ const GamePage = (props) => {
         };
         return (
             <div className='mainContainer'>
-                <div className="gamepage-background" style={ style }></div>
+                <div className="gamepage-background" style={ style }> </div>
                 <div className='mainWrapper'>
                     <h1>{ game.title }</h1>
                     <h4>Разработчик:  { game.developer }</h4>

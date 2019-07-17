@@ -21,7 +21,7 @@
 }
 @media (max-width: 700px) {
   .navigationWrapper{
-    width: calc(100% - 10px);
+    max-width: calc(100% - 30px);
   }
 }
 
