@@ -11,6 +11,9 @@
     grid-gap: 30px;
     grid-template-columns: repeat(9, 40px);
     grid-template-rows: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
     li{
       display: inline-block;
       width: 100%;
