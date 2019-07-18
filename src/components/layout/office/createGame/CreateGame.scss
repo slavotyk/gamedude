@@ -1,9 +1,9 @@
-.create-game-form {
+.create-game-form{
     font-size: 16px;
     padding: 15px;
     text-align: right;
 
-    &__input {
+    &__input{
         width: 60%;
         font-size: 16px;
         margin: 5px auto;
@@ -12,12 +12,12 @@
         border: 1px solid #333333;
         transition: 1s;
 
-        &:focus {
+        &:focus{
             border: 1px solid #616161;
         }
     }
 
-    label {
+    label{
         display:inline-block;
         width: 40%;
         text-align: left;

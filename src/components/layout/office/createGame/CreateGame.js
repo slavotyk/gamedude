@@ -20,6 +20,7 @@ class CreateGame extends Component {
         linkInst: '',
         linkTwitch: ''
     };
+
     handleChange = (e) => {
         if (e.target.type === 'file') {
             this.setState({
@@ -40,7 +41,6 @@ class CreateGame extends Component {
 
         onSave(newGame);
     };
-
 
     render() {
         const { onCancel } = this.props;
