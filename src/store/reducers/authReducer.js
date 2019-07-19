@@ -36,6 +36,14 @@ const authReducer = (state = initState, action) => {
         authError: action.err.message
       }
 
+    case 'AVATAR_CHANGE_SUCCESS':
+      console.log('update avatar success');
+      return state;
+
+    case 'AVATAR_CHANGE_ERROR':
+      console.log('update avatar error', action.err.message);
+      return state;
+
     default:
       return state
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createGame } from '../../../store/actions/gameActions';
+import { updateAvatar } from '../../../store/actions/authActions';
 import { Redirect } from 'react-router-dom';
 
 import CreateGame from './createGame/CreateGame';
@@ -24,6 +25,14 @@ class Office extends Component {
     }
 
     hideModal = () => this.setState({ modal: null });
+
+
+    setAvatar = (e) =>{
+        const { auth, updateAvatar } = this.props;
+        const { uid } = auth;
+
+        updateAvatar(uid, e.target.files[0]);
+    }
 
     showError() {
         this.setState({
@@ -75,13 +84,19 @@ class Office extends Component {
     render(){
         const {profile, auth} = this.props;
         if (!auth.uid) return <Redirect to='/signin' />;
+        const avatarStyle = {
+            background: profile.avatar && `url(${profile.avatar}) no-repeat center top/cover`
+        };
 
         return(
             <div className='mainContainer'>
                 <div className='mainWrapper'>
                     <h1>Мой профиль</h1>
                     <div className="profile">
-                        <div className="profile__avatar"></div>
+                        <div className="profile__avatar" style={avatarStyle}>
+                            <label htmlFor="avatar">Загрузить фото</label>
+                            <input type="file" id="avatar" onChange={this.setAvatar}/>
+                        </div>
                         <div className="profile__info">
                             <div> <b>Имя:</b> {profile.firstName} {profile.lastName} </div>
                             <div> <b>Email:</b> {auth.email}</div>
@@ -104,4 +119,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps, {createGame})(Office);
+export default connect(mapStateToProps, {createGame, updateAvatar})(Office);
