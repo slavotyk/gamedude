@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createGame } from '../../../store/actions/gameActions';
+import { createPost } from '../../../store/actions/postActions';
 import { updateAvatar } from '../../../store/actions/authActions';
 import { Redirect } from 'react-router-dom';
 
 import CreateGame from './createGame/CreateGame';
+import CreatePost from './CreatePost/CreatePost';
 import ModalWindow from '../../common/modalWindow/ModalWindow';
 
 import './office.scss';
@@ -13,8 +15,17 @@ class Office extends Component {
 
     state = {
         showCreateGameForm: false,
+        showCreatePost: false,
         modal: null
     };
+
+    showCreatePost = () => {
+        this.setState({ showCreatePost: true });
+    }
+
+    hideCreatePost = () => {
+        this.setState({ showCreatePost: false });
+    }
 
     showCreateGameForm = () => {
         this.setState({ showCreateGameForm: true });
@@ -71,6 +82,30 @@ class Office extends Component {
         });
     }
 
+    showSuccessPost({title}) {
+
+        this.setState({
+            modal: {
+                title: `Пост ${title}`,
+                content: `успешно опубликован`,
+                buttons: [
+                    {
+                        label: "ДОБАВИТЬ ЕЩЕ",
+                        onClick: ()=> {
+                            this.hideModal();
+                            this.showCreatePost();
+                        }
+                    },
+                    {
+                        label: "ОТМЕНА",
+                        onClick: this.hideModal
+                    }
+                ]
+            }
+        });
+    }
+
+
     saveGame = (newGame) => {
         if (!(newGame.title && newGame.poster)) {
             return this.showError();
@@ -79,6 +114,13 @@ class Office extends Component {
         this.props.createGame(newGame);
         this.hideCreateGameForm();
         this.showSuccess(newGame.title);
+    }
+
+
+    savePost = (newPost) => {
+        this.props.createPost(newPost);
+        this.showSuccessPost(newPost);
+        this.hideCreatePost();
     }
 
     render(){
@@ -105,6 +147,8 @@ class Office extends Component {
 
                     { this.state.showCreateGameForm === false ? <button className="office__button" onClick = {() => this.showCreateGameForm()}>ДOБАВИТЬ НОВУЮ ИГРУ</button> : <CreateGame onSave={ this.saveGame } onCancel={() => this.hideCreateGameForm()}/>}
 
+                    { this.state.showCreatePost === false ? <button className="office__button" onClick = {() => this.showCreatePost()}>ДОБАВИТЬ НОВЫЙ ПОСТ</button> : <CreatePost onSave={ this.savePost }/>}
+
                     { this.state.modal && <ModalWindow { ...this.state.modal }/> }
                 </div>
             </div>
@@ -119,4 +163,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps, {createGame, updateAvatar})(Office);
+export default connect(mapStateToProps, {createGame, createPost, updateAvatar})(Office);
