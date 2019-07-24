@@ -1,13 +1,37 @@
 .post-page{
     margin: 0 auto;
 
-    //img{
-    //    max-width: 100%;
-    //    width: auto;
-    //    height: auto;
-    //}
+    &__img{
+        position: relative;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        margin: 34px auto;
+        &_pic{
+            position: relative;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 33px rgba(0, 0, 0, 0.25);
+            z-index: 2;
+        }
+        &_blur{
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            max-width: 100%;
+            width: calc(100% - 100px);
+            height: auto;
+            border-radius: 10px;
+            filter: blur(50px);
+            z-index: 1;
+        }
+    }
 
     p{
+        position: relative;
+        z-index: 2;
         margin: 0 auto 15px auto;
         font-style: normal;
         font-weight: normal;

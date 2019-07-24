@@ -16,6 +16,10 @@ const PostPage = (props) => {
         const style={
             background: `url(${ background }) no-repeat center top/cover`
         };
+        const imgStyle ={
+            background: `url(${ background }) no-repeat center top/cover`,
+
+        };
 
         return (
             <div className='mainContainer'>
@@ -25,7 +29,10 @@ const PostPage = (props) => {
                     <section className="post-page">
                         <h1 className='post-page__title'>{title}</h1>
                         <NavLink to={`/games/${ gameId }`} className="post-page__game">{game}</NavLink>
-                        {/*<img alt="" src={ background }/>*/}
+                        <div className='post-page__img'>
+                            <img alt="" src={ background } className='post-page__img_blur'/>
+                            <img alt="" src={ background } className='post-page__img_pic'/>
+                        </div>
                         <p> { content }</p>
                     </section>
                 </div>
