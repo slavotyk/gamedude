@@ -8,21 +8,29 @@
     font-family: 'Roboto', sans-serif;
     color: #fff;
 }
+
 body{
     background: #333333;
 }
 
 input{
     background: #333333;
+}
+
+input, button {
     border: none;
     &:focus{
         outline: none;
     }
 }
+
+a {
+    text-decoration: none;
+}
 /*   SCSSComponents   */
 @import "components/layout/landing/landing.scss";
 @import "components/layout/nav/navbar.scss";
-@import "components/layout/landing/MainFresh/mainFresh.scss";
+@import "components/layout/landing/MainFreshGames/MainFreshGames.scss";
 @import "components/layout/footer/footer.scss";
 
 @import "components/layout/gamepage/gamepage.scss";

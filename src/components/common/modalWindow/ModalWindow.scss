@@ -28,13 +28,8 @@
         width: 300px;
         height: 40px;
         background-color: #222222;
-        border: none;
         cursor: pointer;
         transition: 1s;
-
-        &:focus, &:active{
-            outline: none;
-        }
 
         &:hover {
             background-color:white;
