@@ -13,14 +13,19 @@ const PostPage = (props) => {
 
     if (post) {
         const { title, content, background, game, gameId } = post;
+        const style={
+            background: `url(${ background }) no-repeat center top/cover`
+        };
 
         return (
             <div className='mainContainer'>
+
+                <div className="post-page__cover" style={ style }> </div>
                 <div className='mainWrapper'>
                     <section className="post-page">
-                        <h2>{title}</h2>
+                        <h1 className='post-page__title'>{title}</h1>
                         <NavLink to={`/games/${ gameId }`} className="post-page__game">{game}</NavLink>
-                        <img alt="" src={ background }/>
+                        {/*<img alt="" src={ background }/>*/}
                         <p> { content }</p>
                     </section>
                 </div>
