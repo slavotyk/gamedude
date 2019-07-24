@@ -16,10 +16,7 @@ const PostPage = (props) => {
         const style={
             background: `url(${ background }) no-repeat center top/cover`
         };
-        const imgStyle ={
-            background: `url(${ background }) no-repeat center top/cover`,
 
-        };
 
         return (
             <div className='mainContainer'>
