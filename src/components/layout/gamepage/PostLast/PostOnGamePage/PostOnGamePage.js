@@ -3,10 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 import './PostOnGamePage.scss';
 
-const PostOnGamePage = ({ id, title, poster}) => (
-    <NavLink to={`/games/${ id }`} className="post">
-        <img alt="" src={ poster } className="post__poster"/>
-        <h4 className="post__poster">{ title }</h4>
+const PostOnGamePage = ({ id, title, avatar='', author}) => (
+    <NavLink to={`/posts/${ id }`} className="post-on-page-game">
+        <img alt="" src={ avatar } className="post-on-page-game__poster"/>
+        <h4 className="post-on-page-game__title">{ title }</h4>
+        <p>{ author }</p>
     </NavLink>
 );
 

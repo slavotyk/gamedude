@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { MainLast } from './MainLast';
+import { MainLastPosts } from './MainLastPosts';
 import PostCard from '../../../common/PostCard/PostCard';
 
-describe('MainLast', () => {
+describe('MainLastPosts', () => {
     it('renders without crashing', () => {
-        shallow(<MainLast items={[]} />);
+        shallow(<MainLastPosts items={[]} />);
     });
 
     it('renders provided items', () => {
@@ -21,7 +21,7 @@ describe('MainLast', () => {
             }
         ];
 
-        const wrapper = shallow(<MainLast items={ items } />);
+        const wrapper = shallow(<MainLastPosts items={ items } />);
         const postCards = wrapper.find(PostCard);
 
         expect(postCards).toHaveLength(items.length);
@@ -36,7 +36,7 @@ describe('MainLast', () => {
     });
 
     it('renders not found header when no items provided', () => {
-        const wrapper = shallow(<MainLast items={[]} />);
+        const wrapper = shallow(<MainLastPosts items={[]} />);
         const div = wrapper.find('div.mainLastWrapper');
 
         expect(div).toHaveLength(0);

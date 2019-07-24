@@ -6,10 +6,10 @@ import { compose } from 'redux';
 
 import HotLinks from './HotLinks/hotLinks';
 import PostLast from './PostLast/PostLast';
-import news from './PostLast/mock/news.json';
 
 const GamePage = (props) => {
-    const { game } = props;
+    const { game, posts } = props;
+
     if (game) {
         const { background } = game;
         const style={
@@ -25,12 +25,9 @@ const GamePage = (props) => {
 
                     <HotLinks game={ game }/>
 
-                    <PostLast items={ news }/>
+                    <PostLast posts={ posts }/>
                 </div>
             </div>
-
-
-
         )
     } else {
         return (
@@ -44,17 +41,32 @@ const GamePage = (props) => {
 const mapStateToProps = (state, ownProps) => {
     const id = ownProps.match.params.id;
     const games = state.firestore.data.games;
+    const posts = state.firestore.data.posts;
+
     const game = games ? games[id] : null;
+
     return {
-        game: game,
-        auth: state.firebase.auth
+        game,
+        posts,
+        auth: state.firebase.auth,
     }
 };
 
 export default compose(
     connect(mapStateToProps),
-    firestoreConnect([{
-        collection: 'games'
-    }])
+    firestoreConnect(props => [
+        {
+            collection: 'games',
+            doc: props.match.params.id
+        },
+        {
+            collection: 'posts',
+            where: [
+                'gameId',
+                '==',
+                props.match.params.id
+            ]
+        }
+    ])
 )(GamePage);
 

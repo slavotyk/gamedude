@@ -46,7 +46,6 @@ class CreatePost extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
         const newPost = this.state;
         const { onSave } = this.props;
 
@@ -54,6 +53,8 @@ class CreatePost extends Component {
     };
 
     render() {
+        const { onCancel } = this.props;
+
         return (
             <section>
                 <form onSubmit={this.handleSubmit} className="create-post">
@@ -66,6 +67,8 @@ class CreatePost extends Component {
                         <textarea rows="20" id="content" className="create-post__textarea" placeholder="Content" onChange={this.handleChange}/>
 
                         <input type="submit" className="office__button" value="ОПУБЛИКОВАТЬ" onClick={this.handleSubmit}/>
+
+                        <input type="submit" className="office__button" value="ОТМЕНА" onClick={onCancel}/>
                 </form>
             </section>
         )

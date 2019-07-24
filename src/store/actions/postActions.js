@@ -20,6 +20,7 @@ export const createPost = (post) => {
         authorFirstName: profile.firstName,
         authorLastName: profile.lastName,
         authorId: authorId,
+        avatar: profile.avatar,
         createdAt: new Date()
       });
 

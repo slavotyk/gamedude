@@ -12,6 +12,8 @@ import SignUp from './components/layout/auth/SignUp';
 import Landing from './components/layout/landing/landing';
 import SearchResult from './components/layout/search/searchresult';
 import GamePage from './components/layout/gamepage/gamepage';
+import PostPage from './components/layout/PostPage/PostPage';
+
 import Office from './components/layout/office/office';
 import Error from './components/layout/error/404';
 
@@ -24,7 +26,9 @@ function App() {
             <Switch>
                 <Route exact path='/' component={Landing} />
                 <Route path='/search' component={SearchResult} />
+
                 <Route path='/games/:id' component={GamePage} />
+                <Route path='/posts/:id' component={PostPage} />
 
                 <Route path='/back-office' component={Office} />
 

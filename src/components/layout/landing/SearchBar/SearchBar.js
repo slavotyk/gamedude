@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
+
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import './SearchBar.scss';
+
 import { search } from '../../../../store/actions/searchActions';
+
+import './SearchBar.scss';
 
 export class SearchBar extends Component {
     state = {
@@ -36,9 +39,9 @@ export class SearchBar extends Component {
         const { value } = this.state;
 
         return (
-            <div className='searchBar'>
-                <input className='searchInput' type='search' placeholder='Что ищешь, странник?' value={ value } onChange={ this.onChangeValue } onKeyUp={this.onKeyUp}/>
-                <button className='searchButton' onClick={this.onClick}/>
+            <div className='search'>
+                <input className='search__input' type='search' placeholder='Что ищешь, странник?' value={ value } onChange={ this.onChangeValue } onKeyUp={this.onKeyUp}/>
+                <button className='search__button' onClick={this.onClick}/>
             </div>
         );
     }

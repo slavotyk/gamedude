@@ -2,9 +2,8 @@ import React from 'react';
 
 import SearchBar from './SearchBar/SearchBar'
 import Herotext from './herotext';
-import MainFresh from "./MainFresh/mainFresh";
-import MainLast from './MainLast/MainLast';
-import news from './MainLast/mock/news.json';
+import MainFreshGames from "./MainFreshGames/mainFreshGames";
+import MainLastPosts from './MainLastPosts/MainLastPosts';
 
 const Landing = () => {
     return(
@@ -12,8 +11,8 @@ const Landing = () => {
             <div className='mainWrapper'>
                 <Herotext/>
                 <SearchBar/>
-                <MainFresh/>
-                <MainLast items={ news }/>
+                <MainFreshGames/>
+                <MainLastPosts/>
             </div>
         </div>
     );
