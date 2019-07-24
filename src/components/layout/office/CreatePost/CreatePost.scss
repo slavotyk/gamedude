@@ -1,0 +1,32 @@
+.create-post{
+    width: 100%;
+    margin: 20px auto;
+
+    &__input{
+        width: 100%;
+        font-size: 16px;
+        margin-top: 10px;
+        padding: 15px;
+        box-sizing: border-box;
+        border: 1px solid #333333;
+        transition: 1s;
+
+        &:focus{
+            border: 1px solid #616161;
+        }
+    }
+
+    &__textarea{
+        display: block;
+        margin-top: 10px;
+        font-size: 16px;
+        box-sizing: border-box;
+        padding: 15px;
+        width: 100%;
+        background: transparent;
+
+        &:focus{
+            outline: none;
+        }
+    }
+}
