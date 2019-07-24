@@ -7,7 +7,7 @@ import './PostLast.scss';
 const PostLast = ({ posts=[] }) => {
     return (
         <section>
-            <h2>Последние публикации</h2>
+            <h2 className='heading-gamePage'>Последние публикации</h2>
             { (posts) 
                 ? (
                     <div className='postsWrapper'>

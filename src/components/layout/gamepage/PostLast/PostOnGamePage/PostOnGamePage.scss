@@ -9,7 +9,7 @@
    overflow: hidden;
    cursor: pointer;
    color: #000000;
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.09);
+   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.09);
 
     &__poster{
       position: absolute;
@@ -27,9 +27,9 @@
       position: absolute;
       left: 0;
       right: 0;
-      height: 100%;
+      height: calc(100% - 6px);
       margin: 0 10px 0 40px;
-      padding: 3px;
+      padding: 3px 10px;
       color: #333333;
       white-space: nowrap;
       overflow: hidden;
@@ -37,7 +37,7 @@
       font-style: normal;
       font-weight: normal;
       font-size: 14px;
-      line-height: 10px;
+      line-height: 22px;
       opacity: 1;
       text-shadow: none;
    }
@@ -46,7 +46,8 @@
       position: absolute;
       color: #333333;
       font-size: 12px;
-      bottom: 3px;
-      left: 45px;
+      bottom: 0;
+      left: 50px;
+      line-height: 22px;
    }
 }
