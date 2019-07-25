@@ -8,7 +8,11 @@ import { NavLink } from 'react-router-dom';
 
 import './PostPage.scss';
 
+
+
 const PostPage = (props) => {
+
+
     const { post } = props;
 
     if (post) {

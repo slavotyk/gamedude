@@ -18,6 +18,7 @@ import fbConfig from './config/fbConfig'
 
 import 'firebase/storage';
 
+
 const store = createStore(rootReducer,
     compose(
         applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore})),

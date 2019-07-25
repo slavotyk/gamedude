@@ -67,14 +67,14 @@ class Office extends Component {
                 content: 'успешно добавлена в базу данных',
                 buttons: [
                     {
-                        label: "ДОБАВИТЬ ЕЩЕ",
+                        label: "Добавить ещё",
                         onClick: ()=> {
                             this.hideModal();
                             this.showCreateGameForm();
                         }
                     },
                     {
-                        label: "ОТМЕНА",
+                        label: "Готово",
                         onClick: this.hideModal
                     }
                 ]
@@ -86,8 +86,8 @@ class Office extends Component {
 
         this.setState({
             modal: {
-                title: `Пост ${title}`,
-                content: `успешно опубликован`,
+                title: `${title}"`,
+                content: `Успешно опубликован`,
                 buttons: [
                     {
                         label: "ДОБАВИТЬ ЕЩЕ",

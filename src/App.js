@@ -17,13 +17,15 @@ import PostPage from './components/layout/PostPage/PostPage';
 import Office from './components/layout/office/office';
 import Error from './components/layout/error/404';
 
+import Analytics from 'react-router-ga';
+
 function App() {
   return (
       <BrowserRouter>
         <div className="App">
 
-
-            <Switch>
+            <Analytics id="UA-125805128-4">
+                <Switch>
                 <Route exact path='/' component={Landing} />
                 <Route path='/search' component={SearchResult} />
 
@@ -37,7 +39,7 @@ function App() {
 
                 <Route component={Error} />
             </Switch>
-
+            </Analytics>
             <Navbar/>
             <Footer/>
 
