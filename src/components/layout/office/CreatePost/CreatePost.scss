@@ -1,18 +1,43 @@
 .create-post{
+    position: relative;
     width: 100%;
     margin: 20px auto;
-
+    box-shadow: 0 4px 33px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    overflow: hidden;
     &__input{
-        width: 100%;
+
+        position: relative;
+        width: calc(100% - 20px);
         font-size: 16px;
-        margin-top: 10px;
+        margin: 10px 10px 0 10px;
         padding: 15px;
         box-sizing: border-box;
-        border: 1px solid #333333;
         transition: 1s;
+        background: transparent;
+        opacity: 1;
+        z-index: 20;
+
+
+        &::placeholder{
+            color: #fff;
+        }
 
         &:focus{
-            border: 1px solid #616161;
+            //border: 1px solid #616161;
+        }
+
+        &_title{
+            margin-top: 30px;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 40px;
+            /* or 133% */
+
+            color: #FFFFFF;
+
+            text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         }
     }
 
@@ -27,6 +52,28 @@
 
         &:focus{
             outline: none;
+        }
+    }
+
+    &__background{
+        display: block;
+        width: 100%;
+        position: absolute;
+        height: 150px;
+        background: red;
+        object-fit: cover;
+        z-index: 1;
+        line-height: 20px;
+        &_gradient{
+            content: ' ';
+            position: absolute;
+            z-index: 10;
+            width: 100%;
+            height: 150px;
+            left: 0;
+            right: 0;
+            top: 0;
+            background: linear-gradient(180deg, rgba(52, 52, 51, 0) 0%, #343333 100%);
         }
     }
 }
