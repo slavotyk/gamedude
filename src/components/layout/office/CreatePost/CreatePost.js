@@ -18,13 +18,13 @@ class CreatePost extends Component {
 
     handleChange = (e) => {
 
-
-
         if (e.target.type === 'file') {
             this.setState({
                 [e.target.id]: e.target.files[0]
             });
 
+
+            // Часть кода, которая отвечает за превью фонового изображения
             const file    = this.refs.uploadImg.files[0];
             const reader  = new FileReader();
 
@@ -45,15 +45,7 @@ class CreatePost extends Component {
             })
         }
 
-
-
-
-
-
     };
-
-
-
 
 
 
@@ -88,6 +80,7 @@ class CreatePost extends Component {
             <section>
                 <form onSubmit={this.handleSubmit} className="create-post">
 
+                        {/*   Превью бекграунда (когда человек загружает картинку - он видет её в "мини посте"   */}
                         <img className='create-post__background'  alt='Не забудьте загрузить фоновое изображение!' src={this.state.coverPrev}/>
                         <div className='create-post__background_gradient'> </div>
 
@@ -102,6 +95,7 @@ class CreatePost extends Component {
                         <input type="submit" className="office__button" value="ОПУБЛИКОВАТЬ" onClick={this.handleSubmit}/>
 
                         <input type="submit" className="office__button" value="ОТМЕНА" onClick={onCancel}/>
+
                 </form>
             </section>
         )
