@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+
+<head>
+  <!--
+      %BASE_HREF% is a placeholder, that is supposed to be replaced by the
+      server-side renderer. %BASE_HREF% is determined during runtime and can be
+      changed without recompiling making your compiled web app independent of
+      a server / CDN location. The base tag specifies how to resolve relative
+      URLs for CSS files, favicon, etc (notice the trailing slash in the href
+      attribute). Therefore, using %BASE_HREF% only makes sense if all other URL
+      references are kept relative. Alternatively, you can delete the base tag
+      and use %PUBLIC_URL% as documented by create-react-app.
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
-    <link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg" color="#333333">
-    <meta name="msapplication-TileColor" content="#333333">
-    <meta name="theme-color" content="#333333">
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
+  <base href="%BASE_HREF%/" />
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#000000" />
+  <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <title>Game Dude</title>
+  <link rel="manifest" href="manifest.json" />
+  <script>clientEnv=%CLIENT_ENV%</script>
+  <title>React App</title>
+</head>
 
-
-
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root">%ROOT%</div>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -43,5 +39,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+</body>
+
 </html>
