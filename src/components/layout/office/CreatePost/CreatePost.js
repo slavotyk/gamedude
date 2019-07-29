@@ -16,18 +16,18 @@ class CreatePost extends Component {
         content: null
     };
 
+
+    // ловим изменения
     handleChange = (e) => {
-
-
-
+        // если файл, то добавляем к background
         if (e.target.type === 'file') {
             this.setState({
                 [e.target.id]: e.target.files[0]
             });
 
+            // не забываем пилить превью
             const file    = this.refs.uploadImg.files[0];
             const reader  = new FileReader();
-
             reader.onloadend = () => {
                 this.setState({
                     coverPrev: reader.result
@@ -37,26 +37,15 @@ class CreatePost extends Component {
             this.setState({
                 coverPrev :reader.result
             });
-            console.log([e.target.coverPrev])
         }
         else {
             this.setState({
                 [e.target.id]: e.target.value
             })
         }
-
-
-
-
-
-
     };
 
-
-
-
-
-
+    // Селектор игры
     getSuggestions = value => {
         const { games } = this.props;
 
@@ -69,10 +58,12 @@ class CreatePost extends Component {
             );
     };
 
+    // Изменение игры
     gameChangeHandler = (gameId, game )=> {
         this.setState({gameId, game });
     };
 
+    // Ловим сабмит
     handleSubmit = (e) => {
         e.preventDefault();
         const newPost = this.state;
@@ -81,6 +72,7 @@ class CreatePost extends Component {
         onSave(newPost);
     };
 
+    // Рендерим форму
     render() {
         const { onCancel } = this.props;
 
