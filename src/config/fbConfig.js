@@ -14,7 +14,9 @@ var firebaseConfig = {
   appId: "1:770035921761:web:8e75d956a8814cb5"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
 // firebase.firestore().settings({ timestampsInSnapshots: true });
 
 export default firebase

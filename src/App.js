@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import Navbar from './components/layout/nav/navbar';
 import Footer from './components/layout/footer/footer';
@@ -17,15 +17,14 @@ import PostPage from './components/layout/PostPage/PostPage';
 import Office from './components/layout/office/office';
 import Error from './components/layout/error/404';
 
-import Analytics from 'react-router-ga';
+//import Analytics from 'react-router-ga';
 
 function App() {
   return (
-      <BrowserRouter>
         <div className="App">
 
-            <Analytics id="UA-125805128-4">
-                <Switch>
+            {/* <Analytics id="UA-125805128-4">  */}
+              <Switch>
                 <Route exact path='/' component={Landing} />
                 <Route path='/search' component={SearchResult} />
 
@@ -37,14 +36,13 @@ function App() {
                 <Route path='/signin' component={SignIn} />
                 <Route path='/signup' component={SignUp} />
 
-                <Route component={Error} />
+                 <Route component={Error} />
             </Switch>
-            </Analytics>
-            <Navbar/>
+             {/* </Analytics>  */}
+            <Navbar/> 
             <Footer/>
 
         </div>
-      </BrowserRouter>
   );
 }
 
