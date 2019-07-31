@@ -48,20 +48,22 @@ const PostPage = (props) => {
     }
 };
 
-const mapStateToProps = (state, ownProps) => {
-    const id = ownProps.match.params.id;
-    const posts = state.firestore.data.posts;
+const mapStateToProps = (state) => {
+    const { post } = state.firestore.data;
 
-    const post = posts ? posts[id] : null;
     return {
-        post: post,
+        post,
         auth: state.firebase.auth,
     }
 };
 
 export default compose(
     connect(mapStateToProps),
-    firestoreConnect([
-        {collection: 'posts'}
+    firestoreConnect(props => [
+        {
+            collection: 'posts',
+            doc: props.match.params.id,
+            storeAs: 'post'
+        }
     ])
 )(PostPage);
