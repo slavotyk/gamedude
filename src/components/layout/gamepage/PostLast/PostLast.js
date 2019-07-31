@@ -5,10 +5,11 @@ import PostOnGamePage from '../PostLast/PostOnGamePage/PostOnGamePage';
 import './PostLast.scss';
 
 const PostLast = ({ posts=[] }) => {
+
     return (
         <section>
             <h2 className='heading-gamePage'>Последние публикации</h2>
-            { (posts) 
+            { (posts)
                 ? (
                     <div className='postsWrapper'>
                         {
@@ -17,7 +18,7 @@ const PostLast = ({ posts=[] }) => {
                                     ([ id, post ]) => ({ ...post, id })
                                 )
                                 .map(
-                                    post => <PostOnGamePage key={ post.id } id={post.id} title={ post.title} author={post.authorFirstName+" "+post.authorLastName} avatar={post.avatar}/>
+                                    ({ id, title, author }) => <PostOnGamePage key={ id } id={id} title={ title} author={author && `${author.firstName} ${author.lastName}`} avatar={author && author.avatar}/>
                                 )
                         }
                     </div>

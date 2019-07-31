@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import { firestoreConnect } from 'react-redux-firebase';
+import { firestoreConnect, populate } from 'react-redux-firebase';
 import { compose } from 'redux';
 
 import HotLinks from './HotLinks/hotLinks';
@@ -38,17 +38,18 @@ const GamePage = (props) => {
     }
 };
 
-const mapStateToProps = (state, ownProps) => {
-    const id = ownProps.match.params.id;
-    const games = state.firestore.data.games;
-    const posts = state.firestore.data.posts;
+const populates = [
+    { child: 'authorId', root: 'users', childAlias: 'author' }
+];
 
-    const game = games ? games[id] : null;
+const mapStateToProps = (state) => {
+    const { game } = state.firestore.data;
 
     return {
         game,
-        posts,
+        posts: populate(state.firestore, 'gamePosts', populates),
         auth: state.firebase.auth,
+        state
     }
 };
 
@@ -57,7 +58,8 @@ export default compose(
     firestoreConnect(props => [
         {
             collection: 'games',
-            doc: props.match.params.id
+            doc: props.match.params.id,
+            storeAs: 'game'
         },
         {
             collection: 'posts',
@@ -65,7 +67,9 @@ export default compose(
                 'gameId',
                 '==',
                 props.match.params.id
-            ]
+            ],
+            populates,
+            storeAs: 'gamePosts'
         }
     ])
 )(GamePage);

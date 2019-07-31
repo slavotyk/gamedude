@@ -11,16 +11,12 @@ export const createPost = (post) => {
       const backgroundUrl = await uploadFile(storageRef, background);
 
       const firestore = getFirestore();
-      const profile = getState().firebase.profile;
       const authorId = getState().firebase.auth.uid;
 
       await firestore.collection('posts').add({
         ...post,
         background: backgroundUrl,
-        authorFirstName: profile.firstName,
-        authorLastName: profile.lastName,
         authorId: authorId,
-        avatar: profile.avatar,
         createdAt: new Date()
       });
 
