@@ -15,7 +15,19 @@ class CreatePost extends Component {
         coverPrev: null,
         content: null
     };
+    /*
 
+    title - заголовок
+    game - игра
+    gameId: - зачем если есть игра
+    background - обложка
+    coverPrev - наверное лучше убрать из объекта в firebase, но она нужна для отображения при загрузке изображения
+    content - объект в котором будет находиться список объектов
+        content: {
+            {'1', 'text'}
+            {'2', 'picture'}
+        }
+    */
 
     // ловим изменения
     handleChange = (e) => {
@@ -72,6 +84,23 @@ class CreatePost extends Component {
         onSave(newPost);
     };
 
+    // Изменяем "контент"
+
+    // зададим перечень объектов
+    objects = {
+        counter: 0,
+    };
+
+    addTextObject = (e) => {
+        e.preventDefault();
+        this.setState({
+            [e.target.content]: e.target.value
+        });
+
+
+    };
+
+
     // Рендерим форму
     render() {
         const { onCancel } = this.props;
@@ -79,17 +108,24 @@ class CreatePost extends Component {
         return (
             <section>
                 <form onSubmit={this.handleSubmit} className="create-post">
-
+                        {/*   Рисуем бэкграунд на превью   */}
                         <img className='create-post__background'  alt='Не забудьте загрузить фоновое изображение!' src={this.state.coverPrev}/>
                         <div className='create-post__background_gradient'> </div>
 
+                        {/*   Рисуем заголовок   */}
                         <input type="text" id="title" className="create-post__input create-post__input_title" placeholder="Заголовок поста" onChange={ this.handleChange }/>
 
+                        {/*   Рисуем выбор игры   */}
                         <Autocomplete getSuggestions={this.getSuggestions} inputClassName={"create-post__input"} placeholder="Выберите про какую игру ваш пост" onChange={ this.gameChangeHandler } />
 
+                        {/*   Рисуем загрузку картинки   */}
                         <input type="file" ref="uploadImg" id="background"  className="create-post__input" placeholder="Загрузите картинку" onChange={this.handleChange}/>
 
-                        <textarea rows="20" id="content" className="create-post__textarea" placeholder="Content" onChange={this.handleChange}/>
+
+
+                        <input type="submit" className="office__button_addObject" value="Добавить текст" onClick={this.addTextObject}/>
+
+                            {/*<textarea rows="20" id="content" className="create-post__textarea" placeholder="Content" onChange={this.handleChange}/>*/}
 
                         <input type="submit" className="office__button" value="ОПУБЛИКОВАТЬ" onClick={this.handleSubmit}/>
 
