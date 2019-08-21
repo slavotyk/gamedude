@@ -9,7 +9,7 @@ import PostCard from '../../../common/PostCard/PostCard';
 import './MainLastPosts.scss';
 
 export const MainLastPosts = (props) => {
-    const { posts } = props; 
+    const { posts } = props;
 
     if (posts) {
         return (
@@ -17,10 +17,14 @@ export const MainLastPosts = (props) => {
                 <h2>Последние публикации</h2>
                 <div className='mainLastWrapper'>
                     {
-                        Object.entries(posts)
+                        Object.entries(posts || [])
                             .map(
                                 ([ id, post ]) => ({ ...post, id })
                             )
+                            .sort(
+                                (post1, post2) => post2.createdAt.seconds - post1.createdAt.seconds
+                            )
+                            .slice(0, 4)
                             .map(
                                 post => <PostCard key={ post.id } id={post.id} title={ post.title } poster={post.background} game={ post.game}/>
                             )
