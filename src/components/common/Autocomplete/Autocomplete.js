@@ -20,9 +20,11 @@ class Autocomplete extends Component {
             return;
         }
 
-        const suggestions = getSuggestions(value);
+        if (value.length>2) {
+            const suggestions = getSuggestions(value);
 
-        this.setState({ suggestions });
+            this.setState({ suggestions });
+        }
     }
 
     clickHandler = (id, value) => {
