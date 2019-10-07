@@ -10,13 +10,13 @@
 
 .navigationWrapper{
   position: relative;
-  width: 1060px;
+  width: calc(100% - 40px);
   margin: 0 auto;
   z-index: 99;
 }
 @media (min-width: 700px) and (max-width: 1440px) {
   .navigationWrapper{
-    width: 700px;
+    width: calc(100% - 40px);
   }
 }
 @media (max-width: 700px) {
