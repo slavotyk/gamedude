@@ -3,6 +3,7 @@ import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import SearchBar from './../landing/SearchBar/SearchBar';
 
 const Navbar = (props) => {
     const { auth, profile } = props;
@@ -13,6 +14,7 @@ const Navbar = (props) => {
             <div className="navigationWrapper">
 
                 <NavLink to='/' className='logo'> </NavLink>
+                <SearchBar/>
                 <div className="userAuth">
                     {links}
                 </div>

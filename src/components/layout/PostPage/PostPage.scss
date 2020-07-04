@@ -31,20 +31,19 @@
 
     p{
         position: relative;
+        width: 720px;
         z-index: 2;
-        margin: 0 auto 15px auto;
+        margin: 20px auto 15px 130px;
         font-style: normal;
         font-weight: normal;
-        font-size: 25px;
-        line-height: 41px;
+        font-size: 18px;
+        line-height: 30px;
         /* or 176% */
 
         color: #FFFFFF;
-
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
 
         @media (max-width: 700px) {
-
             font-size: 16px;
             line-height: 27px;
         }
@@ -60,7 +59,8 @@
         color: #FFFFFF;
 
         text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-        margin-bottom: 8px !important;
+        margin-top: 200px !important;
+        margin-bottom: 0 !important;
     }
 
     &__game{
@@ -68,6 +68,7 @@
         font-weight: 200;
         font-size: 20px;
         line-height: 50px;
+        margin-left: 130px;
         /* or 250% */
 
         color: #FFFFFF;
@@ -81,7 +82,7 @@
     &__cover{
         position: absolute;
         width: 100%;
-        height: 288px;
+        height: 550px;
         left: 0;
         right: 0;
         top: 0;
@@ -91,11 +92,11 @@
             content: ' ';
             position: absolute;
             width: 100%;
-            height: 289px;
+            height: 400px;
             left: 0;
             right: 0;
-            top: 0;
-            background: linear-gradient(180deg, rgba(52, 52, 51, 0) 0%, #343333 100%);
+            bottom: 0;
+            background: linear-gradient(0deg, #1E1E20 0%, rgba(30, 30, 32, 0) 100%);
         }
     }
 }

@@ -40,7 +40,7 @@ export class SearchBar extends Component {
 
         return (
             <div className='search'>
-                <input className='search__input' type='search' placeholder='Что ищешь, странник?' value={ value } onChange={ this.onChangeValue } onKeyUp={this.onKeyUp}/>
+                <input className='search__input' type='search' placeholder='Поиск на портале...' value={ value } onChange={ this.onChangeValue } onKeyUp={this.onKeyUp}/>
                 <button className='search__button' onClick={this.onClick}/>
             </div>
         );

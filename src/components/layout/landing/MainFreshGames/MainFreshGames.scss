@@ -1,10 +1,27 @@
+
+.freshHeading{
+  margin-left: 130px !important;
+  margin-bottom: 50px !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.freshContainer{
+  width: 100vw;
+  height: 270px;
+  overflow: hidden;
+}
 .freshWrapper{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-  padding: 0 0;
-  width: 700px;
-  margin: 20px auto 0 auto;
+  position: relative;
+  height: 290px;
+  padding: 0 130px;
+  margin: 20px 0 0 0;
+  white-space:nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling:touch;
 
   @media (max-width: 700px) {
     grid-template-columns: repeat(2, 1fr);

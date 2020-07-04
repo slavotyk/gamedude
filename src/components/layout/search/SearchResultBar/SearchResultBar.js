@@ -9,7 +9,6 @@ export const SearchResultBar = ({ items = [] }) => {
     if (items.length) {
         return (
             <section>
-                <h4>По запросу найдено</h4>
                 <div className='searchResultBar'>
                 {
                     (items || []).map(
@@ -23,7 +22,7 @@ export const SearchResultBar = ({ items = [] }) => {
     else {
         return (
             <section>
-                <h4>Ничего не найдено</h4>
+                <h4 className='nothing'>Ничего не найдено</h4>
             </section>
         );
     }

@@ -1,63 +1,84 @@
 .post-card{
-    position: relative;
-    height: 120px;
-    padding: 20px;
-    border-radius: 5px;
+    display: inline-block;
+    width: 550px;
+    height: 320px;
+    border-radius: 4px;
+    text-align: center;
     box-sizing: border-box;
     cursor: pointer;
-    text-align: center;
+    position: relative;
     overflow: hidden;
-    transition: 200ms;
-    //transition: transform 400ms cubic-bezier(.17,.67,.57,.92);
+    transition: transform 200ms cubic-bezier(.17,.67,.57,.92);
+    margin-right: 20px;
 
-    -webkit-box-shadow:0 5px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.1) inset;
-    -moz-box-shadow:0 5px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.1) inset;
-    box-shadow:0 5px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.1) inset;
-
-&:hover{
-
-    -webkit-box-shadow:0 5px 8px rgba(0, 0, 0, 0.0), 0 0 20px rgba(0, 0, 0, 0.0) inset;
-    -moz-box-shadow:0 5px 8px rgba(0, 0, 0, 0.0), 0 0 20px rgba(0, 0, 0, 0.0) inset;
-    box-shadow:0 5px 8px rgba(0, 0, 0, 0.0), 0 0 20px rgba(0, 0, 0, 0.0) inset;
-}
-
+    &__gradient{
+        z-index: 2;
+        position: absolute;
+        left: 0;
+        top:0;
+        height: 100%;
+        width: 500px;
+        background: linear-gradient(90deg, #24292F -15.14%, rgba(23, 33, 39, 0) 100%);
+        content: '';
+    }
     &__poster{
         position: absolute;
         left: 0;
         top: 0;
+        right: 0;
+        bottom: 0;
         min-height: 120px;
         width: 100%;
-        height: auto;
+        height: 100%;
         opacity: 1;
+        object-fit: cover;
+        transition: 200ms;
     }
 
     &__title{
         position: absolute;
         color: #fff;
-        font-weight: 600;
-        padding: 18px 6px 6px 6px;
-        line-height: 143.49%;
+        z-index: 10;
         height: auto;
+        margin: 0;
         opacity: 1;
-        font-size: 14px;
         text-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
-        bottom: 0;
-        left: 0;
+        top: 166px;
+        left: 33px;
         right: 0;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
         transition: 200ms;
         text-align: left;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        background: transparent;
     }
 
     &__game{
-        width: 100%;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
         position: absolute;
-        top: 0;
-        left: 0;
-        text-align: left;
-        padding: 6px 6px 26px 6px;
+        top: 124px;
+        left: 33px;
+        font-style: normal;
         font-weight: bold;
+        z-index: 10;
+        font-size: 24px;
+        line-height: 22px;
+        text-align: left;
+        background: transparent;
+    }
+
+    &__date{
+        display: block;
+        position: absolute;
+        top: 51px;
+        left: 33px;
+        z-index: 10;
+        color: #98A1A3;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
     }
 
     img{

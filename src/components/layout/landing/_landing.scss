@@ -11,11 +11,9 @@
   position: relative;
   margin: 0 auto;
   height: auto;
-  //min-height: calc(100vh - 174px);
-  width: 1060px;
   background: transparent;
-  padding-bottom: 80px;
-  padding-top: 94px;
+  overflow: hidden;
+  width: 100%;
 
   h2{
     font-style: normal;
@@ -25,7 +23,7 @@
     padding-top: 27px;
     width: 700px;
     margin: 20px auto;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
 
     @media (max-width: 700px) {
       width: 340px;
@@ -35,7 +33,7 @@
 
 @media (min-width: 700px) and (max-width: 1440px) {
   .mainWrapper{
-    width: 700px;
+    //width: 700px;
   }
 }
 @media (max-width: 700px) {
@@ -46,14 +44,15 @@
 
 .logo{
   display: block;
+  position: relative;
+  float: left;
   background: url(./img/logo.svg) no-repeat center left;
   background-size: contain;
-  width: 55px;
+  width: 50px;
   height: 30px;
-  margin: 15px auto 10px 0;
+  margin: 20px 0 20px 0;
   cursor: pointer;
   transition: 200ms;
-  position: relative;
   z-index: 99;
   &:hover{
     transform: scale(1.1);
@@ -66,10 +65,66 @@
 
 /*   Hero Text   */
 .heroText{
+  position: relative;
+  height: 549px;
   margin: 0 auto;
-  max-width: 340px;
   font-style: normal;
   font-weight: normal;
   font-size: 22px;
   line-height: 26px;
+  background: url(./img/screen.jpg) no-repeat center bottom;
+  background-size: cover;
+
+    h1{
+      position: relative;
+      height: auto;
+      padding-left: 130px;
+      padding-top: 160px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 64px;
+      line-height: 80px;
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+      margin:0 !important;
+      z-index: 15;
+    }
+
+    h2{
+      position: absolute;
+      height: auto;
+      padding-left: 130px;
+      padding-top: 0;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 32px;
+      line-height: 80px;
+      /* identical to box height, or 250% */
+      margin: 0;
+      color: #FFFFFF;
+      /* shadoow */
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+      z-index: 15;
+    }
+
+  .character{
+    position: absolute;
+    width: 549px;
+    height: 549px;
+    right: 0;
+    top: 0;
+    background: url(./img/char.png) no-repeat right bottom;
+    background-size: contain;
+  }
 }
+.heroText::after{
+  display: block;
+  height: 400px;
+  width: 100%;
+  background: linear-gradient(0deg, #1E1E20 0%, rgba(30, 30, 32, 0) 100%);
+  background-size: cover;
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+}
+

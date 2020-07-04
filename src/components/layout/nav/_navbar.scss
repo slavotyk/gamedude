@@ -1,16 +1,17 @@
 /*   Navigation Bar   */
 .navigationContainer{
-  background: linear-gradient(180deg, rgba(34, 34, 34, 0.65) 0%, rgba(34, 34, 34, 0) 100%);
   position: fixed;
-  height: 60px;
+  height: 70px;
   width: 100%;
   top: 0;
   z-index: 99;
+  background: rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(10px);
 }
 
 .navigationWrapper{
   position: relative;
-  width: calc(100% - 40px);
+  width: calc(100% - 260px);
   margin: 0 auto;
   z-index: 99;
 }
@@ -27,30 +28,45 @@
 
 .userAuth{
   position: absolute;
-  top: -10px;
   right: 0;
   height: 100%;
 }
 
 .authLinksList{
   position: relative;
-
+  right: 0;
   z-index: 99;
+  :last-child{
+    padding: 17px 0 17px 0;
+  }
   li{
     float: left;
     list-style: none;
     display: block;
-    height: 50px;
-    margin: 5px;
-    line-height: 50px;
-
+    height: 36px;
+    margin: 0;
+    padding: 17px 32px 17px 0;
+    line-height: 36px;
+    font-weight: bold;
+    font-size: 16px;
     a{
       color: #fff;
       border-bottom: 1px solid transparent;
       transition: 1s;
       &:hover {
-        border-bottom: 1px solid white;
+
       }
+    }
+    .button{
+      background: #9B5DF7;
+      color: #fff;
+      border-radius: 8px;
+      line-height: 36px;
+      height: 36px;
+      padding: 10px 32px;
+    }
+    .userAvatar{
+      padding: 0;
     }
   }
 }
@@ -59,22 +75,26 @@
   display: block;
   width: 40px;
   height: 40px;
+  top: -2px;
   border-radius: 50%;
   border: none !important;
   background: #fff;
-  margin: 5px auto;
+  margin: 0 0;
   text-align: center;
   line-height: 40px;
   color: #000 !important;
   z-index: 99;
   position: relative;
+  padding: 0;
 }
 
 .navigationButton{
   display: inline-block;
   height: 100%;
   color: #fff;
-  padding: 10px 20px;
+  padding: 0 !important;
   background: none;
-  font-size: 14px;
+  line-height: 36px;
+  font-weight: bold;
+  font-size: 16px;
 }

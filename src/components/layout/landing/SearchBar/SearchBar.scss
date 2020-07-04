@@ -6,8 +6,10 @@ input[type='search'] {
 
 .search {
     position: relative;
-    width: 700px;
-    margin: 36px auto 0 auto;
+    float: left;
+    width: 280px;
+    height: 40px;
+    margin: 15px 10px 15px 67px;
 
     @media (max-width: 700px) {
         grid-template-columns: repeat(2, 1fr);
@@ -16,25 +18,27 @@ input[type='search'] {
 
     &__input{
         width: 100%;
-        height: 53px;
-        padding: 14px 65px 13px 17px;
-        background: #ffffff;
+        height: 40px;
+        padding: 16px 15px 16px 35px;
+        background: #2e2e2e;
         border: 0;
-        border-radius: 20px;
+        border-radius: 8px;
         box-sizing: border-box;
-        font: normal normal 22px/26px Roboto;
-        color: #000;
-        -webkit-box-shadow:0 5px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.1) inset;
-        -moz-box-shadow:0 5px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.1) inset;
-        box-shadow:0 5px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+        font: normal normal 16px/22px Montserrat;
+        color: #fff;
+        &::placeholder{
+            color: #627B85;
+            font-size: 14px;
+        }
     }
 
     &__button{
         position: absolute;
-        width: 53px;
-        height: 53px;
-        right: 7px;
+        width: 16px;
+        height: 16px;
+        left: 14px;
+        top: 12px;
         cursor: pointer;
-        background: url(./search.png) 50% no-repeat;
+        background: url(./search.svg) 50% no-repeat;
     }
 }

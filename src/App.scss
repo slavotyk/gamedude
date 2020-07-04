@@ -1,16 +1,17 @@
 /*   Roboto from googleFonts   */
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap&subset=cyrillic-ext');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
 
 /*   Normalized   */
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #fff;
 }
 
 body{
-    background: #333333;
+    background: #1E1E20;
 }
 
 input{

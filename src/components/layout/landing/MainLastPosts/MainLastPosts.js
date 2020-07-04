@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
+import moment from 'moment';
 
 import PostCard from '../../../common/PostCard/PostCard';
 
@@ -13,8 +14,8 @@ export const MainLastPosts = (props) => {
 
     if (posts) {
         return (
-            <section>
-                <h2>Последние публикации</h2>
+            <section className='mainLastContainer'>
+                <h2 className='freshHeading'>Последние публикации</h2>
                 <div className='mainLastWrapper'>
                     {
                         Object.entries(posts || [])
@@ -26,7 +27,7 @@ export const MainLastPosts = (props) => {
                             )
                             .slice(0, 4)
                             .map(
-                                post => <PostCard key={ post.id } id={post.id} title={ post.title } poster={post.background} game={ post.game}/>
+                                post => <PostCard key={ post.id } id={post.id} title={ post.title } poster={post.background} game={ post.game } date={ moment(post.createdAt.toDate().toString()).format('DD.MM.yyyy') }/>
                             )
                     }
                 </div>

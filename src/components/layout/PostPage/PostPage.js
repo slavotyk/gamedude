@@ -30,10 +30,10 @@ const PostPage = (props) => {
                     <section className="post-page">
                         <h1 className='post-page__title'>{title}</h1>
                         <NavLink to={`/games/${ gameId }`} className="post-page__game">{game}</NavLink>
-                        <div className='post-page__img'>
-                            <img alt="" src={ background } className='post-page__img_blur'/>
-                            <img alt="" src={ background } className='post-page__img_pic'/>
-                        </div>
+                        {/*<div className='post-page__img'>*/}
+                        {/*    <img alt="" src={ background } className='post-page__img_blur'/>*/}
+                        {/*    <img alt="" src={ background } className='post-page__img_pic'/>*/}
+                        {/*</div>*/}
                         <p> { content }</p>
                     </section>
                 </div>

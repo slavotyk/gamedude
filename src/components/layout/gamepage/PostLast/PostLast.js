@@ -21,7 +21,7 @@ const PostLast = ({ posts=[] }) => {
                                     (post1, post2) => post2.createdAt.seconds - post1.createdAt.seconds
                                 )
                                 .map(
-                                    ({ id, title, author }) => <PostOnGamePage key={ id } id={id} title={ title} author={author && `${author.firstName} ${author.lastName}`} avatar={author && author.avatar}/>
+                                    ({ id, title, background, author }) => <PostOnGamePage key={ id } id={id} title={ title} poster={background} author={author && `${author.firstName} ${author.lastName}`} avatar={author && author.avatar}/>
                                 )
                         }
                     </div>

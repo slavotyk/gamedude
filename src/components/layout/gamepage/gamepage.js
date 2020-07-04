@@ -13,7 +13,7 @@ const GamePage = (props) => {
     if (game) {
         const { background } = game;
         const style={
-            background: `linear-gradient(180deg, rgba(34, 34, 34, 0.7) 0%, rgba(34, 34, 34, 0.3) 100%), url(${ background }) no-repeat center top/cover fixed`
+            background: `linear-gradient(180deg, rgba(34, 34, 34, 0.7) 0%, rgba(34, 34, 34, 0.3) 100%), url(${ background }) no-repeat center center/cover fixed`
         };
         return (
             <div className='mainContainer'>

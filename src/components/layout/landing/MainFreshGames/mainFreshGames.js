@@ -9,8 +9,8 @@ import GameCard from '../../../common/GameCard/GameCard';
 const MainFreshGames = (props) => {
     const {games} = props;
     return(
-        <section>
-            <h2>Свежее</h2>
+        <section className='freshContainer'>
+            <h2 className='freshHeading'>Свежее</h2>
             <div className="freshWrapper">
                 {
                     Array.from(games || [])

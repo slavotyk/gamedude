@@ -1,9 +1,9 @@
 .auth-form {
-    margin: 0 auto;
+    margin: 120px auto;
     width: 340px;
 
     h3 {
-        margin: 30px 0px 60px 0px;
+        margin: 30px 0 60px 0;
         text-align: center;
     }
 
@@ -17,10 +17,14 @@
         padding: 10px;
         margin-bottom: 10px;
         border: 1px solid #333333;
-        border-radius: 10px;
-        transition: 1s;
+        border-radius: 4px;
+        transition: 200ms;
         &:focus {
-            border: 1px solid #616161;
+            border: 1px solid #9B5DF7;
+        }
+        &::placeholder{
+            color: #627B85;
+            font-size: 14px;
         }
     }
 
@@ -30,16 +34,13 @@
         font-weight: bold;
         width: 100%;
         height: 45px;
-        margin: 20px 0px;
-        background-color: #222222;
-        border: 1px solid #616161;
-        border-radius: 5px;
-        transition: 1s;
+        margin: 20px 0;
+        background-color: #9B5DF7;
+        border-radius: 4px;
+        transition: 200ms;
 
         &:hover {
-            color: #333333;
-            background-color: white;
-            border: 1px solid #333333;
+            transform: scale(1.1);
         }
     }
 }

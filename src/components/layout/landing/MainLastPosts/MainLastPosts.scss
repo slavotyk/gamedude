@@ -1,10 +1,18 @@
+.mainLastContainer{
+  height: 410px;
+  width: 100vw;
+  overflow: hidden;
+}
+
 .mainLastWrapper{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
-  width: 700px;
-  margin: 20px auto;
-  padding: 0 0;
+  position: relative;
+  height: 340px;
+  padding: 0 130px;
+  margin: 20px 0 0 0;
+  white-space:nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling:touch;
 
   @media (max-width: 700px) {
     grid-template-columns: repeat(1, 1fr);
