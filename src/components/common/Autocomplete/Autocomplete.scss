@@ -1,10 +1,12 @@
 .autocomplete-list{
     list-style: none;
-    width: 100%;
-    position: absolute;
+    width: 300px;
+    position: relative;
+    margin-left: 130px;
     text-align: left;
     box-sizing: border-box;
     background: #333333;
+    z-index: 9999;
     border: 1px solid #616161;
 
     li{

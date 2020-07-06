@@ -1,8 +1,10 @@
 .create-post{
     position: relative;
     width: 100%;
-    margin: 20px auto;
-    box-shadow: 0 4px 33px rgba(0, 0, 0, 0.25);
+    height: auto;
+    min-height: 100vh;
+    margin: 0 auto;
+    //box-shadow: 0 4px 33px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     overflow: hidden;
     &__input{
@@ -10,13 +12,13 @@
         position: relative;
         width: calc(100% - 20px);
         font-size: 16px;
-        margin: 10px 10px 0 10px;
-        padding: 15px;
+        margin: 10px 10px 0 130px;
+        padding: 0;
         box-sizing: border-box;
         transition: 1s;
         background: transparent;
         opacity: 1;
-        z-index: 20;
+        z-index: 999;
 
 
         &::placeholder{
@@ -28,26 +30,62 @@
         }
 
         &_title{
-            margin-top: 30px;
+            margin-top: 200px;
+            margin-left: 130px;
             font-style: normal;
             font-weight: bold;
             font-size: 30px;
             line-height: 40px;
+            width: calc(900px);
             /* or 133% */
 
             color: #FFFFFF;
 
             text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         }
+        &_gamePicker{
+            position: relative;
+            width: calc(900px);
+            margin: 10px 10px 0 130px;
+            box-sizing: border-box;
+            transition: 1s;
+            background: transparent;
+            font-style: normal;
+            font-weight: 200;
+            font-size: 20px;
+            line-height: 50px;
+            opacity: 1;
+            z-index: 999;
+        }
+        &_pictureLoader{
+            position: absolute;
+            margin-top: -100px;
+            padding-left: 60px;
+            right: 130px;
+            background: #fff;
+            width: 0;
+            height: 60px;
+            z-index: 20;
+            border-radius: 50%;
+            cursor: pointer;
+        }
     }
 
     &__textarea{
         display: block;
+        position: relative;
+        border: none;
+        outline: none;
         margin-top: 10px;
-        font-size: 16px;
+        margin-left: 130px;
         box-sizing: border-box;
-        padding: 15px;
-        width: 100%;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        color: #fff;
+        line-height: 30px;
+        width: 800px;
+        z-index: 20;
         background: transparent;
 
         &:focus{
@@ -59,7 +97,7 @@
         display: block;
         width: 100%;
         position: absolute;
-        height: 150px;
+        height: 549px;
         background: red;
         object-fit: cover;
         z-index: 1;
@@ -69,11 +107,25 @@
             position: absolute;
             z-index: 10;
             width: 100%;
-            height: 150px;
+            height: 549px;
             left: 0;
             right: 0;
             top: 0;
-            background: linear-gradient(180deg, rgba(52, 52, 51, 0) 0%, #343333 100%);
+            background: linear-gradient(0deg, #1E1E20 0%, rgba(30, 30, 32, 0) 100%);
         }
     }
+}
+
+.modal_fullscreen{
+    display: block;
+    position: absolute;
+    float: left;
+    top: 0;
+    left: 0;
+    width: calc(100vw);
+    height: auto;
+    min-height: 100vh;
+    margin: 0;
+    z-index: 20;
+    background: #1E1E20;
 }

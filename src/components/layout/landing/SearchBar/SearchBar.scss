@@ -11,9 +11,13 @@ input[type='search'] {
     height: 40px;
     margin: 15px 10px 15px 67px;
 
-    @media (max-width: 700px) {
-        grid-template-columns: repeat(2, 1fr);
-        width: 340px;
+    @media (max-width: 800px) {
+        margin: 15px 10px 15px 37px;
+        width: 220px;
+    }
+
+    @media (max-width: 450px) {
+        display: none;
     }
 
     &__input{

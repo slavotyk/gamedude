@@ -37,7 +37,7 @@ export const MainLastPosts = (props) => {
     else {
         return (
             <section>
-                <h2>Последние публикации</h2>
+                <h2 className='freshHeading'>Последние публикации</h2>
                 <p>Публикаций нет</p>
             </section>
         );

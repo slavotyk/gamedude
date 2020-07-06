@@ -15,16 +15,6 @@
   margin: 0 auto;
   z-index: 99;
 }
-@media (min-width: 700px) and (max-width: 1440px) {
-  .navigationWrapper{
-    width: calc(100% - 40px);
-  }
-}
-@media (max-width: 700px) {
-  .navigationWrapper{
-    max-width: calc(100% - 30px);
-  }
-}
 
 .userAuth{
   position: absolute;
@@ -69,6 +59,9 @@
       padding: 0;
     }
   }
+  @media (max-width: 450px) {
+    display: none;
+  }
 }
 
 .userAvatar{
@@ -97,4 +90,17 @@
   line-height: 36px;
   font-weight: bold;
   font-size: 16px;
+}
+@media (min-width: 800px) and (max-width: 1440px) {
+  .navigationWrapper{
+    width: calc(100vw - 40px) !important;
+    margin: 0 20px !important;
+  }
+}
+@media (max-width: 800px) {
+  .navigationWrapper{
+    width: calc(100vw - 40px) !important;
+    margin: 0 20px !important;
+    height: 70px;
+  }
 }

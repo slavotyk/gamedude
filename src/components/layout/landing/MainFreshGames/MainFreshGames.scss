@@ -13,18 +13,61 @@
   height: 270px;
   overflow: hidden;
 }
-.freshWrapper{
+.freshWrapper {
   position: relative;
   height: 290px;
   padding: 0 130px;
   margin: 20px 0 0 0;
-  white-space:nowrap;
+  white-space: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
-  -webkit-overflow-scrolling:touch;
+  -webkit-overflow-scrolling: touch;
+}
+@media (min-width: 800px) and (max-width: 1440px) {
+  .freshHeading {
+    margin-left: 20px !important;
+    margin-bottom: 50px !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    font-size: 36px;
+    line-height: 42px;
+  }
+  .freshWrapper {
+    position: relative;
+    height: 290px;
+    padding: 0 20px !important;
+    margin: 20px 0 0 0;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
 
-  @media (max-width: 700px) {
-    grid-template-columns: repeat(2, 1fr);
-    width: 340px;
+}
+
+
+}
+@media (min-width: 450px) and (max-width: 800px) {
+
+}
+@media (max-width: 450px){
+  .freshHeading {
+
+    margin-left: 20px !important;
+    margin-bottom: 20px !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    font-size: 24px !important;
+    line-height: 32px !important;
+  }
+  .freshWrapper {
+    position: relative;
+    height: 290px;
+    padding: 0 20px !important;
+    margin: 20px 0 0 0;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+
   }
 }

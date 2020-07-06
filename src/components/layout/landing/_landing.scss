@@ -2,8 +2,9 @@
 
 .mainContainer{
   height: auto;
+  min-height: 100vh;
   //min-height: calc(100vh);
-  width: 100%;
+  width: 100vw;
   bottom: 0;
 }
 
@@ -11,6 +12,7 @@
   position: relative;
   margin: 0 auto;
   height: auto;
+  min-height: 100vh;
   background: transparent;
   overflow: hidden;
   width: 100%;
@@ -25,20 +27,9 @@
     margin: 20px auto;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
 
-    @media (max-width: 700px) {
-      width: 340px;
+    @media (max-width: 800px) {
+      width: 100%;
     }
-  }
-}
-
-@media (min-width: 700px) and (max-width: 1440px) {
-  .mainWrapper{
-    //width: 700px;
-  }
-}
-@media (max-width: 700px) {
-  .mainWrapper{
-    width: calc(100% - 20px);
   }
 }
 
@@ -128,3 +119,183 @@
   z-index: 10;
 }
 
+@media (min-width: 800px) and (max-width: 1440px) {
+  .mainWrapper{
+    margin: 0 !important;
+  }
+  h1{
+    position: relative;
+    height: auto;
+    padding-left: 20px !important;
+    padding-top: 160px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 80px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    margin:0 !important;
+    z-index: 15;
+  }
+
+  h2{
+    position: absolute;
+    height: auto;
+    padding-left: 20px !important;
+    padding-top: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 80px;
+    /* identical to box height, or 250% */
+    margin: 0;
+    color: #FFFFFF;
+    /* shadoow */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    z-index: 15;
+  }
+}
+@media (min-width: 450px) and (max-width: 800px) {
+  .mainWrapper{
+    width: 100vw;
+    margin: 0 !important;
+  }
+  h1{
+    position: relative;
+    height: auto;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 160px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 70px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    margin:0 !important;
+    z-index: 15;
+  }
+
+  h2{
+    width: calc(100vw - 40px) !important;
+    position: absolute;
+    height: auto;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 40px !important;
+    /* identical to box height, or 250% */
+    margin: 0;
+    color: #FFFFFF;
+    /* shadoow */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    z-index: 15;
+  }
+}
+
+@media (max-width: 450px) {
+  .mainWrapper{
+    width: 100vw;
+    margin: 0 !important;
+  }
+  h1{
+    position: relative;
+    height: auto;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 160px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 70px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    margin:0 !important;
+    z-index: 15;
+  }
+
+  h2{
+    width: calc(100vw - 40px) !important;
+    position: absolute;
+    height: auto;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 40px !important;
+    /* identical to box height, or 250% */
+    margin: 0;
+    color: #FFFFFF;
+    /* shadoow */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    z-index: 15;
+  }
+
+
+  /*   Hero Text   */
+  .heroText{
+    position: relative;
+    height: 460px;
+    margin: 0 auto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 26px;
+    background: url(./img/screen.jpg) no-repeat center bottom;
+    background-size: cover;
+
+    h1{
+      position: relative;
+      height: auto;
+      padding-left: 130px;
+      padding-top: 160px;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 36px !important;
+      line-height: 80px;
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+      margin:0 !important;
+      z-index: 15;
+    }
+
+    h2{
+      position: absolute;
+      height: auto;
+      padding-left: 130px;
+      padding-top: 0;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 24px !important;
+      /* identical to box height, or 250% */
+      margin: 0;
+      color: #FFFFFF;
+      /* shadoow */
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+      z-index: 15;
+    }
+
+    .character{
+      position: absolute;
+      width: 460px;
+      height: 460px;
+      right: -50px;
+      top: 0;
+      background: url(./img/char.png) no-repeat right bottom;
+      background-size: contain;
+    }
+  }
+  .heroText::after{
+    display: block;
+    height: 400px;
+    width: 100%;
+    background: linear-gradient(0deg, #1E1E20 0%, rgba(30, 30, 32, 0) 100%);
+    background-size: cover;
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+  }
+}

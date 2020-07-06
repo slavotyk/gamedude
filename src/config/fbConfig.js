@@ -11,10 +11,12 @@ var firebaseConfig = {
   projectId: "gamedude-7f1f1",
   storageBucket: "gamedude-7f1f1.appspot.com",
   messagingSenderId: "770035921761",
-  appId: "1:770035921761:web:8e75d956a8814cb5"
+  appId: "1:770035921761:web:8e75d956a8814cb5",
+  measurementId: "G-1937GGZS35"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
 // firebase.firestore().settings({ timestampsInSnapshots: true });
 
 export default firebase

@@ -116,7 +116,6 @@ class Office extends Component {
         this.showSuccess(newGame.title);
     }
 
-
     savePost = (newPost) => {
         this.props.createPost(newPost);
         this.showSuccessPost(newPost);
@@ -140,8 +139,8 @@ class Office extends Component {
                             <input type="file" id="avatar" onChange={this.setAvatar}/>
                         </div>
                         <div className="profile__info">
-                            <div> <b>Имя:</b> {profile.firstName} {profile.lastName} </div>
-                            <div> <b>Email:</b> {auth.email}</div>
+                            <div> Имя <br/> <b>{profile.firstName} {profile.lastName}</b> </div>
+                            <div> Email:<br/> <b>{auth.email}</b></div>
                         </div>
                     </div>
 

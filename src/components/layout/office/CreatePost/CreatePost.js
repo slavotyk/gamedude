@@ -11,9 +11,9 @@ class CreatePost extends Component {
         title: '',
         game: '',
         gameId: '',
+        content: '',
         background: null,
-        coverPrev: null,
-        content: null
+        coverPrev: null
     };
     /*
 
@@ -106,7 +106,7 @@ class CreatePost extends Component {
         const { onCancel } = this.props;
 
         return (
-            <section>
+            <section className='modal_fullscreen'>
                 <form onSubmit={this.handleSubmit} className="create-post">
                         {/*   Рисуем бэкграунд на превью   */}
                         <img className='create-post__background'  alt='Не забудьте загрузить фоновое изображение!' src={this.state.coverPrev}/>
@@ -116,16 +116,16 @@ class CreatePost extends Component {
                         <input type="text" id="title" className="create-post__input create-post__input_title" placeholder="Заголовок поста" onChange={ this.handleChange }/>
 
                         {/*   Рисуем выбор игры   */}
-                        <Autocomplete getSuggestions={this.getSuggestions} inputClassName={"create-post__input"} placeholder="Выберите про какую игру ваш пост" onChange={ this.gameChangeHandler } />
+                        <Autocomplete getSuggestions={this.getSuggestions} inputClassName={"create-post__input_gamePicker"} placeholder="Выберите про какую игру ваш пост" onChange={ this.gameChangeHandler } />
 
                         {/*   Рисуем загрузку картинки   */}
-                        <input type="file" ref="uploadImg" id="background"  className="create-post__input" placeholder="Загрузите картинку" onChange={this.handleChange}/>
+                        <input type="file" ref="uploadImg" id="background"  className="create-post__input_pictureLoader" placeholder="+" onChange={this.handleChange}/>
 
 
 
-                        <input type="submit" className="office__button_addObject" value="Добавить текст" onClick={this.addTextObject}/>
+                        {/*<input type="submit" className="office__button_addObject" value="Добавить текст" onClick={this.addTextObject}/>*/}
 
-                            {/*<textarea rows="20" id="content" className="create-post__textarea" placeholder="Content" onChange={this.handleChange}/>*/}
+                        <textarea rows="10" id="content" className="create-post__textarea" placeholder="Введите текст вашей публикации..." onChange={this.handleChange}/>
 
                         <input type="submit" className="office__button" value="ОПУБЛИКОВАТЬ" onClick={this.handleSubmit}/>
 
