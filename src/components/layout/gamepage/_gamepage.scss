@@ -17,6 +17,7 @@
     margin: 0 auto;
     @media (min-width: 700px) and (max-width: 1440px) {
       width: 600px;
+      margin: 0;
   }
     @media (max-width: 700px) {
       width: 320px;
@@ -73,22 +74,24 @@
   }
 }
 
-h1{
+.gamepage-title{
   margin-left: 130px;
   font-style: normal;
   font-weight: bold;
   font-size: 30px;
   line-height: 40px;
   /* or 133% */
-
   color: #FFFFFF;
-
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   margin-top: 200px !important;
   margin-bottom: 0 !important;
+  @media (max-width: 1440px) and (min-width: 800px) {
+    margin-left: 0 !important;
+    padding-left: 130px !important;
+  }
 }
 
-h4{
+.gamepage-description{
   font-style: normal;
   font-weight: 200;
   font-size: 20px;
@@ -123,4 +126,111 @@ h4{
   right: 0;
   bottom: 0;
   background: linear-gradient(0deg, #1E1E20 0%, rgba(30, 30, 32, 0) 100%);
+}
+
+@media (max-width: 450px) {
+  .gamepage-title{
+    margin-top: 0 !important;
+    font-size: 24px;
+    line-height: 30px;
+    padding-bottom: 16px;
+  }
+  .gamepage-description{
+    margin-left: 20px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .gamepage-background {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: transparent;
+  }
+  .gamepage-background::after{
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, #1E1E20 0%, rgba(30, 30, 32, 0) 100%);
+  }
+  .hotLinksWrapper{
+    display: block;
+    width: calc(100vw - 40px);
+    height: auto;
+    margin-top: 25px;
+    margin-left: 20px;
+
+
+    ul{
+      display: grid;
+      height: auto;
+      min-height: 40px;
+      padding: 0 0;
+      grid-gap: 30px;
+      grid-template-columns: repeat(9, 40px);
+      grid-auto-rows: 40px;
+      margin: 0 auto;
+      @media (min-width: 700px) and (max-width: 1440px) {
+        width: 600px;
+      }
+      @media (max-width: 700px) {
+        width: 320px;
+        grid-template-columns: repeat(5, 40px);
+        grid-auto-rows: 40px;
+        grid-gap: 20px;
+      }
+      li{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        .icon {
+          display: block;
+          cursor: pointer;
+          width: 30px;
+          height: 100%;
+          opacity: 0.5;
+          transition: 200ms;
+          background: no-repeat center;
+          background-size: contain;
+          &:hover{
+            opacity: 1;
+            transform: scale(1.1);
+          }
+        }
+        .web {
+          background-image: url(./img/social/web.svg);
+        }
+        .wiki {
+          background-image: url(./img/social/wikipedia.svg);
+        }
+        .facebook {
+          background-image: url(./img/social/facebook.svg);
+        }
+        .forum {
+          background-image: url(./img/social/forum.svg);
+        }
+        .youtube {
+          background-image: url(./img/social/youtube.svg);
+        }
+        .vkontakte {
+          background-image: url(./img/social/vk.svg);
+        }
+        .twitter {
+          background-image: url(./img/social/twitter.svg);
+        }
+        .instagram {
+          background-image: url(./img/social/instagram.svg);
+        }
+        .twitch {
+          background-image: url(./img/social/twitch.svg);
+        }
+      }
+    }
+  }
 }

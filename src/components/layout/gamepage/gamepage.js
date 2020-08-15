@@ -13,18 +13,17 @@ const GamePage = (props) => {
     if (game) {
         const { background } = game;
         const style={
-            background: `linear-gradient(180deg, rgba(34, 34, 34, 0.7) 0%, rgba(34, 34, 34, 0.3) 100%), url(${ background }) no-repeat center center/cover fixed`
+            background: `linear-gradient(180deg, rgba(34, 34, 34, 0.7) 0%, rgba(34, 34, 34, 0.3) 100%), url(${ background }) no-repeat top center/cover`
         };
         return (
             <div className='mainContainer'>
                 <div className="gamepage-background" style={ style }> </div>
                 <div className='mainWrapper'>
-                    <h1>{ game.title }</h1>
-                    <h4>Разработчик:  { game.developer }</h4>
-                    <h4>Жанр: { game.category }</h4>
+                    <h1 className='gamepage-title'>{ game.title }</h1>
+                    <h4 className='gamepage-description'>Разработчик:  { game.developer }</h4>
+                    <h4 className='gamepage-description'>Жанр: { game.category }</h4>
 
                     <HotLinks game={ game }/>
-
                     <PostLast posts={ posts }/>
                 </div>
             </div>

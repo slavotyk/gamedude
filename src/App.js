@@ -17,13 +17,13 @@ import PostPage from './components/layout/PostPage/PostPage';
 import Office from './components/layout/office/office';
 import Error from './components/layout/error/404';
 
-
+import ScrollToTop from "./components/scrollToTop";
 
 
 function App() {
   return (
       <BrowserRouter>
-        <div className="App">
+          <ScrollToTop />
             <Switch>
                 <Route exact path='/' component={Landing} />
                 <Route path='/search' component={SearchResult} />
@@ -41,7 +41,6 @@ function App() {
             <Navbar/>
             <Footer/>
 
-        </div>
       </BrowserRouter>
   );
 }
