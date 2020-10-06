@@ -1,19 +1,23 @@
 .office__button{
     display: inline-block;
     cursor: pointer;
-    margin-top: 15px;
-    font-size: 16px;
-    padding: 10px 40px;
-    background-color:#333333;
-    border: 1px solid #616161;
-    border-radius: 5px;
-    transition: 0.5s;
-
+    margin-top: 16px;
+    margin-right: 16px;
+    padding: 10px 18px;
+    background-color:#9B5DF7;
+    border-radius: 4px;
+    transition: 200ms;
+    font-size: 14px;
+    line-height: 20px;
+    font-style: normal;
+    font-weight: bold;
     &:hover{
-        background-color:white;
-        color: #222222;
-        border: 1px solid #222222;
+        transform: scale(1.1);
     }
+}
+
+.buttonsWrapper{
+    margin-left: 130px;
 }
 
 .profile{

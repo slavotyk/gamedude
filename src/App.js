@@ -15,15 +15,16 @@ import GamePage from './components/layout/gamepage/gamepage';
 import PostPage from './components/layout/PostPage/PostPage';
 
 import Office from './components/layout/office/office';
+import GameModeration from "./components/layout/office/GameModeration/GameModeration";
 import Error from './components/layout/error/404';
 
-import ScrollToTop from "./components/scrollToTop";
+
 
 
 function App() {
   return (
       <BrowserRouter>
-          <ScrollToTop />
+        <div className="App">
             <Switch>
                 <Route exact path='/' component={Landing} />
                 <Route path='/search' component={SearchResult} />
@@ -31,6 +32,8 @@ function App() {
                 <Route path='/games/:id' component={GamePage} />
                 <Route path='/posts/:id' component={PostPage} />
 
+
+                <Route path='/back-office/gamesModeration' component={GameModeration} />
                 <Route path='/back-office' component={Office} />
 
                 <Route path='/signin' component={SignIn} />
@@ -41,6 +44,7 @@ function App() {
             <Navbar/>
             <Footer/>
 
+        </div>
       </BrowserRouter>
   );
 }
