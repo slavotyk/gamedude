@@ -6,7 +6,7 @@ import { updateAvatar } from '../../../store/actions/authActions';
 import {NavLink, Redirect} from 'react-router-dom';
 
 import CreateGame from './createGame/CreateGame';
-import CreatePost from './CreatePost/CreatePost';
+// import CreatePost from './PostCreation/PostCreation';
 import ModalWindow from '../../common/modalWindow/ModalWindow';
 
 import './office.scss';
@@ -149,8 +149,9 @@ class Office extends Component {
                     <div className='buttonsWrapper'>
                     { this.state.showCreateGameForm === false ? <button className="office__button" onClick = {() => this.showCreateGameForm()}>Добавить игру</button> : <CreateGame onSave={ this.saveGame } onCancel={() => this.hideCreateGameForm()}/>}
 
-                    { this.state.showCreatePost === false ? <button className="office__button" onClick = {() => this.showCreatePost()}>Написть пост</button> : <CreatePost onSave={ this.savePost } onCancel={() => this.hideCreatePost()}/>}
+                    { <NavLink to={`/back-office/postCreation`} className="office__button">Написать пост</NavLink>}
 
+                    <br/>
                     { profile.isAdmin && <NavLink to={`/back-office/gamesModeration`} className="office__button">Редактировать список игр</NavLink> }
 
                     </div>

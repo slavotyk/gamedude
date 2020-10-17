@@ -129,3 +129,90 @@
     z-index: 20;
     background: #1E1E20;
 }
+.codex-editor{
+    background: #222222;
+}
+.cdx{
+    &-settings-button{
+        &:hover{
+            background-color: #9B5DF7;
+        }
+    }
+    &-block{
+        &::selection{
+            background-color: #1E1E20 !important;
+        }
+    }
+}
+
+.ce{
+    &-block{
+        float: left;
+        position: relative;
+        width: 100%;
+    }
+    &-inline-tool{
+        &:hover{
+            background-color: #9B5DF7;
+        }
+    }
+    &-conversion{
+        &-toolbar{
+            background-color:  #1E1E20;
+            border: 1px solid #1E1E20;
+        }
+        &-tool{
+            &:hover{
+                background-color: #9B5DF7;
+            }
+        }
+    }
+
+    &-inline-toolbar{
+        background-color:  #1E1E20;
+        border: 1px solid #1E1E20;
+        &__dropdown{
+            border-right: 1px solid #9B5DF7;
+            &:hover{
+                background-color: #9B5DF7;
+                border-right: 1px solid rgba(201,201,204,.48);
+            }
+        }
+    }
+    &-toolbar{
+        &__settings-btn{
+            background-color: #9B5DF7;
+            &::selection{
+                background-color: #9B5DF7;
+            }
+        }
+    }
+    &-paragraph{
+        position: relative;
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+        &::selection{
+            background-color: #1E1E20 !important;
+        }
+    }
+    &-header{
+        position: relative;
+        padding-left: 0 !important;
+        padding-top: 0 !important;
+        margin-left: 0 !important;
+        &::selection{
+            background-color: #1E1E20 !important;
+        }
+    }
+    &-settings{
+        background: #1E1E20;
+        border: 1px solid #1E1E20;
+        &__button{
+            &:hover{
+                background-color: #9B5DF7;
+            }
+        }
+    }
+
+}
+

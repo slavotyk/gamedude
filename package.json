@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@editorjs/header": "^2.6.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "firebase": "^6.6.2",
@@ -63,7 +64,8 @@
     ]
   },
   "devDependencies": {
-    "@editorjs/editorjs": "^2.18.0",
+    "@editorjs/editorjs": "^2.19.0",
+    "@editorjs/list": "^1.6.0",
     "@editorjs/paragraph": "^2.7.0",
     "react-editor-js": "^1.6.2",
     "react-hook-form": "^6.9.2"
