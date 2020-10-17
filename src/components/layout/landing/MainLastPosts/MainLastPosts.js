@@ -27,7 +27,7 @@ export const MainLastPosts = (props) => {
                             )
                             .slice(0, 4)
                             .map(
-                                post => <PostCard key={ post.id } id={post.id} title={ post.title } poster={post.background} game={ post.game } date={ moment(post.createdAt.toDate().toString()).format('DD.MM.yyyy') }/>
+                                post => <PostCard key={ post.id } id={post.id} title={ post.title } poster={post.background} game={ post.game } date={ moment(post.createdAt.toDate().toString()).format('D.MM.YYYY') }/>
                             )
                     }
                 </div>

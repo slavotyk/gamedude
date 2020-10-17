@@ -1,25 +1,32 @@
 .create-game-form{
+    margin-top: 100px;
     font-size: 16px;
     padding: 15px;
-    text-align: right;
 
     &__input{
-        width: 60%;
+        width: 300px;
         font-size: 16px;
-        margin: 5px auto;
-        padding: 5px;
+        margin: 0 0 16px 0;
+        padding: 8px 16px;
         box-sizing: border-box;
+        border-radius: 4px;
         border: 1px solid #333333;
         transition: 1s;
 
         &:focus{
-            border: 1px solid #616161;
+            border: 1px solid #9B5DF7;
         }
     }
 
+    &__imgPrev{
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+    }
     label{
-        display:inline-block;
-        width: 40%;
+        margin: 0 0 8px 16px;
+        display: block;
         text-align: left;
     }
 }

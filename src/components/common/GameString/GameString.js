@@ -17,7 +17,7 @@ const GameString = ({ id, title, background, category, developer}) => (
         </div>
         {/*<div className='gamesString__button gamesString__button_delete' onClick={firebase.collection("games").doc({id}).delete().then(function() {console.log("Document successfully deleted!");}).catch(function(error) {console.error("Error removing document: ", error);})}>x</div>*/}
         {/*<div className='gamesString__button gamesString__button_delete' onClick={console.log()}>x</div>*/}
-        <NavLink to={`/gamesModeration/game/${ id }`}  className='gamesString__button gamesString__button_edit'>edit</NavLink>
+        <NavLink to={`./gamesModeration/game/${ id }`}  className='gamesString__button gamesString__button_edit'>edit</NavLink>
     </div>
 );
 

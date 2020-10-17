@@ -16,6 +16,7 @@ import PostPage from './components/layout/PostPage/PostPage';
 
 import Office from './components/layout/office/office';
 import GameModeration from "./components/layout/office/GameModeration/GameModeration";
+import GameEditor from "./components/layout/office/GameModeration/GameEditor/GameEditor";
 import Error from './components/layout/error/404';
 
 
@@ -33,6 +34,7 @@ function App() {
                 <Route path='/posts/:id' component={PostPage} />
 
 
+                <Route path='/back-office/gamesModeration/game/:id' component={GameEditor} />
                 <Route path='/back-office/gamesModeration' component={GameModeration} />
                 <Route path='/back-office' component={Office} />
 

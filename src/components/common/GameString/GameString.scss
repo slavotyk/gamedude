@@ -3,7 +3,7 @@
         display: block;
         position: relative;
         width: 100%;
-        height: 200px;
+        height: 130px;
         margin-bottom: 32px;
         border-radius: 8px;
         overflow: hidden;
@@ -11,11 +11,11 @@
     &__background{
         position: absolute;
         width: 100%;
-        height: 200px;
+        height: 130px;
         z-index: 1;
         &_content{
             width: 100%;
-            height: 200px;
+            height: 130px;
             object-fit: cover;
             z-index: 2;
         }
@@ -26,9 +26,9 @@
             top: 0;
             content: ' ';
             width: 100%;
-            height: 200px;
+            height: 130px;
             z-index: 3;
-            background: linear-gradient(90deg, #1E1E20 0%, rgba(30, 30, 32, 0) 50%, #1E1E20 100%);
+            background: linear-gradient(90deg, rgba(30, 30, 32, 0.9) 0%, rgba(30, 30, 32, 0.6) 50%, rgba(30, 30, 32, 0.9) 100%);
         }
     }
     &__wrapper{
@@ -69,7 +69,7 @@
         &_edit{
             background: #9B5DF7;
             right: calc(16px + 32px + 16px);
-            top: calc(200px / 2 - 32px / 2);
+            top: calc(110px / 2 - 32px / 2);
         }
     }
 }
