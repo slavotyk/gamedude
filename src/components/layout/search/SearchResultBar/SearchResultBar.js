@@ -6,7 +6,6 @@ import GameString from "../../../common/GameString/GameString";
 
 export const SearchResultBar = ({ items = [] }) => {
     if (items.length) {
-        console.log(items)
         return (
             <section className='givingSpaceAbove'>
                 <div className='searchResultBar'>

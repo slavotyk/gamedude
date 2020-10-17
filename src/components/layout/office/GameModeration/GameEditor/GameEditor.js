@@ -40,11 +40,11 @@ const GameEditor = (props) => {
                     <input name="keywords" defaultValue={game.keywords} className="create-game-form__input" ref={register}/>
 
                     <label htmlFor="poster">Game Poster</label>
-                    <img className="create-game-form__imgPrev" alt="poster" src={game.poster}/>
+                    <img className="create-game-form__imgPrev_poster" alt="poster" src={game.poster}/>
                     <input type="file" id="poster" name="poster" className="create-game-form__input" ref={register}/>
 
                     <label htmlFor="background">Background</label>
-                    <img className="create-game-form__imgPrev" alt="background" src={game.background}/>
+                    <img className="create-game-form__imgPrev_bg" alt="background" src={game.background}/>
                     <input type="file" id="background" name="background" className="create-game-form__input" ref={register}/>
 
                     <label htmlFor="linkWeb">official WebPage*</label>

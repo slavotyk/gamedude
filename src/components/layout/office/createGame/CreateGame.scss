@@ -19,10 +19,18 @@
     }
 
     &__imgPrev{
-        width: 300px;
-        height: 300px;
-        object-fit: cover;
-        display: block;
+        &_poster{
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+        &_bg{
+            width: 300px;
+            height: 86px;
+            object-fit: cover;
+            display: block;
+        }
     }
     label{
         margin: 0 0 8px 16px;
