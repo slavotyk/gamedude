@@ -1,18 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import GameCard from '../../../common/GameCard/GameCard';
-
 import './SearchResultBar.scss';
+import GameString from "../../../common/GameString/GameString";
 
 export const SearchResultBar = ({ items = [] }) => {
     if (items.length) {
+        console.log(items)
         return (
-            <section>
+            <section className='givingSpaceAbove'>
                 <div className='searchResultBar'>
                 {
                     (items || []).map(
-                        item => <GameCard key={ item.id } title={ item.title } poster={ item.poster } id={ item.id }/>
+                        item => <GameString key={ item.id } id = { item.id } title={ item.title } background={ item.background } category={item.category} developer={item.developer}/>
                     )
                 }
                 </div>

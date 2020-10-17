@@ -20,9 +20,9 @@ export const search = query => {
                 .map(
                     document => {
                         const { id } = document;
-                        const { title, poster } = document.data();
+                        const { title, background, category, developer } = document.data();
 
-                        return { id, title, poster };
+                        return { id, title, background, category, developer };
                     }
                 );
 

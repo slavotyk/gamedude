@@ -34,7 +34,7 @@ function App() {
                 <Route path='/posts/:id' component={PostPage} />
 
 
-                <Route path='/back-office/gamesModeration/game/:id' component={GameEditor} />
+                <Route path='/back-office/games/:id' component={GameEditor} />
                 <Route path='/back-office/gamesModeration' component={GameModeration} />
                 <Route path='/back-office' component={Office} />
 
