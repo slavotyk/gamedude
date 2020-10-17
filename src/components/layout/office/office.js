@@ -11,13 +11,17 @@ import ModalWindow from '../../common/modalWindow/ModalWindow';
 
 import './office.scss';
 
+
+
 class Office extends Component {
 
     state = {
         showCreateGameForm: false,
         showCreatePost: false,
+        showGameModeration: false,
         modal: null
     };
+
 
     showCreatePost = () => {
         this.setState({ showCreatePost: true });
@@ -132,7 +136,6 @@ class Office extends Component {
         return(
             <div className='mainContainer'>
                 <div className='mainWrapper'>
-                    <h1>Админка</h1>
                     <div className="profile">
                         <div className="profile__avatar" style={avatarStyle}>
                             <label htmlFor="avatar">Загрузить фото</label>
@@ -148,7 +151,7 @@ class Office extends Component {
 
                     { this.state.showCreatePost === false ? <button className="office__button" onClick = {() => this.showCreatePost()}>Написть пост</button> : <CreatePost onSave={ this.savePost } onCancel={() => this.hideCreatePost()}/>}
 
-                    <NavLink to={`/back-office/gamesModeration`} className="office__button">Редактировать список игр</NavLink>
+                    { profile.isAdmin && <NavLink to={`/back-office/gamesModeration`} className="office__button">Редактировать список игр</NavLink> }
 
                     </div>
                     { this.state.modal && <ModalWindow { ...this.state.modal }/> }

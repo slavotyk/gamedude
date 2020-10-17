@@ -3,6 +3,7 @@
     cursor: pointer;
     margin-top: 16px;
     margin-right: 16px;
+    margin-bottom: 16px;
     padding: 10px 18px;
     background-color:#9B5DF7;
     border-radius: 4px;
@@ -22,6 +23,7 @@
 
 .profile{
     display: grid;
+    margin-top: 80px;
     margin-left: 130px !important;
     grid-template-columns: 150px 1fr;
     grid-gap: 32px;
