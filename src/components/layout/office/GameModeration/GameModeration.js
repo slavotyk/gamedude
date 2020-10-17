@@ -21,7 +21,7 @@ const GameModeration = (props) => {
                         .sort(
                             (game1, game2) => game2.createdAt.seconds - game1.createdAt.seconds
                         )
-                        .slice(0, 8)
+                        // .slice(0, 20)
                         .map(
                             item => <GameString key={ item.id } id = { item.id } title={ item.title } background={ item.background } category={item.category} developer={item.developer}/>
                         )
