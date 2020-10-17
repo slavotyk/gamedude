@@ -17,6 +17,7 @@ import PostPage from './components/layout/PostPage/PostPage';
 import Office from './components/layout/office/office';
 import GameModeration from "./components/layout/office/GameModeration/GameModeration";
 import GameEditor from "./components/layout/office/GameModeration/GameEditor/GameEditor";
+import PostCreation from "./components/layout/office/PostCreation/PostCreation";
 import Error from './components/layout/error/404';
 
 
@@ -36,6 +37,7 @@ function App() {
 
                 <Route path='/back-office/games/:id' component={GameEditor} />
                 <Route path='/back-office/gamesModeration' component={GameModeration} />
+                <Route path='/back-office/postCreation' component={PostCreation} />
                 <Route path='/back-office' component={Office} />
 
                 <Route path='/signin' component={SignIn} />
