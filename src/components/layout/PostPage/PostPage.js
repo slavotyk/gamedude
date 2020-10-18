@@ -7,6 +7,7 @@ import { compose } from 'redux';
 import { NavLink } from 'react-router-dom';
 
 import './PostPage.scss';
+import PostDebouncer from "./PostDebouncer/PostDebouncer";
 
 
 
@@ -34,7 +35,12 @@ const PostPage = (props) => {
                         {/*    <img alt="" src={ background } className='post-page__img_blur'/>*/}
                         {/*    <img alt="" src={ background } className='post-page__img_pic'/>*/}
                         {/*</div>*/}
-                        <p> { content }</p>
+                        {
+                            Array.from(content || [])
+                                .map(
+                                    item => <PostDebouncer key={ item.id } data={item.data} type={item.type}/>
+                                )
+                        }
                     </section>
                 </div>
             </div>
