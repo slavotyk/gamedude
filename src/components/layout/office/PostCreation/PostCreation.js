@@ -1,57 +1,146 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 
-// import GameString from '../../../common/GameString/GameString';
 import {NavLink} from "react-router-dom";
 
-import EditorJS from '@editorjs/editorjs';
-import Header from '@editorjs/header';
-import List from '@editorjs/list';
-
 import './PostCreation.scss';
+import { useForm } from 'react-hook-form';
+import EditorJS from "@editorjs/editorjs";
+import Header from '@editorjs/header';
+import Autocomplete from "../../../common/Autocomplete/Autocomplete";
+import {createPost} from "../../../../store/actions/postActions";
 
-const PostCreation = () => {
+const PostCreation = (props) => {
+
+    const { register, handleSubmit } = useForm();
+
+    const dataRef = useRef();
+
     useEffect(() => {
-        // eslint-disable-next-line
-        const editor = new EditorJS({
+
+        dataRef.current = new EditorJS({
             /**
-             * Id of Element that should contain the Editor
+             * Id of Element that should contain Editor instance
              */
             holder: 'editorjs',
-
-            /**
-             * Available Tools list.
-             * Pass Tool's class or Settings object for each Tool you want to use
-             */
             tools: {
-                header: Header,
-                list: List
+                header: {
+                    class: Header,
+                    inlineToolbar : true
+                },
             },
+            data: {
+                    time: 1556098174501,
+                    blocks: [
+                        {
+                            type: "header",
+                            data: {
+                                text: "Время написать свой шедевр",
+                                level: 2
+                            }
+                        },
+                        {
+                            type: "paragraph",
+                            data: {
+                                text:
+                                    "Просто начните вводить текст, ведь это так просто! ^_^ "
+                            }
+                        },
+                    ],
+                    version: "2.12.4"
+                },
+            onReady: () => { saver() }
         });
-    }, []);
     // eslint-disable-next-line
+    }, []);
+
+
+    const [state, setState] = useState({
+        title: '',
+        gameId: '',
+        content: [],
+        background: null,
+    });
+
+    const gettingBgIntoState = () => {
+        if (document.getElementById('background').files[0]) {
+            setState({
+                ...state,
+                background: document.getElementById('background').files[0]
+            });
+        }};
+
+    const gettingTitleIntoState = (data) => {
+        const title = document.getElementById('title').value
+        setState({
+            ...state,
+            title: title
+        });
+    }
+
+    const saver = () => {
+        dataRef.current.save()
+            .then((outputData) => {
+                setState({
+                    ...state,
+                    content: outputData.blocks
+                });
+            })
+            .catch((error) => {
+                console.log('Saving failed: ', error)
+            });
+    }
+
+
+    const onSubmit = () => {
+        // Post Blocks
+
+        if ((state.background !== 'null') && (state.content !== [])) {
+            createPost(state)
+        }
+    };
+
+    const getSuggestions = value => {
+        const { games } = props;
+        return Object.entries(games)
+            .map(
+                ([ id, game ]) => ({ ...game, id })
+            )
+            .filter(
+                ({ title }) => title.toLowerCase().includes(value.toLowerCase())
+            );
+    };
+
+    const gameChangeHandler = ( game ) => {
+        setState({...state, gameId: game});
+    };
 
     return(
-        <section className='moderation__container'>
+        <section className='create-post__container'>
             <NavLink to={`/back-office`} className="office__button">Назад</NavLink>
-            {/*<h2 className='moderation__heading'>Создание нового поста</h2>*/}
             <div className="moderation__wrapper">
-                <div id="editorjs">
+                <form onSubmit={handleSubmit(onSubmit)}>
 
-                </div>
+                    <label htmlFor="background">Заголовок</label><br/>
+                    <input name='title' id="title" className="create-game-form__input" onChange={gettingTitleIntoState} ref={register}/><br/>
+                    <label htmlFor="background">Обложка</label><br/>
+                    <input type="file" id="background" name="background" className="create-game-form__input" onChange={gettingBgIntoState} ref={register}/>
+                    <Autocomplete getSuggestions={getSuggestions} inputClassName={"create-post__input_gamePicker"} placeholder="Выберите про какую игру ваш пост" onChange={ gameChangeHandler }/>
+                    <div id='editorjs'  ref={register}/>
+                    <input type="submit" className="office__button" value="Сохранить"/>
+                </form>
+
             </div>
         </section>
     );
 };
 
-const mapStateToProps = (state) => {
-    return {
-        games: state.firestore.ordered.games
-    };
-};
+const mapStateToProps = state => ({
+    games: state.firestore.data.games
+});
 
 export default compose(
     connect(mapStateToProps),
