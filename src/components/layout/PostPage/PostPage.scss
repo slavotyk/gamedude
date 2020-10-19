@@ -51,6 +51,15 @@
         }
     }
 
+    &__embed{
+        float: left;
+        display: block;
+        width: 720px;
+        height: 405px;
+        margin: 20px auto 15px 130px;
+        position: relative;
+        border-radius: 4px;
+    }
     &__h2{
         float: left;
         position: relative;
@@ -81,6 +90,8 @@
         text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         margin-top: 200px !important;
         margin-left: 130px;
+        padding-left: 130px;
+        width: calc(100% - 260px);
         margin-bottom: 0 !important;
         @media (min-width: 800px) and (max-width: 1440px) {
             margin-left: 0 !important;
