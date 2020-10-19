@@ -155,6 +155,13 @@
         float: left;
         position: relative;
         width: 100%;
+        height: auto;
+        &__content{
+            float: left;
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
     }
     &-inline-tool{
         &:hover{
@@ -201,11 +208,14 @@
         }
     }
     &-header{
+        float: left;
         position: relative;
+        display: block;
         padding-left: 0 !important;
         padding-top: 0 !important;
-        padding-bottom: 0;
+        padding-bottom: 0 !important;
         margin-left: 0 !important;
+        margin-bottom: 0 !important;
         &::selection{
             background-color: #1E1E20 !important;
         }
