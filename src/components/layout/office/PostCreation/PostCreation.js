@@ -10,6 +10,7 @@ import './PostCreation.scss';
 import { useForm } from 'react-hook-form';
 import EditorJS from "@editorjs/editorjs";
 import Header from '@editorjs/header';
+import Embed from '@editorjs/embed';
 import Autocomplete from "../../../common/Autocomplete/Autocomplete";
 import {createPost} from "../../../../store/actions/postActions";
 
@@ -31,6 +32,17 @@ const PostCreation = (props) => {
                     class: Header,
                     inlineToolbar : true
                 },
+                embed: {
+                    class: Embed,
+                    config: {
+                        services: {
+                            youtube: true,
+                            coub: true,
+                            twitch: true,
+                        }
+                    }
+                },
+
             },
             data: {
                     time: 1556098174501,
