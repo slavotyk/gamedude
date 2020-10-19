@@ -52,7 +52,8 @@ const PostCreation = (props) => {
                     ],
                     version: "2.12.4"
                 },
-            onReady: () => { saver() }
+            onReady: () => { saver() },
+            onChange: () => { saver() },
         });
     // eslint-disable-next-line
     }, []);
@@ -64,6 +65,10 @@ const PostCreation = (props) => {
         content: [],
         background: null,
     });
+
+    // useEffect( () => {
+    //     console.log(state);
+    // }, [state])
 
     const gettingBgIntoState = () => {
         if (document.getElementById('background').files[0]) {
@@ -84,10 +89,10 @@ const PostCreation = (props) => {
     const saver = () => {
         dataRef.current.save()
             .then((outputData) => {
-                setState({
+                setState(state =>({
                     ...state,
                     content: outputData.blocks
-                });
+                }))
             })
             .catch((error) => {
                 console.log('Saving failed: ', error)
