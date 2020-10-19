@@ -38,7 +38,7 @@ const PostPage = (props) => {
                         {
                             Array.from(content || [])
                                 .map(
-                                    item => <PostDebouncer key={ item.id } data={item.data} type={item.type}/>
+                                    item => <PostDebouncer key={ content.indexOf(item) } data={item.data} type={item.type}/>
                                 )
                         }
                     </section>
