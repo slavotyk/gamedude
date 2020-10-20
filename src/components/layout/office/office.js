@@ -90,7 +90,7 @@ class Office extends Component {
 
         this.setState({
             modal: {
-                title: `${title}"`,
+                title: `${title}`,
                 content: `Успешно опубликован`,
                 buttons: [
                     {
@@ -160,7 +160,7 @@ class Office extends Component {
             </div>
         )
     };
-};
+}
 
 function mapStateToProps(state) {
     return {
