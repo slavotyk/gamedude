@@ -22,6 +22,7 @@ import PostCreation from "./components/layout/office/PostCreation/PostCreation";
 import UserPage from "./components/layout/user/userpage";
 
 import Error from './components/layout/error/404';
+import ScrollToTop from "./components/scrollToTop";
 
 
 
@@ -30,6 +31,7 @@ function App() {
   return (
       <BrowserRouter>
         <div className="App">
+            <ScrollToTop/>
             <Switch>
                 <Route exact path='/' component={Landing} />
                 <Route path='/search' component={SearchResult} />
