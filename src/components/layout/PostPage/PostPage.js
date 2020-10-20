@@ -8,19 +8,22 @@ import { NavLink } from 'react-router-dom';
 
 import './PostPage.scss';
 import PostDebouncer from "./PostDebouncer/PostDebouncer";
+import AuthorBadge from "./AuthorBadge/AuthorBadge";
 
 
 
 const PostPage = (props) => {
 
+    // console.log(props);
 
     const { post } = props;
 
     if (post) {
-        const { title, content, background, gameName, gameId } = post;
+        const { title, content, background, gameName, gameId, authorId } = post;
         const style={
             background: `url(${ background }) no-repeat center top/cover`
         };
+        // console.log(post);
 
 
         return (
@@ -41,7 +44,11 @@ const PostPage = (props) => {
                                     item => <PostDebouncer key={ content.indexOf(item) } data={item.data} type={item.type}/>
                                 )
                         }
+
+                        <AuthorBadge id={authorId} />
+
                     </section>
+
                 </div>
             </div>
         )
@@ -57,6 +64,11 @@ const PostPage = (props) => {
 const mapStateToProps = (state) => {
     const { post } = state.firestore.data;
 
+    // console.log(post);
+
+    // if (post.authorId)
+
+    // console.log('props');
     return {
         post,
         auth: state.firebase.auth,
@@ -70,6 +82,6 @@ export default compose(
             collection: 'posts',
             doc: props.match.params.id,
             storeAs: 'post'
-        }
+        },
     ])
 )(PostPage);
