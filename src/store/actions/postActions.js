@@ -16,14 +16,15 @@ export const createPost = async (post) => {
   const backgroundUrl = await uploadFile(storageRef, post.background);
 
   const authorId = firebase.auth().currentUser.uid;
-  await firestorePostRef.add({
-          title: post.title,
-          gameId: post.gameId,
-          content: post.content,
-          background: backgroundUrl,
-          authorId: authorId,
-          createdAt: new Date()
-        });
+    await firestorePostRef.add({
+        title: post.title,
+        gameId: post.gameId,
+        gameName: post.gameName,
+        content: post.content,
+        background: backgroundUrl,
+        authorId: authorId,
+        createdAt: new Date(),
+    });
 
   // return async (dispatch, getState, {getFirestore, getFirebase}) => {
   //   try {

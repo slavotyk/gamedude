@@ -49,6 +49,17 @@
             font-size: 16px;
             line-height: 27px;
         }
+
+        & a {
+            text-decoration: underline;
+        }
+
+        & b {
+            font-weight: bold;
+        }
+        & i {
+            font-style: italic;
+        }
     }
 
     &__embed{
