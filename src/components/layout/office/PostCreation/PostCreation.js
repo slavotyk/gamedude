@@ -74,6 +74,7 @@ const PostCreation = (props) => {
     const [state, setState] = useState({
         title: '',
         gameId: '',
+        gameName: '',
         content: [],
         background: null,
     });
@@ -131,8 +132,8 @@ const PostCreation = (props) => {
             );
     };
 
-    const gameChangeHandler = ( game ) => {
-        setState({...state, gameId: game});
+    const gameChangeHandler = ( game, gameName ) => {
+        setState({...state, gameId: game, gameName: gameName});
     };
 
     return(

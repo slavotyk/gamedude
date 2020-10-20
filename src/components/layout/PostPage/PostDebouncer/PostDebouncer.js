@@ -3,7 +3,7 @@ import React from 'react';
 
 const PostDebouncer = ({data, type}) => {
 
-    console.log(data);
+    // console.log(data);
     function createMarkup() {
         return {__html: data.text};
     }
@@ -13,10 +13,11 @@ const PostDebouncer = ({data, type}) => {
     if (type === 'embed') {
         return (
             <iframe className='post-page__embed'
+                    title={data.caption}
                     src={data.embed}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen></iframe>
+                    allowFullScreen/>
 
         )
     }
