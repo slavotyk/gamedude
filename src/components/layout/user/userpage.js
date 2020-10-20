@@ -42,8 +42,6 @@ const UserPage = (props) => {
         // eslint-disable-next-line
     }, [userState.posts]);
 
-    console.log(userState);
-
     return (
         <section className='userWrapper'>
             <section className='userWrapper_profile'>
