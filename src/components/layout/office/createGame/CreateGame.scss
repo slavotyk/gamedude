@@ -4,6 +4,9 @@
     padding: 15px;
 
     &__input{
+        clear: left;
+        float: left;
+        position: relative;
         width: 300px;
         font-size: 16px;
         margin: 0 0 16px 0;
@@ -15,6 +18,12 @@
 
         &:focus{
             border: 1px solid #9B5DF7;
+        }
+        &[type='checkbox']{
+            width: 20px;
+            height: 20px;
+            float: left;
+            margin-right: 16px;
         }
     }
 

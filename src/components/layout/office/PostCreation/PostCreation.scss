@@ -46,7 +46,7 @@
         &_gamePicker{
             position: relative;
             width: calc(900px);
-            margin: 10px 10px 0 130px;
+            margin: 10px 10px 0 0;
             box-sizing: border-box;
             transition: 1s;
             background: transparent;
@@ -116,7 +116,8 @@
     }
 
     &__container{
-        margin: 80px 130px 0 130px;
+        margin: 80px 130px 200px 130px;
+        height: auto;
     }
 }
 
@@ -135,7 +136,16 @@
 }
 .codex-editor{
     padding-top: 32px;
-    background: #222222;
+    //background: #222222;
+    height: auto;
+    margin-bottom: 64px;
+    &__redactor{
+        height: auto;
+    }
+}
+#editorjs {
+    height: auto;
+    margin-bottom: 64px;
 }
 .cdx{
     &-settings-button{

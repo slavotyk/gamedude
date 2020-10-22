@@ -23,6 +23,8 @@ export const createPost = async (post) => {
         content: post.content,
         background: backgroundUrl,
         authorId: authorId,
+        isPR: post.isPR,
+        linkToPR: post.linkToPR,
         createdAt: new Date(),
     });
 

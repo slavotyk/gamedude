@@ -12,20 +12,35 @@ import './AuthorBadge.scss';
 
 const AuthorBadge = (props) => {
 
-    const {user} = props;
+    const {user, isPR, linkToPR} = props;
 
     if (props.user) {
 
         const userFullName = user.firstName + ' ' + user.lastName;
-        return (
-            <NavLink to={`/users/${ props.id }`}>
-                <div className='authorBadge'>
 
-                    <img src={user.avatar} alt={userFullName} className='authorBadge_avatar'/>
-                    <span className='authorBadge_name'>{userFullName}</span>
-                </div>
-            </NavLink>
-        )
+        if (isPR === true) {
+            return (
+                <>
+                    <div className='authorBadge'>
+                        {/*<img src={user.avatar} alt={userFullName} className='authorBadge_avatar'/>*/}
+                        <span className='authorBadge_disclaimer'>
+                            Данная публикация является пресс-релизом, чтобы ознакомиться с&nbsp;полной информацией данного пресс-релиза перейдите по&nbsp;<a href={linkToPR} rel="noopener noreferrer" target='_blank'>ссылке</a>.
+                        </span>
+                        {/*<span className='authorBadge_name'>{userFullName}</span>*/}
+                    </div>
+                </>
+            )
+        } else {
+            return (
+                <NavLink to={`/users/${ props.id }`}>
+                    <div className='authorBadge'>
+
+                        <img src={user.avatar} alt={userFullName} className='authorBadge_avatar'/>
+                        <span className='authorBadge_name'>{userFullName}</span>
+                    </div>
+                </NavLink>
+            )
+        }
     } else {
         return (
             <div className="authorBadge">

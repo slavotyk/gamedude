@@ -19,7 +19,7 @@ const PostPage = (props) => {
     const { post } = props;
 
     if (post) {
-        const { title, content, background, gameName, gameId, authorId } = post;
+        const { title, content, background, gameName, gameId, authorId, isPR, linkToPR } = post;
         const style={
             background: `url(${ background }) no-repeat center top/cover`
         };
@@ -45,7 +45,7 @@ const PostPage = (props) => {
                                 )
                         }
 
-                        <AuthorBadge id={authorId} />
+                        <AuthorBadge id={authorId} isPR={isPR} linkToPR={linkToPR}/>
 
                     </section>
 

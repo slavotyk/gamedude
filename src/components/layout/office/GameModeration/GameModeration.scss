@@ -10,4 +10,16 @@
         padding: 0 !important;
         position: relative;
     }
+
+}
+.label{
+    clear: left;
+    float: left !important;
+    width: calc(100%) !important;
+    position: relative !important;
+    display: inline-block !important;
+    margin-bottom: 8px;
+    &_text{
+        clear: none;
+    }
 }

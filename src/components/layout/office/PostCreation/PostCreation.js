@@ -77,6 +77,8 @@ const PostCreation = (props) => {
         gameName: '',
         content: [],
         background: null,
+        isPR: false,
+        linkToPR: ''
     });
 
     // useEffect( () => {
@@ -99,6 +101,14 @@ const PostCreation = (props) => {
         });
     }
 
+    const gettingPRLinkIntoState = (data) => {
+        const linkToPR = document.getElementById('linkToPR').value
+        setState({
+            ...state,
+            linkToPR: linkToPR
+        });
+    }
+
     const saver = () => {
         dataRef.current.save()
             .then((outputData) => {
@@ -112,12 +122,29 @@ const PostCreation = (props) => {
             });
     }
 
+    const isPRhandler = () => {
+        if (state.isPR === true) {
+            setState(state =>({
+                ...state,
+                isPR: !state.isPR,
+                linkToPR: ''
+
+            }))
+        } else {
+            setState(state =>({
+                ...state,
+                isPR: !state.isPR,
+            }))
+        }
+
+    }
 
     const onSubmit = () => {
         // Post Blocks
 
         if ((state.background !== 'null') && (state.content !== [])) {
             createPost(state)
+            // console.log(state)
         }
     };
 
@@ -142,13 +169,28 @@ const PostCreation = (props) => {
             <div className="moderation__wrapper">
                 <form onSubmit={handleSubmit(onSubmit)}>
 
-                    <label htmlFor="background">Заголовок</label><br/>
+                    <label htmlFor="title" className="label">Заголовок</label><br/>
                     <input name='title' id="title" className="create-game-form__input" onChange={gettingTitleIntoState} ref={register}/><br/>
-                    <label htmlFor="background">Обложка</label><br/>
+                    <label htmlFor="background" className="label">Обложка</label><br/>
                     <input type="file" id="background" name="background" className="create-game-form__input" onChange={gettingBgIntoState} ref={register}/>
                     <Autocomplete getSuggestions={getSuggestions} inputClassName={"create-post__input_gamePicker"} placeholder="Выберите про какую игру ваш пост" onChange={ gameChangeHandler }/>
                     <div id='editorjs'  ref={register}/>
-                    <input type="submit" className="office__button" value="Сохранить"/>
+                    <div>
+                        <label htmlFor="isPR" className="label">Является ли статья пресс-релизом со стороннего ресурса?</label>
+                        <input type="checkbox" className="create-game-form__input" id="isPR" name="isPR" ref={register} onChange={isPRhandler}/>
+                        <label htmlFor="isPR" className="label_text">Да</label>
+                        {state.isPR ?
+                            <>
+                                <br/>
+                                <label htmlFor="linkToPR" className="label">Ссылка на оригинал / источник</label>
+                                <input name='linkToPR' id="linkToPR" ref={register} className="create-game-form__input" onChange={gettingPRLinkIntoState} /><br/>
+                            </>
+                            :
+                            <></>
+                        }
+                    </div>
+                    <br/>
+                    <input type="submit" className="office__button office__button_newLine" value="Сохранить"/>
                 </form>
 
             </div>
