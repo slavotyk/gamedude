@@ -1,14 +1,14 @@
 import React from 'react';
-
+import {TypografText} from "../../../common/Typograf/TypografText";
 
 const PostDebouncer = ({data, type}) => {
 
-    // console.log(data);
     function createMarkup() {
-        return {__html: data.text};
+        const outerMarkup = TypografText(data.text);
+        return {__html:outerMarkup};
     }
     if (type === 'header') {
-        return (<h2 className='post-page__h2'>{data.text}</h2>)
+        return (<h2 className='post-page__h2'>{TypografText(data.text)}</h2>)
     }
     if (type === 'embed') {
         return (
