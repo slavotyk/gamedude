@@ -143,7 +143,7 @@ const PostCreation = (props) => {
         // Post Blocks
 
         if ((state.background !== 'null') && (state.content !== [])) {
-            createPost(state)
+            // createPost(state)
             // console.log(state)
         }
     };

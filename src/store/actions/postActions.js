@@ -3,15 +3,15 @@ import * as firebase from "firebase";
 
 export const createPost = async (post) => {
 
-  console.log('start');
-  console.log(post);
+  // console.log('start');
+  // console.log(post);
   const db = firebase.firestore();
   const firestorePostRef = db.collection('posts');
 
   const storage = firebase.storage();
   const storageRef = storage.ref().child('posts');
 
-  console.log('start uploading...');
+  // console.log('start uploading...');
 
   const backgroundUrl = await uploadFile(storageRef, post.background);
 
