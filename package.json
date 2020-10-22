@@ -22,7 +22,8 @@
     "redux": "^4.0.5",
     "redux-firestore": "^0.8.0",
     "redux-thunk": "^2.3.0",
-    "typograf": "^6.11.2"
+    "typograf": "^6.11.2",
+    "webp-converter": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
