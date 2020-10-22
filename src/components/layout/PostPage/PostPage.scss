@@ -91,12 +91,12 @@
         /* or 133% */
         color: #FFFFFF;
         text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-        margin-top: 0 !important;
+        margin-top: 32px !important;
         //margin-left: 130px;
         margin-bottom: 0 !important;
         @media (min-width: 800px) and (max-width: 1440px) {
             margin-left: 0 !important;
-            padding-left: 130px !important;
+            padding-left: 0 !important;
         }
     }
 
