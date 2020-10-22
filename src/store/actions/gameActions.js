@@ -1,6 +1,8 @@
 import {uploadFile} from './helpers';
 // import {getFirestore} from "redux-firestore";
-import * as firebase from "firebase";
+import * as firebase from "firebase/app";
+import 'firebase/firestore'; // If using Firebase database
+import 'firebase/storage';  // If using Firebase storage
 
 export const createGame = (game) => {
   return async (dispatch, getState, {getFirestore, getFirebase}) => {
