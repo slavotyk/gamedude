@@ -4,10 +4,14 @@ import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import moment from 'moment';
+import 'moment/locale/ru';
+
 
 import PostCard from '../../../common/PostCard/PostCard';
 
 import './MainLastPosts.scss';
+
+moment.locale('ru');
 
 export const MainLastPosts = (props) => {
     const { posts } = props;
@@ -27,7 +31,7 @@ export const MainLastPosts = (props) => {
                             )
                             .slice(0, 4)
                             .map(
-                                post => <PostCard key={ post.id } id={post.id} title={ post.title } poster={post.background} game={ post.game } date={ moment(post.createdAt.toDate().toString()).format('D.MM.YYYY') }/>
+                                post => <PostCard key={ post.id } id={post.id} title={ post.title } poster={post.background} game={ post.game } date={ moment(post.createdAt.toDate()).format('DD MMM YYYY') }/>
                             )
                     }
                 </div>
