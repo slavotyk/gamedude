@@ -10,7 +10,7 @@
 
 .mainWrapper{
   position: relative;
-  margin: 0 auto;
+  margin: 0 auto 100px auto !important;
   height: auto;
   min-height: 100vh;
   background: transparent;
@@ -121,7 +121,7 @@
 
 @media (min-width: 800px) and (max-width: 1440px) {
   .mainWrapper{
-    margin: 0 !important;
+    margin: 0 auto 100px auto !important;
   }
   h1{
     position: relative;
