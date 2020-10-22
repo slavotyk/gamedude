@@ -9,6 +9,7 @@ import { NavLink } from 'react-router-dom';
 import './PostPage.scss';
 import PostDebouncer from "./PostDebouncer/PostDebouncer";
 import AuthorBadge from "./AuthorBadge/AuthorBadge";
+import {TypografText} from "../../common/Typograf/TypografText";
 
 
 
@@ -32,7 +33,7 @@ const PostPage = (props) => {
                 <div className="post-page__cover" style={ style }> </div>
                 <div className='mainWrapper'>
                     <section className="post-page">
-                        <h1 className='post-page__title'>{title}</h1>
+                        <h1 className='post-page__title'>{TypografText(title)}</h1>
                         <NavLink to={`/games/${ gameId }`} className="post-page__game">{gameName}</NavLink>
                         {/*<div className='post-page__img'>*/}
                         {/*    <img alt="" src={ background } className='post-page__img_blur'/>*/}
