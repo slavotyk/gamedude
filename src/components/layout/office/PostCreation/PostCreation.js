@@ -11,6 +11,8 @@ import { useForm } from 'react-hook-form';
 import EditorJS from "@editorjs/editorjs";
 import Header from '@editorjs/header';
 import Embed from '@editorjs/embed';
+import List from '@editorjs/list';
+
 import Autocomplete from "../../../common/Autocomplete/Autocomplete";
 import {createPost} from "../../../../store/actions/postActions";
 
@@ -42,7 +44,10 @@ const PostCreation = (props) => {
                         }
                     }
                 },
-
+                list: {
+                    class: List,
+                    inlineToolbar: true,
+                },
             },
             data: {
                     time: 1556098174501,
@@ -81,9 +86,9 @@ const PostCreation = (props) => {
         linkToPR: ''
     });
 
-    // useEffect( () => {
-    //     console.log(state);
-    // }, [state])
+    useEffect( () => {
+        console.log(state);
+    }, [state])
 
     const gettingBgIntoState = () => {
         if (document.getElementById('background').files[0]) {
