@@ -33,8 +33,8 @@ const AuthorBadge = (props) => {
         } else {
             return (
                 <NavLink to={`/users/${ props.id }`}>
+                    <meta itemProp="author" content={userFullName}/>
                     <div className='authorBadge'>
-
                         <img src={user.avatar} alt={userFullName} className='authorBadge_avatar'/>
                         <span className='authorBadge_name'>{userFullName}</span>
                     </div>
