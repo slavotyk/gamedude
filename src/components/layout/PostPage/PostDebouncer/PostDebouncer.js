@@ -21,6 +21,34 @@ const PostDebouncer = ({data, type}) => {
 
         )
     }
+    if (type === 'list') {
+        if (data.style === 'ordered') {
+            return (
+                <ol>
+                    {
+                        Array.from(data.items || [])
+                            .map(
+                                item => <li key={data.items.indexOf(item)}>item</li>
+                                // item => console.log(item)
+                            )
+                    }
+                </ol>
+            )
+        }
+        if (data.style === 'unordered') {
+            return (
+                <ul>
+                    {
+                        Array.from(data.items || [])
+                            .map(
+                                item => <li key={data.items.indexOf(item)}>item</li>
+                                // item => console.log(item)
+                            )
+                    }
+                </ul>
+            )
+        }
+    }
 
     return(
         <>
