@@ -1,7 +1,8 @@
 import React from 'react';
-import './App.scss';
-
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import {Helmet} from 'react-helmet';
+
+import './App.scss';
 
 import Navbar from './components/layout/nav/navbar';
 import Footer from './components/layout/footer/footer';
@@ -29,33 +30,39 @@ import ScrollToTop from "./components/scrollToTop";
 
 function App() {
   return (
-      <BrowserRouter>
-        <div className="App">
-            <ScrollToTop/>
-            <Switch>
-                <Route exact path='/' component={Landing} />
-                <Route path='/search' component={SearchResult} />
+      <>
+          <Helmet>
+              <meta charSet="utf-8"/>
+              <title>GameDude сервис поиска информации про игры</title>
+          </Helmet>
+          <BrowserRouter>
+              <div className="App">
+                  <ScrollToTop/>
+                  <Switch>
+                      <Route exact path='/' component={Landing}/>
+                      <Route path='/search' component={SearchResult}/>
 
-                <Route path='/games/:id' component={GamePage} />
-                <Route path='/posts/:id' component={PostPage} />
+                      <Route path='/games/:id' component={GamePage}/>
+                      <Route path='/posts/:id' component={PostPage}/>
 
-                <Route path='/users/:id' component={UserPage} />
+                      <Route path='/users/:id' component={UserPage}/>
 
-                <Route path='/back-office/games/:id' component={GameEditor} />
-                <Route path='/back-office/gamesModeration' component={GameModeration} />
-                <Route path='/back-office/postCreation' component={PostCreation} />
-                <Route path='/back-office' component={Office} />
+                      <Route path='/back-office/games/:id' component={GameEditor}/>
+                      <Route path='/back-office/gamesModeration' component={GameModeration}/>
+                      <Route path='/back-office/postCreation' component={PostCreation}/>
+                      <Route path='/back-office' component={Office}/>
 
-                <Route path='/signin' component={SignIn} />
-                <Route path='/signup' component={SignUp} />
+                      <Route path='/signin' component={SignIn}/>
+                      <Route path='/signup' component={SignUp}/>
 
-                <Route component={Error} />
-            </Switch>
-            <Navbar/>
-            <Footer/>
+                      <Route component={Error}/>
+                  </Switch>
+                  <Navbar/>
+                  <Footer/>
 
-        </div>
-      </BrowserRouter>
+              </div>
+          </BrowserRouter>
+      </>
   );
 }
 
