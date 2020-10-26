@@ -99,11 +99,6 @@ export default compose(
         {
             collection: 'users',
             doc: props.match.params.id,
-            // where: [
-            //     'userId',
-            //     '==',
-            //     props.match.params.id
-            // ],
             storeAs: 'user'
         },
         {

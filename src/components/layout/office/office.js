@@ -1,172 +1,120 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { createGame } from '../../../store/actions/gameActions';
-import { createPost } from '../../../store/actions/postActions';
-import { updateAvatar } from '../../../store/actions/authActions';
-import {NavLink, Redirect} from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
 
-import CreateGame from './createGame/CreateGame';
-// import CreatePost from './PostCreation/PostCreation';
-import ModalWindow from '../../common/modalWindow/ModalWindow';
+import {connect} from 'react-redux';
+import {firestoreConnect} from 'react-redux-firebase';
+import {compose} from 'redux';
 
+import { NavLink } from 'react-router-dom';
+
+// import './AuthorBadge.scss';
 import './office.scss';
+// import CreateGame from "./createGame/CreateGame";
 
 
+const Office = (props) => {
 
-class Office extends Component {
+    const {auth, user, gamePosts} = props;
+    const [userState, setUserState] = useState({
+        fullName: 'Загружаем...',
+        avatar: '',
+        email: 'Загружаем...',
+        posts: null,
+        isAdmin: false,
+    });
 
-    state = {
-        showCreateGameForm: false,
-        showCreatePost: false,
-        showGameModeration: false,
-        modal: null
+    useEffect(() => {
+        auth && user && gamePosts && setUserState({
+            ...userState,
+            email: auth.email,
+            fullName: user.firstName + ' ' + user.lastName,
+            avatar: user.avatar,
+            posts: gamePosts.gamePosts,
+            isAdmin: user.isAdmin,
+        });
+        // eslint-disable-next-line
+    }, [auth, user, gamePosts])
+
+    // console.log(userState);
+
+    const avatarStyle = {
+        background: userState.avatar && `url(${userState.avatar}) no-repeat center top/cover`
     };
 
-
-    showCreatePost = () => {
-        this.setState({ showCreatePost: true });
-    }
-
-    hideCreatePost = () => {
-        this.setState({ showCreatePost: false });
-    }
-
-    showCreateGameForm = () => {
-        this.setState({ showCreateGameForm: true });
-    }
-
-    hideCreateGameForm = () => {
-        this.setState({ showCreateGameForm: false });
-    }
-
-    hideModal = () => this.setState({ modal: null });
-
-
-    setAvatar = (e) =>{
-        const { auth, updateAvatar } = this.props;
-        const { uid } = auth;
-
-        updateAvatar(uid, e.target.files[0]);
-    }
-
-    showError() {
-        this.setState({
-            modal: {
-                title: 'Ошибка',
-                content: 'Поля, отмеченные звездочкой, обязательны для заполнения!!!',
-                buttons: [
-                    {
-                        label: "OK",
-                        onClick: this.hideModal
-                    }
-                ]
-            }
-        });
-    }
-
-    showSuccess(gameTitle) {
-        this.setState({
-            modal: {
-                title: `Игра ${gameTitle}`,
-                content: 'успешно добавлена в базу данных',
-                buttons: [
-                    {
-                        label: "Добавить ещё",
-                        onClick: ()=> {
-                            this.hideModal();
-                            this.showCreateGameForm();
-                        }
-                    },
-                    {
-                        label: "Готово",
-                        onClick: this.hideModal
-                    }
-                ]
-            }
-        });
-    }
-
-    showSuccessPost({title}) {
-
-        this.setState({
-            modal: {
-                title: `${title}`,
-                content: `Успешно опубликован`,
-                buttons: [
-                    {
-                        label: "ДОБАВИТЬ ЕЩЕ",
-                        onClick: ()=> {
-                            this.hideModal();
-                            this.showCreatePost();
-                        }
-                    },
-                    {
-                        label: "ОТМЕНА",
-                        onClick: this.hideModal
-                    }
-                ]
-            }
-        });
-    }
-
-
-    saveGame = (newGame) => {
-        if (!(newGame.title && newGame.poster)) {
-            return this.showError();
-        }
-
-        this.props.createGame(newGame);
-        this.hideCreateGameForm();
-        this.showSuccess(newGame.title);
-    }
-
-    savePost = (newPost) => {
-        this.props.createPost(newPost);
-        this.showSuccessPost(newPost);
-        this.hideCreatePost();
-    }
-
-    render(){
-        const {profile, auth} = this.props;
-        if (!auth.uid) return <Redirect to='/signin' />;
-        const avatarStyle = {
-            background: profile.avatar && `url(${profile.avatar}) no-repeat center top/cover`
-        };
-
-        return(
-            <div className='mainContainer'>
-                <div className='mainWrapper'>
-                    <div className="profile">
-                        <div className="profile__avatar" style={avatarStyle}>
-                            <label htmlFor="avatar">Загрузить фото</label>
-                            <input type="file" id="avatar" onChange={this.setAvatar}/>
-                        </div>
-                        <div className="profile__info">
-                            <div> Имя <br/> <b>{profile.firstName} {profile.lastName}</b> </div>
-                            <div> Email:<br/> <b>{auth.email}</b></div>
-                        </div>
+    return (
+        <div className='mainContainer'>
+            <div className="mainWrapper">
+                <div className="profile">
+                    <div className="profile__avatar" style={avatarStyle}>
+                        {/*<label htmlFor="avatar">Загрузить фото</label>*/}
+                        {/*<input type="file" id="avatar"/>*/}
+                        {/*<input type="file" id="avatar" onChange={this.setAvatar}/>*/}
                     </div>
-                    <div className='buttonsWrapper'>
-                    { this.state.showCreateGameForm === false ? <button className="office__button" onClick = {() => this.showCreateGameForm()}>Добавить игру</button> : <CreateGame onSave={ this.saveGame } onCancel={() => this.hideCreateGameForm()}/>}
+                    <div className="profile__info">
+                        <div> Имя: <br/> <b>{userState.fullName}</b></div>
+                        <div> Email:<br/> <b>{userState.email}</b></div>
+                    </div>
+                </div>
 
-                    { <NavLink to={`/back-office/postCreation`} className="office__button">Написать пост</NavLink>}
+                <div className='buttonsWrapper'>
 
+                    {/*<CreateGame onSave={this.saveGame} onCancel={() => this.hideCreateGameForm()}/>*/}
+                    <NavLink to={`/back-office/postCreation`} className="office__button">Написать пост</NavLink>
+                    {
+                        userState.posts !== null &&
+                        <NavLink to={`/back-office/postsModeration`}
+                                 className="office__button">
+                            Мои посты
+                        </NavLink>
+                    }
                     <br/>
-                    { profile.isAdmin && <NavLink to={`/back-office/gamesModeration`} className="office__button">Редактировать список игр</NavLink> }
+                    {
+                        userState.isAdmin &&
+                        <NavLink to={`/back-office/gamesModeration`}
+                                 className="office__button">
+                            Редактировать игры
+                        </NavLink>
+                    }
 
-                    </div>
-                    { this.state.modal && <ModalWindow { ...this.state.modal }/> }
                 </div>
             </div>
-        )
-    };
-}
+        </div>
+    )
 
-function mapStateToProps(state) {
+};
+
+const populates = [
+    { child: 'authorId', root: 'users', childAlias: 'author' }
+];
+
+
+const mapStateToProps = (state) => {
+    const user = state.firebase.profile;
+    const gamePosts = state.firestore.composite;
     return {
-        profile: state.firebase.profile,
-        auth: state.firebase.auth
-    };
-}
+        auth: state.firebase.auth,
+        gamePosts,
+        user
+    }
+};
 
-export default connect(mapStateToProps, {createGame, createPost, updateAvatar})(Office);
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect(props => [
+        {
+            collection: 'users',
+            doc: props.uid,
+            storeAs: 'user'
+        },
+        {
+            collection: 'posts',
+            where: [
+                'authorId',
+                '==',
+                props.auth.uid
+            ],
+            populates,
+            storeAs: 'gamePosts'
+        }
+    ])
+)(Office);
+
