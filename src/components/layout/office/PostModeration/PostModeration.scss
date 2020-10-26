@@ -1,0 +1,25 @@
+.moderation{
+    &__container{
+        margin: 130px 130px 0 130px;
+    }
+    &__wrapper{
+
+    }
+    &__heading{
+        margin: 16px 0 32px 0;
+        padding: 0 !important;
+        position: relative;
+    }
+
+}
+.label{
+    clear: left;
+    float: left !important;
+    width: calc(100%) !important;
+    position: relative !important;
+    display: inline-block !important;
+    margin-bottom: 8px;
+    &_text{
+        clear: none;
+    }
+}

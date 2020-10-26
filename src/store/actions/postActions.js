@@ -33,3 +33,36 @@ export const createPost = async (post) => {
     });
 
 };
+
+export const updatePost = async (post) => {
+
+    const db = firebase.firestore();
+    const firestorePostRef = db.collection('posts').doc(post.postId);
+    // console.log(firestorePostRef);
+    // const storage = firebase.storage();
+    // const storageRef = storage.ref().child('posts');
+
+    // console.log('we are in my friend');
+    // console.log(post.background);
+    // post.background = webpConverter(post.background);
+
+    // const backgroundUrl = await uploadFile(storageRef, post.background);
+
+    // const authorId = firebase.auth().currentUser.uid;
+
+    // console.log(post);
+    // console.log(await firestorePostRef.get())
+
+    await firestorePostRef.update({
+        title: post.title,
+        // gameId: post.gameId,
+        // gameName: post.gameName,
+        content: post.content,
+        // background: backgroundUrl,
+        // authorId: authorId,
+        isPR: post.isPR,
+        linkToPR: post.linkToPR,
+        modifiedAt: new Date(),
+    });
+
+};
