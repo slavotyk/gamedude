@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signUp } from '../../../store/actions/authActions'
-
+import RecaptchaComponent from "../../common/ReCaptcha/Recaptcha";
 import './Auth.scss';
 
 class SignUp extends Component {
@@ -19,6 +19,7 @@ class SignUp extends Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
+    console.log(RecaptchaComponent)
     this.props.signUp(this.state);
   };
   render() {
@@ -33,6 +34,7 @@ class SignUp extends Component {
             <input type="text" className="auth-form__input" placeholder="Фамилия" id='lastName' onChange={this.handleChange} />
             <input type="email" className="auth-form__input" placeholder="Email" id='email' onChange={this.handleChange} />
             <input type="password" className="auth-form__input" placeholder="Пароль" id='password' onChange={this.handleChange} />
+            <RecaptchaComponent/>
             <button className="auth-form__button">ЗАРЕГИСТРИРОВАТЬСЯ</button>
             <div>
               { authError ? <p className="auth-form__error">{authError}</p> : null }
