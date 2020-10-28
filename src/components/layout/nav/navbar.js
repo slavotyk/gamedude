@@ -10,8 +10,8 @@ const Navbar = (props) => {
     const links = auth.uid ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
 
     return (
-        <header className="navigationContainer" itemscope itemtype="https://schema.org/WPHeader">
-            <nav className="navigationWrapper" itemscope itemtype="https://schema.org/SiteNavigationElement">
+        <header className="navigationContainer" itemScope itemType="https://schema.org/WPHeader">
+            <nav className="navigationWrapper" itemScope itemType="https://schema.org/SiteNavigationElement">
 
                 <NavLink to='/' className='logo'> </NavLink>
                 <SearchBar/>
