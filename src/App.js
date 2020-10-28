@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React, {useEffect} from 'react';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import {Helmet} from 'react-helmet';
 
 import './App.scss';
@@ -27,47 +27,52 @@ import UserPage from "./components/layout/user/userpage";
 import Error from './components/layout/error/404';
 import ScrollToTop from "./components/scrollToTop";
 
+import {loadReCaptcha} from 'react-recaptcha-google';
 
 
+const App = () => {
 
-function App() {
-  return (
-      <>
-          <Helmet>
-              <meta charSet="utf-8"/>
-              <title>GameDude сервис поиска информации про игры</title>
-          </Helmet>
-          <BrowserRouter>
-              <div className="App">
-                  <ScrollToTop/>
-                  <Switch>
-                      <Route exact path='/' component={Landing}/>
-                      <Route path='/search' component={SearchResult}/>
+    useEffect(() => {
+        loadReCaptcha();
+    }, [])
 
-                      <Route path='/games/:id' component={GamePage}/>
-                      <Route path='/posts/:id' component={PostPage}/>
+    return (
+        <>
+            <Helmet>
+                <meta charSet="utf-8"/>
+                <title>GameDude сервис поиска информации про игры</title>
+            </Helmet>
+            <BrowserRouter>
+                <div className="App">
+                    <ScrollToTop/>
+                    <Switch>
+                        <Route exact path='/' component={Landing}/>
+                        <Route path='/search' component={SearchResult}/>
 
-                      <Route path='/users/:id' component={UserPage}/>
+                        <Route path='/games/:id' component={GamePage}/>
+                        <Route path='/posts/:id' component={PostPage}/>
 
-                      <Route path='/back-office/games/:id' component={GameEditor}/>
-                      <Route path='/back-office/posts/:id' component={PostEditor}/>
-                      <Route path='/back-office/gamesModeration' component={GameModeration}/>
-                      <Route path='/back-office/postsModeration' component={PostModeration}/>
-                      <Route path='/back-office/postCreation' component={PostCreation}/>
-                      <Route path='/back-office' component={Office}/>
+                        <Route path='/users/:id' component={UserPage}/>
 
-                      <Route path='/signin' component={SignIn}/>
-                      <Route path='/signup' component={SignUp}/>
+                        <Route path='/back-office/games/:id' component={GameEditor}/>
+                        <Route path='/back-office/posts/:id' component={PostEditor}/>
+                        <Route path='/back-office/gamesModeration' component={GameModeration}/>
+                        <Route path='/back-office/postsModeration' component={PostModeration}/>
+                        <Route path='/back-office/postCreation' component={PostCreation}/>
+                        <Route path='/back-office' component={Office}/>
 
-                      <Route component={Error}/>
-                  </Switch>
-                  <Navbar/>
-                  <Footer/>
+                        <Route path='/signin' component={SignIn}/>
+                        <Route path='/signup' component={SignUp}/>
 
-              </div>
-          </BrowserRouter>
-      </>
-  );
+                        <Route component={Error}/>
+                    </Switch>
+                    <Navbar/>
+                    <Footer/>
+
+                </div>
+            </BrowserRouter>
+        </>
+    );
 }
 
 export default App;
