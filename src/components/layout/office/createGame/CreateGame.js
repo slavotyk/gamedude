@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './CreateGame.scss';
 
-class CreateGame extends Component {
+class GameCreation extends Component {
     state = {
         title: '',
         developer: '',
@@ -117,4 +117,4 @@ class CreateGame extends Component {
     }
 }
 
-export default CreateGame;
+export default GameCreation;

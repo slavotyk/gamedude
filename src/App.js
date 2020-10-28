@@ -19,6 +19,7 @@ import Office from './components/layout/office/office';
 import GameModeration from "./components/layout/office/GameModeration/GameModeration";
 import PostModeration from "./components/layout/office/PostModeration/PostModeration";
 import GameEditor from "./components/layout/office/GameModeration/GameEditor/GameEditor";
+import GameCreation from "./components/layout/office/createGame/CreateGame";
 import PostEditor from "./components/layout/office/PostModeration/PostEditor/PostEditor";
 import PostCreation from "./components/layout/office/PostCreation/PostCreation";
 
@@ -56,6 +57,8 @@ const App = () => {
 
                         <Route path='/back-office/games/:id' component={GameEditor}/>
                         <Route path='/back-office/posts/:id' component={PostEditor}/>
+
+                        <Route path='/back-office/gameCreation' component={GameCreation}/>
                         <Route path='/back-office/gamesModeration' component={GameModeration}/>
                         <Route path='/back-office/postsModeration' component={PostModeration}/>
                         <Route path='/back-office/postCreation' component={PostCreation}/>
