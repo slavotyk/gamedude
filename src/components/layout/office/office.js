@@ -67,6 +67,7 @@ const Office = (props) => {
                         </NavLink>
                     }
                     <br/>
+                    <NavLink to={`/back-office/gameCreation`} className="office__button">Добавить игру</NavLink>
                     {
                         userState.isAdmin &&
                         <NavLink to={`/back-office/gamesModeration`}

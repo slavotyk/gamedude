@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
@@ -9,6 +9,45 @@ import {NavLink} from "react-router-dom";
 
 const GameEditor = (props) => {
     const {game} = props;
+
+    const [gameState, setGameState] = useState({
+        title: '',
+        developer: '',
+        category: '',
+        keywords: '',
+        poster: '',
+        background: '',
+        linkWeb: '',
+        linkForum: '',
+        linkWiki: '',
+        linkVk: '',
+        linkYouTube: '',
+        linkTwitter: '',
+        linkFacebook: '',
+        linkInst: '',
+        linkTwitch: ''
+    });
+
+    useEffect(() => {
+        game && setGameState({
+            ...gameState,
+            title: game.title,
+            developer: game.developer,
+            category: game.category,
+            keywords: game.keywords,
+            poster: game.poster,
+            background: game.background,
+            linkWeb: game.linkWeb,
+            linkForum: game.linkForum,
+            linkWiki: game.linkWiki,
+            linkVk: game.linkVk,
+            linkYouTube: game.linkYouTube,
+            linkTwitter: game.linkTwitter,
+            linkFacebook: game.linkFacebook,
+            linkInst: game.linkInst,
+            linkTwitch: game.linkTwitch
+        })
+    }, [game])
 
     const { register, handleSubmit } = useForm();
 
@@ -28,51 +67,51 @@ const GameEditor = (props) => {
                     <NavLink to={`/back-office/gamesModeration`} className="office__button">Назад</NavLink>
 
                     <label htmlFor="title" className='label'>Game Title</label>
-                    <input name='title' defaultValue={game.title} className="create-game-form__input" ref={register}/>
+                    <input name='title' defaultValue={gameState.title} className="create-game-form__input" ref={register}/>
 
                     <label htmlFor="developer" className='label'>Game Developer</label>
-                    <input name="developer" defaultValue={game.developer} className="create-game-form__input" ref={register}/>
+                    <input name="developer" defaultValue={gameState.developer} className="create-game-form__input" ref={register}/>
 
                     <label htmlFor="category" className='label'>Game Category</label>
-                    <input name="category" defaultValue={game.category} className="create-game-form__input" ref={register}/>
+                    <input name="category" defaultValue={gameState.category} className="create-game-form__input" ref={register}/>
 
                     <label htmlFor="keywords" className='label'>Keywords</label>
-                    <input name="keywords" defaultValue={game.keywords} className="create-game-form__input" ref={register}/>
+                    <input name="keywords" defaultValue={gameState.keywords} className="create-game-form__input" ref={register}/>
 
                     <label htmlFor="poster" className='label'>Game Poster</label>
-                    <img className="create-game-form__imgPrev_poster" alt="poster" src={game.poster}/>
+                    <img className="create-game-form__imgPrev_poster" alt="poster" src={gameState.poster}/>
                     <input type="file" id="poster" name="poster" className="create-game-form__input" ref={register}/>
 
                     <label htmlFor="background" className='label'>Background</label>
-                    <img className="create-game-form__imgPrev_bg" alt="background" src={game.background}/>
+                    <img className="create-game-form__imgPrev_bg" alt="background" src={gameState.background}/>
                     <input type="file" id="background" name="background" className="create-game-form__input" ref={register}/>
 
                     <label htmlFor="linkWeb" className='label'>official WebPage*</label>
-                    <input type="text" name="linkWeb" defaultValue={game.linkWeb} className="create-game-form__input" ref={register}/>
+                    <input type="text" name="linkWeb" defaultValue={gameState.linkWeb} className="create-game-form__input" ref={register}/>
 
                     <label htmlFor="linkForum" className='label'>official (or biggest) Forum</label>
-                    <input type="text" name="linkForum" defaultValue={game.linkForum} className="create-game-form__input" ref={register}/>
+                    <input type="text" name="linkForum" defaultValue={gameState.linkForum} className="create-game-form__input" ref={register}/>
 
                     <label htmlFor="linkWiki" className='label'>Wikipedia page*</label>
-                    <input type="text" name="linkWiki" defaultValue={game.linkWiki} className="create-game-form__input" ref={register}/>
+                    <input type="text" name="linkWiki" defaultValue={gameState.linkWiki} className="create-game-form__input" ref={register}/>
 
                     <label htmlFor="linkVk" className='label'>VK.com page</label>
-                    <input type="text" name="linkVk" defaultValue={game.linkVk} className="create-game-form__input" ref={register}/>
+                    <input type="text" name="linkVk" defaultValue={gameState.linkVk} className="create-game-form__input" ref={register}/>
 
                     <label htmlFor="linkYouTube" className='label'>YouTube page</label>
-                    <input type="text" name="linkYouTube" defaultValue={game.linkYouTube} className="create-game-form__input" ref={register}/>
+                    <input type="text" name="linkYouTube" defaultValue={gameState.linkYouTube} className="create-game-form__input" ref={register}/>
 
                     <label htmlFor="linkTwitter" className='label'>Twitter page</label>
-                    <input type="text" name="linkTwitter" defaultValue={game.linkTwitter} className="create-game-form__input" ref={register}/>
+                    <input type="text" name="linkTwitter" defaultValue={gameState.linkTwitter} className="create-game-form__input" ref={register}/>
 
                     <label htmlFor="linkFacebook" className='label'>Facebook page*</label>
-                    <input type="text" name="linkFacebook" defaultValue={game.linkFacebook} className="create-game-form__input" ref={register}/>
+                    <input type="text" name="linkFacebook" defaultValue={gameState.linkFacebook} className="create-game-form__input" ref={register}/>
 
                     <label htmlFor="linkInst" className='label'>Instagram page</label>
-                    <input type="text" name="linkInst" defaultValue={game.linkInst} className="create-game-form__input" ref={register}/>
+                    <input type="text" name="linkInst" defaultValue={gameState.linkInst} className="create-game-form__input" ref={register}/>
 
                     <label htmlFor="linkTwitch" className='label'>Twitch page</label>
-                    <input type="text" name="linkTwitch" defaultValue={game.linkTwitch} className="create-game-form__input" ref={register}/>
+                    <input type="text" name="linkTwitch" defaultValue={gameState.linkTwitch} className="create-game-form__input" ref={register}/>
 
                     <br/>
                     <input type="submit" className="office__button office__button_newLine" value="Сохранить"/>
