@@ -28,26 +28,51 @@ const PostPage = (props) => {
 
                 <Helmet>
                     <title>{title}</title>
-                </Helmet>
-                <article className='mainContainer' itemscope itemtype="https://schema.org/Article">
+
                     {/*SEO-meta*/}
-                    {linkToPR !== '' ? <link itemProp="mainEntityOfPage" href={linkToPR}/> : <></>}
+                    <meta property="og:title" content={title} />
+                    {background !== '' ? <meta property="og:image" content={background}/> : <></>}
+                    <meta property="article:published_time" content={moment(createdAt.toDate()).format('YYYY-MM-DD')}
+                          content={moment(createdAt.toDate()).format('YYYY-MM-DD')} />
+                    <meta property="article:modified_time" content={moment(createdAt.toDate()).format('YYYY-MM-DD')}
+                          content={moment(createdAt.toDate()).format('YYYY-MM-DD')} />
+                    <meta property='og:site_name' content='Game Dude' />
+                </Helmet>
+
+                <article className='mainContainer' itemScope itemType="https://schema.org/Article">
                     {background !== '' ? <link itemProp="image" href={background}/> : <></>}
-                    <meta itemProp="headline name" content={title}/>
-                    <meta itemProp="description"
-                          content={content[0].data.text.replace(/<[^>]*>?/gm, '').substring(0, 147) + '...'}/>
-                    <meta itemProp="datePublished" datetime={moment(createdAt.toDate()).format('YYYY-MM-DD')}
+                    <div className="post-page__cover" style={style}> </div>
+                    <meta itemProp="datePublished" dateTime={moment(createdAt.toDate()).format('YYYY-MM-DD')}
                           content={moment(createdAt.toDate()).format('YYYY-MM-DD')}/>
                     {modifiedAt &&
-                    <meta itemProp="dateModified" datetime={moment(modifiedAt.toDate()).format('YYYY-MM-DD')}
+                    <meta itemProp="dateModified" dateTime={moment(modifiedAt.toDate()).format('YYYY-MM-DD')}
                           content={moment(modifiedAt.toDate()).format('YYYY-MM-DD')}/>}
+                    <meta itemProp="description"
+                          content={content[0].data.text.replace(/<[^>]*>?/gm, '').substring(0, 147) + '...'}/>
+                    {linkToPR !== '' ? <>
+                        <link itemProp="mainEntityOfPage" href={linkToPR}/>
+                        <link itemProp="author" content='user'/>
+                                    </> : <>
+                        <link itemProp="author" content='Press Release'/>
+                                    </>}
 
-                    <div className="post-page__cover" style={style}></div>
+                    <div itemProp="publisher" itemScope itemType="https://schema.org/Organization">
+
+                        <div itemProp="logo" itemScope itemType="https://schema.org/ImageObject">
+                            <meta itemProp="url" content="https://gamedude.ru/cover.jpg"/>
+                            <meta itemProp="width" content="300"/>
+                            <meta itemProp="height" content="300"/>
+                        </div>
+                        <meta itemProp="name" content="GameDude"/>
+
+                    </div>
+
                     <div className='mainWrapper'>
                         <section className="post-page">
+                            <meta itemProp="headline name" content={title}/>
                             <h1 className='post-page__title'>{TypografText(title)}</h1>
                             <NavLink to={`/games/${gameId}`} className="post-page__game">{gameName}</NavLink>
-                            <div itemprop="articleBody">
+                            <div itemProp="articleBody">
                                 {
                                     Array.from(content || [])
                                         .map(
