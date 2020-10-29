@@ -47,6 +47,7 @@ const GameEditor = (props) => {
             linkInst: game.linkInst,
             linkTwitch: game.linkTwitch
         })
+        // eslint-disable-next-line
     }, [game])
 
     const { register, handleSubmit } = useForm();

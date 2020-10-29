@@ -1,7 +1,7 @@
 .post-card{
     display: inline-block;
     width: 550px;
-    height: 320px;
+    height: 276px;
     border-radius: 4px;
     text-align: center;
     box-sizing: border-box;
@@ -52,13 +52,14 @@
         color: #fff;
         z-index: 10;
         height: auto;
+        min-height: 90px;
         width: calc( 100% - 40px);
         white-space: initial;
         margin: 0;
         opacity: 1;
         text-shadow: 0 4px 4px rgba(0, 0, 0, 0.35);
-        top: 166px;
-        left: 33px;
+        bottom: 32px;
+        left: 32px;
         right: 0;
         transition: 200ms;
         text-align: left;

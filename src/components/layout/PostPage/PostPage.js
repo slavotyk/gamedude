@@ -32,10 +32,6 @@ const PostPage = (props) => {
                     {/*SEO-meta*/}
                     <meta property="og:title" content={title} />
                     {background !== '' ? <meta property="og:image" content={background}/> : <></>}
-                    <meta property="article:published_time" content={moment(createdAt.toDate()).format('YYYY-MM-DD')}
-                          content={moment(createdAt.toDate()).format('YYYY-MM-DD')} />
-                    <meta property="article:modified_time" content={moment(createdAt.toDate()).format('YYYY-MM-DD')}
-                          content={moment(createdAt.toDate()).format('YYYY-MM-DD')} />
                     <meta property='og:site_name' content='Game Dude' />
                 </Helmet>
 
