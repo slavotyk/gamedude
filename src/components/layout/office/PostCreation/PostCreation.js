@@ -87,7 +87,7 @@ const PostCreation = (props) => {
     });
 
     useEffect( () => {
-        console.log(state);
+        // console.log(state);
     }, [state])
 
     const gettingBgIntoState = () => {
