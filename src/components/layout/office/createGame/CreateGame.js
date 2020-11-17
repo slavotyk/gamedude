@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import { createGame } from "../../../../store/actions/gameActions";
 import './CreateGame.scss';
 
 class GameCreation extends Component {
@@ -37,13 +38,12 @@ class GameCreation extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         const newGame = this.state;
-        const { onSave } = this.props;
 
-        onSave(newGame);
+        createGame(newGame);
     };
 
     render() {
-        const { onCancel } = this.props;
+        // const { onCancel } = this.props;
         return (
             <section>
                 <form onSubmit={this.handleSubmit} className="create-game-form">
@@ -109,7 +109,7 @@ class GameCreation extends Component {
                     </div>
                     <div>
                         <input type="submit" className="office__button office__button_newLine" value="Добавить"/>
-                        <button className="office__button office__button_newLine" onClick={ onCancel }>Отменить</button>
+                        {/*<button className="office__button office__button_newLine" onClick={ onCancel }>Отменить</button>*/}
                     </div>
                 </form>
             </section>

@@ -4,37 +4,39 @@ import * as firebase from "firebase/app";
 import 'firebase/firestore'; // If using Firebase database
 import 'firebase/storage';  // If using Firebase storage
 
-export const createGame = (game) => {
-  return async (dispatch, getState, {getFirestore, getFirebase}) => {
-    try {
-      const firebase = getFirebase();
-      const storageRef = firebase.storage().ref();
 
-      const { poster, background } = game;
 
-      const posterUrl = await uploadFile(storageRef, poster);
-      const backgroundUrl = await uploadFile(storageRef, background);
+export const createGame = async (game) => {
+  console.log(game);
+  const db = firebase.firestore();
+  const firestoreGameRef = db.collection('games');
 
-      const firestore = getFirestore();
-      const profile = getState().firebase.profile;
-      const authorId = getState().firebase.auth.uid;
+  // connecting to firebase
+  const storageRef = firebase.storage().ref();
 
-      await firestore.collection('games').add({
-        ...game,
-        poster: posterUrl,
-        background: backgroundUrl,
-        keywords: game.keywords.toLowerCase().split(','),
-        authorFirstName: profile.firstName,
-        authorLastName: profile.lastName,
-        authorId: authorId,
-        createdAt: new Date()
-      });
-
-      dispatch({ type: 'CREATE_PROJECT_SUCCESS' });
-    } catch (err) {
-      dispatch({ type: 'CREATE_PROJECT_ERROR' }, err);
-    }
+  if ((game.background.length === 0) || (game.background === '')) {
+    delete game.background;
+  } else {
+    // uploading new img
+    game.background = await uploadFile(storageRef, game.background);
   }
+
+  if ((game.poster.length === 0) || (game.poster === '')) {
+    delete game.poster;
+  } else {
+
+    // uploading new img
+    game.poster = await uploadFile(storageRef, game.poster);
+  }
+  await firestoreGameRef.add({
+    ...game,
+    keywords: game.keywords.toLowerCase().split(','),
+    createdAt: new Date()
+  }).then(function () {
+    // console.log("Document successfully written!");
+  }).catch(function (error) {
+    console.log("Error updating document: ", error);
+  });
 };
 
 export const updateGame = async (game, doc, newBg, newPoster, oldBg, oldPoster) => {
