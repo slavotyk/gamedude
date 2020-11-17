@@ -3,9 +3,14 @@ import {TypografText} from "../../../common/Typograf/TypografText";
 
 const PostDebouncer = ({data, type}) => {
 
-    function createMarkup() {
-        const outerMarkup = TypografText(data.text);
-        return {__html:outerMarkup};
+    function createMarkup(attr) {
+        if (attr) {
+            const outerMarkup = TypografText(attr);
+            return {__html:outerMarkup};
+        } else {
+            const outerMarkup = TypografText(data.text);
+            return {__html:outerMarkup};
+        }
     }
     if (type === 'header') {
         return (<h2 className='post-page__h2'>{TypografText(data.text)}</h2>)
@@ -41,7 +46,7 @@ const PostDebouncer = ({data, type}) => {
                     {
                         Array.from(data.items || [])
                             .map(
-                                item => <li key={data.items.indexOf(item)}>item</li>
+                                item => <li key={data.items.indexOf(item)} dangerouslySetInnerHTML={createMarkup(item)}/>
                                 // item => console.log(item)
                             )
                     }
