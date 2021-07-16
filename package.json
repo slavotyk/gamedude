@@ -7,7 +7,8 @@
     "@editorjs/header": "^2.6.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
-    "firebase": "^6.6.2",
+    "firebase": "^8.7.1",
+    "grpc": "^1.24.10",
     "moment": "^2.27.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -24,6 +25,7 @@
     "redux": "^4.0.5",
     "redux-firestore": "^0.8.0",
     "redux-thunk": "^2.3.0",
+    "request": "^2.88.2",
     "typograf": "^6.11.2",
     "webp-converter": "^2.3.0"
   },

@@ -1,6 +1,6 @@
 import {uploadFile} from './helpers';
 // import {getFirestore} from "redux-firestore";
-import * as firebase from "firebase/app";
+import firebase from "firebase/app";
 import 'firebase/firestore'; // If using Firebase database
 import 'firebase/storage';  // If using Firebase storage
 
@@ -86,4 +86,3 @@ export const updateGame = async (game, doc, newBg, newPoster, oldBg, oldPoster) 
   });
 
 };
-
