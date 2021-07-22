@@ -6,7 +6,8 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './store/reducers/rootReducer';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
@@ -15,13 +16,18 @@ import thunk from 'redux-thunk';
 import { reduxFirestore, getFirestore } from 'redux-firestore';
 import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
 import fbConfig from './config/fbConfig';
-
-
 import 'firebase/storage';
-console.log(fbConfig);
+
+// const store = createStore(rootReducer,
+//     compose(
+//         applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore})),
+//         reactReduxFirebase(fbConfig, {userProfile: 'users', useFirestoreForProfile: true, attachAuthIsReady: true}),
+//         reduxFirestore(fbConfig) // redux bindings for firestore
+//     )
+// ); default version
 
 const store = createStore(rootReducer,
-    compose(
+    composeWithDevTools(
         applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore})),
         reactReduxFirebase(fbConfig, {userProfile: 'users', useFirestoreForProfile: true, attachAuthIsReady: true}),
         reduxFirestore(fbConfig) // redux bindings for firestore
