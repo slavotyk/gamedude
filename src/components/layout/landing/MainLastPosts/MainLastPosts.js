@@ -2,7 +2,8 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
-import { compose } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+// import { compose } from 'redux';
 import moment from 'moment';
 import 'moment/locale/ru';
 
@@ -55,7 +56,7 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default compose(
+export default composeWithDevTools(
     connect(mapStateToProps),
     firestoreConnect([{
         collection: 'posts'

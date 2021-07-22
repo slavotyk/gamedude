@@ -7,7 +7,6 @@ import 'firebase/storage';  // If using Firebase storage
 
 
 export const createGame = async (game) => {
-  console.log(game);
   const db = firebase.firestore();
   const firestoreGameRef = db.collection('games');
 
