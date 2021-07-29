@@ -1,5 +1,6 @@
 import { uploadFile } from './helpers';
 
+
 export const signIn = (credentials) => {
   return (dispatch, getState, {getFirebase}) => {
     const firebase = getFirebase();
@@ -15,6 +16,7 @@ export const signIn = (credentials) => {
 
   }
 }
+
 
 export const signOut = () => {
   return (dispatch, getState, {getFirebase}) => {
@@ -32,7 +34,7 @@ export const signUp = (newUser) => {
     const firestore = getFirestore();
 
     firebase.auth().createUserWithEmailAndPassword(
-      newUser.email, 
+      newUser.email,
       newUser.password
     ).then(resp => {
       return firestore.collection('users').doc(resp.user.uid).set({

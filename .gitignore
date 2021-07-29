@@ -6,3 +6,4 @@ coverage
 build
 config/fbConfig
 /src/config/fbConfig.js
+.env.local
