@@ -19,7 +19,7 @@ const MainFreshGames = (props) => {
                         )
                         .slice(0, 8)
                         .map(
-                            item => <GameCard key={ item.id } id = { item.id } title={ item.title } poster={ item.poster }/>
+                            item => <GameCard key={ item.id } id={ item.id } title={ item.title } poster={ item.poster }/>
                         )
                 }
             </div>
